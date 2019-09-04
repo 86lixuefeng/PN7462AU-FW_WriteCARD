@@ -1,0 +1,6 @@
+digraph "phCfg_EE_HW_RfInitUserEE"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node0 [label="{phCfg_EE_HW_RfInitUserEE\n|+ dwAgcConfig1CMValue\l+ dwAgcConfig0CMValue\l+ dwLCPDRefValue\l+ dwLCPDThreashold\l+ dwLCPDDurations\l+ wAgcCMInputValue\l+ bAnaNFCLD\l+ bAnaTxProt\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}

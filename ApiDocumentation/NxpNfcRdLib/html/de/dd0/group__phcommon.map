@@ -1,0 +1,10 @@
+<map id="Common" name="Common">
+<area shape="rect" id="node1" href="$de/d4e/group__phKeyStore.html" title="This is only a wrapper layer to abstract the different KeyStore implementations. " alt="" coords="183,5,259,32"/>
+<area shape="rect" id="node3" href="$d3/d83/group__phalVca.html" title="These Components implement the Virtual Card Architecture (R) commands. " alt="" coords="129,56,314,83"/>
+<area shape="rect" id="node4" href="$db/d56/group__phTools.html" title="This component implements tools that are necessary for many different software modules. " alt="" coords="195,107,248,133"/>
+<area shape="rect" id="node5" href="$de/dd7/group__phCidManager.html" title="Eases Multiple&#45;Card&#45;Management by providing and locking CIDs. " alt="" coords="174,157,269,184"/>
+<area shape="rect" id="node6" href="$d6/d0f/group__phTMIUtils.html" title="This layer provides Utilities for operating on transaction MAC. " alt="" coords="176,208,267,235"/>
+<area shape="rect" id="node7" href="$d3/db3/group__phCryptoRng.html" title="This is only a wrapper layer to abstract the different crypto random number generator implementations..." alt="" coords="180,259,263,285"/>
+<area shape="rect" id="node8" href="$d4/d4a/group__phLog.html" title="This layer provides logging and debug functionality. " alt="" coords="200,309,243,336"/>
+<area shape="rect" id="node9" href="$dc/dfa/group__phCryptoSym.html" title="This is only a wrapper layer to abstract the different CryptoSym implementations. ..." alt="" coords="178,360,265,387"/>
+</map>

@@ -1,0 +1,6 @@
+digraph "phCfg_EE_Boot_PcrPwrTempConfig"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node0 [label="{phCfg_EE_Boot_PcrPwrTemp\lConfig\n|+ bUseTempSensor0\l+ bUseTempSensor1\l+ bLowTempTarget0\l+ bLowTempTarget1\l+ bHighTempTarget0\l+ bHighTempTarget1\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}

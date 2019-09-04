@@ -1,0 +1,40 @@
+<!--
+
+    $URL: https://www.collabnet.nxp.com/svn/pn640/pn640_docs/trunk/06_Validation/RF_Validation/Bring-up/PN640_RF_Settings/30x50_ALM/V1.9/user_ee_RfAPC.xml $
+    $Date: 2015-12-08 11:05:11 +0100 (Di, 08 Dez 2015) $
+    $Id: user_ee_RfAPC.xml 16882 2015-12-08 10:05:11Z Purnank G (ing05193) $
+    $Revision: 16882 $
+
+-->
+<structure name="RfAPC">
+    <!-- Added 2015.09.07 -->
+    <description> APC Settings
+
+</description>
+    <field valuetype="hex" name="bRssiTimer" type="u16" value="0x423">
+        <description>Periodic timer to reapply RSSI while transceiver is in Wait4Data state. Unit is 128/fc (106kHz)
+if set to 0 it means feature is not used
+0423 == ~10ms </description>
+    </field>
+    <field valuetype="hex" name="bRssiLutSize" type="u8" value="0x10"><description>Size of LUT: DO NOT MODIFY this parameter</description></field>
+    <field valuetype="hex" name="bRssiNbEntries" type="u8" value="0x01"><description>Number of entries in RSSI look up table (it refers to dwRssiEntry0 to dwRssiEntryX).
+If set to 0 then no RSSI algo is applied</description></field>
+    <array name="dwRssiEntry" size="16" type="u32" valuetype="hex"
+    value="0x00E00000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000">
+        <description>
+Purpose of each bits:
+
+bits 26:24 = TXLDO output voltage: PMU_TXLDO_CONTROL_REG / TXLDO_SELECT
+
+bits 23:22 = CLIF_ANA_TX_AMPLITUDE_REG / TX_CW_AMPLITUDE_ALM_CM
+
+bits 21:21 = CLIF_TX_CONTROL_REG / TX_ALM_TYPE_SELECT
+
+bits 20:16 = CLIF_ANA_TX_AMPLITUDE_REG / TX_RESIDUAL_CARRIER
+
+bits 15:00 = CLIF_RSSI_REG / AGC_VALUE[15:6] + ADC_DATA_Q[5:0]</description>
+    </array>
+    <field valuetype="hex" name="dwRssiEntry0overwrite" type="u32" value="0x03000000" >
+        <description>Replacement of dwRssiEntry[0] for trigger ReqA/ReqB</description>
+    </field>
+</structure>

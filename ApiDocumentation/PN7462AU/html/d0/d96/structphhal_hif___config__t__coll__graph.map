@@ -1,0 +1,4 @@
+<map id="phhalHif_Config_t" name="phhalHif_Config_t">
+<area shape="rect" id="node2" href="$dd/d5f/unionphhal_hif___config__t_1_1phhal_hif___intf_config.html" title="For Cofiguring the I2C,SPI and HSU register. " alt="" coords="5,205,136,312"/>
+<area shape="rect" id="node4" href="$d0/d92/structphhal_hif___hsu__t.html" title="This structure gives the configuration parameters needed for HSU initialization. " alt="" coords="11,5,131,141"/>
+</map>

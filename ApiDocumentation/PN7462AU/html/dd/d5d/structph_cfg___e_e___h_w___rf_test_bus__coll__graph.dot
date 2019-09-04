@@ -1,0 +1,6 @@
+digraph "phCfg_EE_HW_RfTestBus"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node0 [label="{phCfg_EE_HW_RfTestBus\n|+ dwAnaTB\l+ dwDAC\l+ bTbDigi1\l+ bTbDigi2\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}

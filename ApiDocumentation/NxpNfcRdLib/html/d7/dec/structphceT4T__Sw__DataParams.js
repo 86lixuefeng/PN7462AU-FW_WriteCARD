@@ -1,0 +1,27 @@
+var structphceT4T__Sw__DataParams =
+[
+    [ "wId", "d7/dec/structphceT4T__Sw__DataParams.html#a862645116ed697e475970308002015e3", null ],
+    [ "wStatusWord", "d7/dec/structphceT4T__Sw__DataParams.html#af400793272a68e57e1d03cb53582de1b", null ],
+    [ "wLc", "d7/dec/structphceT4T__Sw__DataParams.html#a4e959406b746df4ce78fedefdfa1b13f", null ],
+    [ "wAppBufferSize", "d7/dec/structphceT4T__Sw__DataParams.html#a8b63229a0ba6b9c489d1b8f007255b93", null ],
+    [ "pAppBuffer", "d7/dec/structphceT4T__Sw__DataParams.html#aa5b742859b5a206db94cf10666bc7843", null ],
+    [ "pNdefFile", "d7/dec/structphceT4T__Sw__DataParams.html#a0a5fa089c17b4e41fb713d07876c0a77", null ],
+    [ "dwNdefFileSize", "d7/dec/structphceT4T__Sw__DataParams.html#a3ba36ab8e43dfab171b32fb66af652d0", null ],
+    [ "pCcFile", "d7/dec/structphceT4T__Sw__DataParams.html#a99429d5145f35e4071f2f54c30f4ced6", null ],
+    [ "wCcFileSize", "d7/dec/structphceT4T__Sw__DataParams.html#abe148d0f91b679a6f08a6778faffa15d", null ],
+    [ "wCcContentLen", "d7/dec/structphceT4T__Sw__DataParams.html#a465c1c02ba397e244ea3cc3ac3b56a91", null ],
+    [ "pSelectedFile", "d7/dec/structphceT4T__Sw__DataParams.html#ade0eeac9506b7df26435db7343370b88", null ],
+    [ "dwFileSize", "d7/dec/structphceT4T__Sw__DataParams.html#a48ab50c079e96b0edca965a5ccb17ca2", null ],
+    [ "dwFileOffset", "d7/dec/structphceT4T__Sw__DataParams.html#a6b020083fae99939204bbceb1473d7fa", null ],
+    [ "wSelectedFileId", "d7/dec/structphceT4T__Sw__DataParams.html#ae9d5e1435e69421f46e67fc633da973e", null ],
+    [ "bFileWriteAccess", "d7/dec/structphceT4T__Sw__DataParams.html#a1ed9f87b1aadfec2f47e7efa321b94a8", null ],
+    [ "bTagState", "d7/dec/structphceT4T__Sw__DataParams.html#a97207573123b22e54cfc7970602314d3", null ],
+    [ "pPalI14443p4mCDataParams", "d7/dec/structphceT4T__Sw__DataParams.html#acfbba553be1064546a6c679f123ea146", null ],
+    [ "pSharedData", "d7/dec/structphceT4T__Sw__DataParams.html#ad06df5f491ee784c451b6f218baefe13", null ],
+    [ "wSharedDataLen", "d7/dec/structphceT4T__Sw__DataParams.html#aac6c5ab18e064166b92b912efe6329e4", null ],
+    [ "bRxOption", "d7/dec/structphceT4T__Sw__DataParams.html#aed7aff3d647156477707027a7522593e", null ],
+    [ "bSupportProprietaryCmd", "d7/dec/structphceT4T__Sw__DataParams.html#a591098084fd2e51a101ba7989f7170a9", null ],
+    [ "bHandleUpdateCmd", "d7/dec/structphceT4T__Sw__DataParams.html#a5d78c3e10455f8bef9e7939b19f5123e", null ],
+    [ "wExitStatus", "d7/dec/structphceT4T__Sw__DataParams.html#a887d5973a404ad272254973f84be3b1c", null ],
+    [ "T4TEventObj", "d7/dec/structphceT4T__Sw__DataParams.html#a5dfde854430851c9da43caa855630026", null ]
+];

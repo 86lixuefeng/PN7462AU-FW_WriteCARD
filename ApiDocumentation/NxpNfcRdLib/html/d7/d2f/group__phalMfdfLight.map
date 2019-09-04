@@ -1,0 +1,13 @@
+<map id="MIFARE DESFire Light" name="MIFARE DESFire Light">
+<area shape="rect" id="node1" href="$db/df4/group__phalMfdfLight__DataManagement.html" title="These Components implement the MIFARE DESFire Light Data Management related commands. " alt="" coords="401,5,599,32"/>
+<area shape="rect" id="node2" href="$d7/dec/group__phalMfdfLight__OriginalityCheck.html" title="These Components implement the MIFARE DESFire Light Originality Check functions. " alt="" coords="405,56,595,83"/>
+<area shape="rect" id="node3" href="$da/d80/group__phalMfdfLight__ISO7816.html" title="These Components implement the MIFARE DESFire Light ISO/IEC 7816&#45;4 Basic commands. " alt="" coords="427,107,573,133"/>
+<area shape="rect" id="node4" href="$d3/dce/group__phalMfdfLight__Miscellaneous.html" title="These Components implement the MIFARE DESFire Light Miscellaneous functions. " alt="" coords="411,157,589,184"/>
+<area shape="rect" id="node5" href="$de/d8c/group__phalMfdfLight__SecureMessaging.html" title="These Components implement the MIFARE DESFire Light Secure Messaging related commands. " alt="" coords="401,208,599,235"/>
+<area shape="rect" id="node6" href="$de/d49/group__phalMfdfLight__KeyManagement.html" title="These Components implement the MIFARE DESFire Light Key Management related commands. " alt="" coords="403,259,597,285"/>
+<area shape="rect" id="node7" href="$d0/d19/group__phalMfdfLight__MemoryConfiguration.html" title="These Components implement the MIFARE DESFire Light Memory and Configuration Management related comma..." alt="" coords="391,309,609,336"/>
+<area shape="rect" id="node8" href="$d2/db6/group__phalMfdfLight__Sw.html" title="Component : Software" alt="" coords="425,360,575,387"/>
+<area shape="rect" id="node9" href="$d3/d4c/group__phalMfdfLight__TransactionnManagement.html" title="These Components implement the MIFARE DESFire Light Transaction Management related commands..." alt="" coords="381,411,619,437"/>
+<area shape="rect" id="node10" href="$d3/d6e/group__phal.html" title="Contains Application specific implementations for various contactless cards (MIFARE DESFire..." alt="" coords="5,233,128,260"/>
+<area shape="rect" id="node11" href="$de/d40/group__phalMfdfLight__FileManagement.html" title="These Components implement the MIFARE DESFire Light File Management related commands. " alt="" coords="405,461,595,488"/>
+</map>

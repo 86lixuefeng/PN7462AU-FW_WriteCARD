@@ -1,0 +1,11 @@
+<map id="Application Layer" name="Application Layer">
+<area shape="rect" id="node1" href="$d1/d43/group__phalTop.html" title="This Component implements tag operations for different NFC Tag types T1T, T2T, T3T,T4T and T5T. " alt="" coords="209,5,348,32"/>
+<area shape="rect" id="node2" href="$dd/d1b/group__phalMfc.html" title="These Functions implement the MIFARE Classic commands. " alt="" coords="176,56,381,83"/>
+<area shape="rect" id="node3" href="$d9/d1c/group__phalFelica.html" title="These Components implement the Felica commands. " alt="" coords="250,107,307,133"/>
+<area shape="rect" id="node4" href="$df/d5c/group__phalMful.html" title="These Components implement the MIFARE(R) Ultralight, C, Ultralight EV1 commands. " alt="" coords="207,157,350,184"/>
+<area shape="rect" id="node5" href="$d2/d02/group__phalICode.html" title="This component implements the commands of ICode products. " alt="" coords="251,208,306,235"/>
+<area shape="rect" id="node7" href="$da/d7d/group__phalMfdf.html" title="These Functions implement the MIFARE DESFire EV1 commands. " alt="" coords="217,259,341,285"/>
+<area shape="rect" id="node8" href="$d3/db9/group__phalI18000p3m3.html" title="These Components implement the ICODE ILT support. " alt="" coords="197,309,360,336"/>
+<area shape="rect" id="node9" href="$d7/d2f/group__phalMfdfLight.html" title="These Functions implement the MIFARE DESFire Light commands. " alt="" coords="201,360,357,387"/>
+<area shape="rect" id="node10" href="$df/d72/group__phalT1T.html" title="These Components implement the Type 1 Tag commands. " alt="" coords="237,411,320,437"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="MIFARE product" name="MIFARE product">
+<area shape="rect" id="node1" href="$da/d53/group__phpalMifare__Sw.html" title="Component : Software" alt="" coords="363,5,514,32"/>
+<area shape="rect" id="node4" href="$da/dc0/group__phpalMifare__Stub.html" title="PhpalMifare_Stub" alt="" coords="377,56,501,83"/>
+<area shape="rect" id="node3" href="$d6/d7d/group__phpal.html" title="Contains Hardware&#45;Independent implementations of various contactless protocols. " alt="" coords="6,23,146,65"/>
+</map>

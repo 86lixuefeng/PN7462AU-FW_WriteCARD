@@ -1,0 +1,35 @@
+
+
+     digraph "Typical Usage" {
+         node [shape=oval, fontname="Helvetica", fontsize=10];
+         End;
+         Start;
+
+         node [shape=record, fontname="Helvetica", fontsize=10];
+
+     //Nodes
+         phhalCt_CardActivate [ URL="\ref phhalCt_CardActivate"];
+         phhalCt_CardDeactivate [ URL="\ref phhalCt_CardDeactivate"];
+         phhalCt_DeInit [ URL="\ref phhalCt_DeInit"];
+         phhalCt_Init [ URL="\ref phhalCt_Init"];
+         phhalCt_Receive [ URL="\ref phhalCt_Receive"];
+         phhalCt_SetTimer [ URL="\ref phhalCt_SetTimer"];
+         phhalCt_Transmit [ URL="\ref phhalCt_Transmit"];
+         PHHAL_CT_STOP_TIMER [ URL="\ref PHHAL_CT_STOP_TIMER"];
+     //Logical Flow
+         Start ->phhalCt_Init -> phhalCt_CardActivate;
+         phhalCt_CardActivate -> phhalCt_SetTimer;
+         phhalCt_SetTimer -> phhalCt_Transmit;
+         phhalCt_Transmit -> phhalCt_Receive;
+         phhalCt_Receive -> phhalCt_Transmit;
+         phhalCt_Receive -> PHHAL_CT_STOP_TIMER;
+         PHHAL_CT_STOP_TIMER -> phhalCt_CardDeactivate;
+         phhalCt_CardDeactivate -> phhalCt_DeInit;
+         phhalCt_DeInit -> End;
+
+     //optionals
+         edge [ style="dashed", color="blue" ];
+     //error/abort cases
+         edge [ style="dashed", color="red" ];
+
+     }

@@ -1,0 +1,11 @@
+digraph "SPI MASTER HAL"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir=LR;
+  Node0 [label="SPI MASTER HAL",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 [label="Master Interface HALs",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d18/group__grp__mif__hal.html"];
+  Node2 [label="Error Code: SPIM HAL",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d24/group__grp_err___hal_s_p_i_m.html",tooltip="Error codes for SPI Master HAL. "];
+  Node1->Node0 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node2 [shape=plaintext, dir="back", style="solid"];
+}

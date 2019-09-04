@@ -1,0 +1,20 @@
+---- phLED_Init Matches (19 in 18 files) ----
+phExCcid_SystemTask in phExCcid.c (PN7462AU_ex_phExCcid\src) :     phLED_Init();
+main in phExCt.c (PN7462AU_ex_phExCt\src) :     phLED_Init();
+main in phExCT7816.c (PN7462AU_ex_phExCT7816\src) :     phLED_Init();
+main in phExCTEMVCo.c (PN7462AU_ex_phExCTEMVCo\src) :     phLED_Init();
+phExDoorAccess_SystemTask in phExDoorAccess.c (PN7462AU_ex_phExDoorAccess\src) :     phLED_Init();
+phExEMVCo_SystemTask in phExEMVCo.c (PN7462AU_ex_phExEMVCo\src) :     phLED_Init();
+main in phExEMVCo_NoRTOS.c (PN7462AU_ex_phExEMVCo\src) :     phLED_Init();
+main in phExHif.c (PN7462AU_ex_phExHif\src) :     phLED_Init();
+phExMain_SystemTask in phExMain.c (PN7462AU_ex_phExMain\src) :     phLED_Init();
+main in phExMain_NoRTOS.c (PN7462AU_ex_phExMain\src) :     phLED_Init();
+phExNFCCcid_SystemTask in phExNFCCcid.c (PN7462AU_ex_phExNFCCcid\src) :     phLED_Init();
+phExPos_SystemTask in phExPos.c (PN7462AU_ex_phExPos\src) :     phLED_Init();
+main in phExRf.c (PN7462AU_ex_phExRf\src) :     phLED_Init();
+main in phExRfPCDA.c (PN7462AU_ex_phExRfPCDA\src) :     phLED_Init();
+main in phExRf_Poll.c (PN7462AU_ex_phExRfPoll\src) :     phLED_Init();
+phExVCom_SystemTask in phExVCom.c (PN7462AU_ex_phExVCom\src) :     phLED_Init();
+phLED.c (PN7462AU\phHal\phLED\src) line 114 : void phLED_Init(void) {
+phLED.h (PN7462AU\phCommon\inc) line 35 :  * 1. Ensure that the module is already initialized with \ref phLED_Init
+phLED.h (PN7462AU\phCommon\inc) line 161 : void phLED_Init(void);

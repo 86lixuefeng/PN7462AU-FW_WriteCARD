@@ -1,0 +1,2835 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+
+
+                     Copyright (c), NXP Semiconductors
+
+                        (C) NXP Semiconductors 2014,2015
+
+          All rights are reserved. Reproduction in whole or in part is
+         prohibited without the written consent of the copyright owner.
+     NXP reserves the right to make changes without notice at any time.
+    NXP makes no warranty, expressed, implied or statutory, including but
+    not limited to any implied warranty of merchantability or fitness for any
+   particular purpose, or that the use will not infringe any third party patent,
+    copyright or trademark. NXP must not be liable for any loss or damage
+                             arising from its use.
+
+--><?xml-stylesheet type="text/xsl" href="user_ee.xslt" ?><UserEE endAddress="0x201FFF" product_name="PN7462AU" product_version="MRA3" startAddress="0x201200">
+<pages>
+<page name="ErrorMem" startAddress="0x201200" totalSize="64">
+<description>Error Memory written by ROM in case of error</description>
+<structure name="Err" startAddress="0x201200" totalSize="40">
+<description>Error information during ROM APIs</description>
+<array address="0x201200" name="str_name" size="36" type="u8" value="IntentionallyEmpty" valuetype="cstring">
+<description>Reserved for MRA2 and MRA3</description>
+</array>
+<field address="0x201224" name="dwCauseCode" type="u32" value="0x00" valuetype="hex">
+<description>Error information from ROM Boot</description>
+</field>
+</structure>
+</page>
+<page name="Ctrl" startAddress="0x201240" totalSize="64">
+<description>Master Control Block for EEPROM</description>
+<structure name="VerInfo" startAddress="0x201240" totalSize="36">
+<!-- Reviewed 2015.03.03 -->
+<description>
+&lt;pre&gt;
+    Version Information of the Layout
+	Version 28.0.0: artf178091: [CR][FW][TXOCP] Load dependent RX gain control
+	Version 27.0.0: artf203315 : The Default TVDD source config to be External. DPC 5V by default.
+	Version 27.0.0: Clif EEPROM 1.9.2v Settings.
+	Version 26.0.0: artf157683 : Changing the wWaitTime of Tx Ldo Params. [15:14] : Lfo Clock Value and [13:0] : Waiting Time after TxLdo is started.
+	Version 25.5.0: artf156243 : Update according to the Analysis Information.
+	Version 25.4.0: wWaitTime value for Tx Ldo start ir changed from 250us to 1100us.
+    Version 25.3.0: dwTidtTimeAdjust field added.
+    Version 25.2.0: RRDD value changed from 28us to 50us and dwExtRfOnTime values to 302us.
+    Version 25.1.0: Adding the RRDD and Fdt values for Jewel.
+    Version 25.0.0: Clif EEPROM 1.9v settings
+    &lt;hr /&gt;
+    Version 24.0.2: [RC4] CLIF_ANA_NFCLD_REG.CM_RFL_NFC set to 7.  [MRA3] v1.8.3 of EEPROM
+    Version 24.0.1: Refactored dwFelicaRxRMSigproTime
+    Version 24.0.0: Removed the Rf On and Off De-bouncing structure. 
+                  : Added Rf Inter-Op timings structure and Rf hal timings 
+                  : for different algos.
+    Version 23.9.0: CLIF_ANA_NFCLD_REG.CM_RFL_NFC value changed from 7 to 3
+    Version 23.8.0: [MRA2] v1.8   of EEPROM
+    Version 23.7.0: [MRA2] v1.7.4 of EEPROM
+    Version 23.6.0: [MRA2] ClkGenClifClockStart-&gt;ClkModeAlmCm set to 0x50
+&lt;/pre&gt;
+                </description>
+<field address="0x201240" name="major" type="u16" value="28" valuetype="int">
+<!-- Change in major version means total in-compatibility -->
+<description>Major Version</description>
+</field>
+<field address="0x201242" name="minor" type="u8" value="0" valuetype="int">
+<!-- Change in minor version means new fields have been added -->
+<description>Minor Version</description>
+</field>
+<field address="0x201243" name="development" type="u8" value="0" valuetype="int">
+<!-- Change in minor version means values have changed -->
+<description>Development Version</description>
+</field>
+<array address="0x201244" name="str_name" size="32" type="u8" value="Rf#v1.9" valuetype="cstring">
+<description>Canonical name to identify the EE Layout</description>
+</array>
+</structure>
+</page>
+<page name="Boot" startAddress="0x201280" totalSize="116">
+<description>These values are used during during Boot up and applied to HW IPs</description>
+<structure name="RNG" startAddress="0x201280" totalSize="4">
+<description>Random Number Generator. \see phhalRng_Init</description>
+<field address="0x201280" name="bTrngFeedTimeout" type="u8" value="0x26" valuetype="hex">
+<description>Programmable wait time to release gated clocks feeding the TRNG</description>
+</field>
+</structure>
+<structure name="ClkGen" startAddress="0x201284" totalSize="4">
+<description>Clock Generator.  \ref phhalClkGen_Init</description>
+<field address="0x201284" name="wXtalActivationTimeOut" type="u16" value="2000" valuetype="int">
+<description>dwXtalActivationTimeOut Activation time out value</description>
+</field>
+<field address="0x201286" name="eSource" type="u8" value="0x00" valuetype="hex">
+<description>eSource Clock source selection, \see phhalClkGen_Source_t</description>
+</field>
+<field address="0x201287" name="bKickOnError" type="u8" value="0x00" valuetype="hex">
+<description>bKickOnError Kick on error.</description>
+</field>
+</structure>
+<structure name="PcrPwrTempConfig" startAddress="0x201288" totalSize="8">
+<!--  Reviewed structure contents PGh: 2015.03.09 -->
+<description>Power Clock Reset Temperature Configuration related to \see phhalPcr_PwrTempConfig_t
+
+                \warning This structure is tightly linked to \ref phhalPcr_PwrTempConfig_t
+                </description>
+<field address="0x201288" name="bUseTempSensor0" type="u8" value="0" valuetype="int">
+<description>Flag to indicate to use temperature sensor 0 or not</description>
+<option description="Disabled" value="0"/>
+<option description="Enabled" value="1"/>
+</field>
+<field address="0x201289" name="bUseTempSensor1" type="u8" value="0" valuetype="int">
+<description>Flag to indicate to use temperature sensor 1 or not</description>
+<option description="Disabled" value="0"/>
+<option description="Enabled" value="1"/>
+</field>
+<field address="0x20128a" name="bLowTempTarget0" type="u8" value="3" valuetype="int">
+<option description="135" value="0"/>
+<option description="130" value="1"/>
+<option description="125" value="2"/>
+<option description="120" value="3"/>
+</field>
+<field address="0x20128b" name="bLowTempTarget1" type="u8" value="3" valuetype="int">
+<option description="135" value="0"/>
+<option description="130" value="1"/>
+<option description="125" value="2"/>
+<option description="120" value="3"/>
+</field>
+<field address="0x20128c" name="bHighTempTarget0" type="u8" value="0" valuetype="int">
+<option description="135" value="0"/>
+<option description="130" value="1"/>
+<option description="125" value="2"/>
+<option description="120" value="3"/>
+</field>
+<field address="0x20128d" name="bHighTempTarget1" type="u8" value="0" valuetype="int">
+<option description="135" value="0"/>
+<option description="130" value="1"/>
+<option description="125" value="2"/>
+<option description="120" value="3"/>
+</field>
+</structure>
+<structure name="PcrPwrDown" startAddress="0x201290" totalSize="4">
+<!-- Added on 2015.08.10:  See SC3476: [PCR HAL API Change] Power Down Setting during USB should be provided as input parameter -->
+<description>See \ref phhalPcr_PwrDown_Setting_t
+
+It is a 32 bit value bit-file created by ORing enums of type \ref phhalPcr_PwrDown_Setting_t used to select which settings must be applied to reduce power consumption during Suspend</description>
+<field address="0x201290" name="dwPwrDownSettings" type="u32" value="0x7FFFFFFF" valuetype="hex">
+<description>
+                        0x7FFFFFFF : E_APPLY_ALL_SETTNGS. i.e.  all power reduction settings will be applied during Suspend
+                    </description>
+</field>
+</structure>
+<structure name="TxAnaStandByConfig" startAddress="0x201294" totalSize="8">
+<!-- Reviewed structure contents PGh: 2015.03.09 -->
+<description> TxAna register settings for standby  \see phhalPcr_TxAnaStandByConfig_t</description>
+<field address="0x201294" name="dwAnaTxStandByValue" type="u32" value="0F" valuetype="hex">
+<description>
+                        To hold CLIF standby GSN value selection
+                    </description>
+</field>
+<field address="0x201298" name="dwAnaTxProtStandByValue" type="u32" value="03" valuetype="hex">
+<description>
+                        To hold the CLIF configuration related to powerdown
+                    </description>
+</field>
+</structure>
+<structure name="EEPROM" startAddress="0x20129c" totalSize="4">
+<!-- Reviewed structure contents PGh: 2015.03.09 -->
+<description>EEPROM Access Settings. \see phhalEeprom_Init</description>
+<field address="0x20129c" name="bEnableFastMode" type="u8" value="0" valuetype="int">
+<description>Disable Fast mode for EEPROM access</description>
+<option description="Disabled" value="0"/>
+<option description="Enabled" value="1"/>
+</field>
+</structure>
+<structure name="FLASH" startAddress="0x2012a0" totalSize="4">
+<!-- Reviewed structure contents PGh: 2015.03.09 -->
+<description>Flash Settings. \see phhalFlash_Init</description>
+<field address="0x2012a0" name="bEnableFastMode" type="u8" value="0" valuetype="int">
+<description>Enable or Disable fast mode for Page Flash access</description>
+<option description="Disabled" value="0"/>
+<option description="Enabled" value="1"/>
+</field>
+<field address="0x2012a1" name="bEnableSkipProgramOnEraseFail" type="u8" value="1" valuetype="int">
+<description>Setting to decide if program phase will be attempted in the event of an erase phase failure</description>
+<option description="Program phase will be attempted even if erase phase failed" value="0"/>
+<option description="Program phase will be skipped if erase phase failed" value="1"/>
+</field>
+</structure>
+<structure name="TxLdoParams" startAddress="0x2012a4" totalSize="8">
+<!-- Reviewed and fixed structure contents PGh: 2015.03.09 -->
+<description>Power management unit. \see phhalPmu_TxLdoInit and \see phhalPmu_TxLdoParams_t</description>
+<field address="0x2012a4" name="bUseTxLdo" type="u8" value="0x00" valuetype="hex">
+<description>
+                        Parameter to use internal TxLDO or external TxLDO for TVDD Source
+                    </description>
+<option description="Use external TxLDO" value="0"/>
+<option description="Use internal TxLDO" value="1"/>
+</field>
+<field address="0x2012a5" name="eFullPowerTvddSel" type="u8" value="0x04" valuetype="hex">
+<!-- 2015.07.17 : Changed to 4.7v -->
+<description>
+                        TVDD Power Selection for Reader Mode. \see phhalPmu_TvddSel_t
+                    </description>
+<option description="3V" value="0"/>
+<option description="3.3V" value="1"/>
+<option description="3.6v" value="2"/>
+<option description="4.5V" value="3"/>
+<option description="4.7v" value="4"/>
+<option description="Invalid" value="other"/>
+</field>
+<field address="0x2012a6" name="eLowPowerTvddSrc" type="u8" value="0x00" valuetype="hex">
+<description>Source for the TVDD \see phhalPmu_LowPower_TvddSrc_t</description>
+<option description="Source is TVDD In" value="0"/>
+<option description="Source is VUP" value="1"/>
+<option description="Source is VBUS" value="2"/>
+<option description="Invalid" value="other"/>
+</field>
+<field address="0x2012a7" name="bOverCurrentEnable" type="u8" value="0x00" valuetype="hex">
+<description>Over Current Interrupt Enable or disable</description>
+<option description="Disabled" value="0"/>
+<option description="Enable" value="Others"/>
+</field>
+<field address="0x2012a8" name="wWaitTime" type="u16" value="50272" valuetype="int">
+<description>[15:14] : Lfo Clock Value and [13:0] : Waiting Time after TxLdo is started. Lfo Clk = 3 and Waiting Time = 1120us.</description>
+</field>
+</structure>
+<structure name="CT" startAddress="0x2012ac" totalSize="4">
+<description>Initial settings for CT Interface. \see phhalCt_InitParam_t</description>
+<field address="0x2012ac" name="bPullUp" type="u8" value="1" valuetype="hex">
+<description>Pull UP Configuration</description>
+<option description="Pull Down" value="0"/>
+<option description="Pull UP" value="1"/>
+<option description="Undefined behaviour" value="others"/>
+</field>
+<field address="0x2012ad" name="bConnectorType" type="u8" value="1" valuetype="hex">
+<description>Connector Type</description>
+<option description="Normally Closed" value="0"/>
+<option description="Normally Open" value="others"/>
+</field>
+<field address="0x2012ae" name="bAutoCTDeactivationEnable" type="u8" value="1" valuetype="hex">
+<description>Auto deactivation</description>
+<option description="Disabled" value="0"/>
+<option description="Enabled" value="others"/>
+</field>
+<field address="0x2012af" name="bSlewRate" type="u8" value="0x38" valuetype="hex">
+<description>CLK,IO,VCC slew rate</description>
+<option description="CLK,IO,VCC slew rate" value="0"/>
+<option description="This value is directly mapped to ct_srr_reg
+                    to give enough options" value="others"/>
+</field>
+<!--
+                <field name="bEmvProfile" type="u8" value="1" valuetype="hex" >
+                    <description>Select EMV profile or ISO profile</description>
+                    <option value="0" description="ISO profile" />
+                    <option value="others" description="EMV profile" />
+                </field>
+ -->
+<!--
+                <field name="bAuxActiveLowEn" type="u8" value="1" valuetype="hex" >
+                    <description>Should we enable AUX Pin Active LOW?</description>
+                    <option value="0" description="Disabled" />
+                    <option value="1" description="Active Low" />
+                </field>
+ -->
+</structure>
+<structure name="GPIO" startAddress="0x2012b0" totalSize="24">
+<description>
+                    GPIO Bootup Configuration. Each byte represents a Gpio configuration starting from Gpio 1 to 12.
+                </description>
+<array address="0x2012b0" name="OutputPUPD" size="12" type="u8" value="00 00 00 00 00 00 03 03 07 03 03 03" valuetype="hex">
+<!--    1  2  3  4  5  6  7  8  9 10 11 12 -->
+<!-- GPIO 7 is used for APC.
+                         GPIO 8 is used for DPC. -->
+<description>
+                        Lower Nibble - Related to output configuration
+                        Upper Nibble - Related to Pull-up/Pull-down configuration
+                    </description>
+<option description="Skip Configuration as output on Boot" value="Bit0=0"/>
+<option description="Configure Gpio as output" value="Bit0=1"/>
+<option description="Enable slew-rate" value="Bit1=1"/>
+<option description="Drive the output high" value="Bit2=1"/>
+<option description="Drive the output low" value="Bit2=0"/>
+<option description="Apply Pull UP" value="Bit5=1"/>
+<option description="Apply Pull Down" value="Bit6=1"/>
+</array>
+<array address="0x2012bc" name="InputISR" size="12" type="u8" value="00 00 00 00 00 00 00 00 00 00 00 00" valuetype="hex">
+<!--    1  2  3  4  5  6  7  8  9 10 11 12 -->
+<!--          -BLV-IWI -->
+<option description="Skip Configuration on Boot" value="ALL=0"/>
+<option description="Un-Configure as input" value="Bit0=0"/>
+<option description="Configure/SET as Input" value="Bit0=1"/>
+<option description="GPIO is a wakeup source" value="Bit1=1"/>
+<option description="GPIO is an interrupt source" value="Bit2=1"/>
+<option description="Level Sensitive Interrupt" value="Bit4=1"/>
+<option description="Interrupt on Active Low or Falling Edge" value="Bit5=1"/>
+<option description="Interrupt on Both Edges" value="Bit6=1"/>
+</array>
+</structure>
+</page>
+<page name="HW" startAddress="0x201300" totalSize="384">
+<description>Hardware Configurations / Default settings.  These settings are not applied direclty at bootup but eventually during the course of usage of the IPs.</description>
+<structure name="WakeUpConfig" startAddress="0x201300" totalSize="12">
+<description>Wakeup Sources \see phhalPcr_WakeUpConfig_t</description>
+<!-- Reviewed 2015.03.03 -->
+<field address="0x201300" name="wWakeUpTimerVal" type="u16" value="300" valuetype="int">
+<description>Timer value for the wake up in milliseconds</description>
+</field>
+<field address="0x201302" name="bEnableHIFWakeup" type="u8" value="0" valuetype="int">
+<description>Flag to know the host interface wake up</description>
+<option description="Disabled" value="0"/>
+<option description="Enabled" value="1"/>
+</field>
+<field address="0x201303" name="bI2CAddr" type="u8" value="0x28" valuetype="hex">
+<description>I2C address if the wake up is configured for HIF</description>
+</field>
+<field address="0x201304" name="bWakeUpTimer" type="u8" value="1" valuetype="int">
+<description>Flag to enable the wake up timer as wake up source</description>
+<option description="Disabled" value="0"/>
+<option description="Enabled" value="1"/>
+</field>
+<field address="0x201305" name="bWakeUpRfLdt" type="u8" value="0" valuetype="int">
+<description>Flag to enable the RfLdt as wake up source</description>
+<option description="Disabled" value="0"/>
+<option description="Enabled" value="1"/>
+</field>
+<field address="0x201306" name="bWakeUpPvddLim" type="u8" value="1" valuetype="int">
+<description>Flag to enable Pvdd current limitation as wake up source when it goes below the lower threshold</description>
+<option description="Disabled" value="0"/>
+<option description="Enabled" value="1"/>
+</field>
+<field address="0x201307" name="bWakeUpCtPr" type="u8" value="1" valuetype="int">
+<description>Flag to enable CT presence as wake up source when it goes below the lower threshold</description>
+<option description="Disabled" value="0"/>
+<option description="Enabled" value="1"/>
+</field>
+<field address="0x201308" name="bWakeUpIntAux" type="u8" value="0" valuetype="int">
+<description>Flag to enable PVDD Auxiliary interrupt as wake up source when it goes below the lower threshold</description>
+<option description="Disabled" value="0"/>
+<option description="Enabled" value="1"/>
+</field>
+<field address="0x201309" name="bWakeUpTvddMon" type="u8" value="0" valuetype="int">
+<description> Flag to enable Tvdd Monitoring as wake up source when it goes below the lower threshold</description>
+<option description="Disabled" value="0"/>
+<option description="Enabled" value="1"/>
+</field>
+<field address="0x20130a" name="bWakeUpGpio" type="u8" value="0" valuetype="int">
+<description> Flag to enable Gpio as wake up source when it goes below the lower threshold</description>
+<option description="Disabled" value="0"/>
+<option description="Enabled" value="1"/>
+</field>
+</structure>
+<!--
+
+    $URL: https://www.collabnet.nxp.com/svn/pn640/pn640_docs/trunk/06_Validation/RF_Validation/Bring-up/PN640_RF_Settings/65x65_PLM/V1.9.2/user_ee_RfAntennae.xml $
+    $Date: 2016-02-02 00:09:17 +0530 (Tue, 02 Feb 2016) $
+    $Id: user_ee_RfAntennae.xml 17667 2016-02-01 18:39:17Z Purnank G (ing05193) $
+    $Revision: 17667 $
+
+-->
+<structure name="RfAntennae" startAddress="0x20130c" totalSize="4">
+<!-- Added on 2015.08.10: See PT_SC3518: EEPROM Allocation needed for TestBus and CM Configuration -->
+<description>Antennae type. ALM or PLM</description>
+<field address="0x20130c" name="enableALM" type="u8" value="0" valuetype="hex">
+<option description="ALM is used." value="1"/>
+<option description="PLM is used." value="0"/>
+</field>
+</structure>
+<structure name="RfInitUserEE" startAddress="0x201310" totalSize="24">
+<description>\see phhalRf_InitUserEE_t</description>
+<field address="0x201310" name="dwAgcConfig1CMValue" type="u32" value="0x0107FF7" valuetype="hex">
+<description>Card mode AGC Config1 value</description>
+</field>
+<field address="0x201314" name="dwAgcConfig0CMValue" type="u32" value="0x44003" valuetype="hex">
+<description>Card mode AGC Config0 value</description>
+</field>
+<field address="0x201318" name="dwLCPDRefValue" type="u32" value="0x000020AC" valuetype="hex">
+<description>Reference value of AGC for LPCD</description>
+</field>
+<field address="0x20131c" name="dwLCPDThreashold" type="u32" value="0x00000005" valuetype="hex">
+<description>Threshold value for LPCD</description>
+</field>
+<field address="0x201320" name="dwLCPDDurations" type="u32" value="0x00000028" valuetype="hex">
+<description>Duration value for LPCD</description>
+</field>
+<field address="0x201324" name="wAgcCMInputValue" type="u16" value="0x00" valuetype="hex">
+<description>Card Mode most possible sensitive input value</description>
+</field>
+<field address="0x201326" name="bAnaNFCLD" type="u8" value="0x0C" valuetype="hex">
+<description>NFC LD Threshold value</description>
+</field>
+<field address="0x201327" name="bAnaTxProt" type="u8" value="0x09" valuetype="hex">
+<description>Initial value for Ana Tx Prot Register</description>
+</field>
+</structure>
+<!--
+
+    $URL: https://www.collabnet.nxp.com/svn/pn640/pn640_docs/trunk/06_Validation/RF_Validation/Bring-up/PN640_RF_Settings/65x65_PLM/V1.9.2/5v/user_ee_RfDPC.xml $
+    $Date: 2016-02-02 00:09:17 +0530 (Tue, 02 Feb 2016) $
+    $Id: user_ee_RfDPC.xml 17667 2016-02-01 18:39:17Z Purnank G (ing05193) $
+    $Revision: 17667 $
+
+-->
+<structure name="RfDPC" startAddress="0x201328" totalSize="64">
+<description>\see phhalRf_DPCConfig_t</description>
+<field address="0x201328" name="wControlCycle" type="u16" value="0x4E20" valuetype="hex">
+<description>Sets the value for the periodic regulation. Time base is 1/20Mhz. (Example: Value of 20000 is equal to 1ms) </description>
+</field>
+<field address="0x20132a" name="wAgcFastModeConfig" type="u16" value="0x2540" valuetype="hex">
+<description>Controls AGC FastMode (StepSizeEnabled: 13 + StepSize: 12..11 + DurationEnabled: 10 + Duration: 9..0 ) </description>
+</field>
+<field address="0x20132c" name="wAgcTrshLow" type="u16" value="0x144" valuetype="hex">
+<description>Low threashold for gearshift </description>
+</field>
+<field address="0x20132e" name="wGuardTimeFastMode" type="u16" value="0x88B8" valuetype="hex">
+<description>
+            Guard time after AGC fast mode has been triggered. This happens in the following scenarios:
+            - End of Receive
+            - End of Transmit
+            - After a gear switch
+            Time base is 1/20MHz (Example: Value of 2000 is equal to 100us)
+        </description>
+</field>
+<field address="0x201330" name="wGuardTimeSofDetected" type="u16" value="0x61A8" valuetype="hex">
+<description>Guard time after SoF or SC detection. This is to avoid any DPC regulation between SoF/SC and actual begin of reception. Time base is 1/20MHz (Example: Value of 2000 is equal to 100us) </description>
+</field>
+<field address="0x201332" name="wGuardTimeFieldOn" type="u16" value="0x0190" valuetype="hex">
+<description>Guard time after Gear Switch during FieldOn instruction. Time base is 1/20MHz (Example: Value of 2000 is equal to 100us) </description>
+</field>
+<array address="0x201334" name="wAgcTrshHigh" size="15" type="u16" value="0x014A 0x014B 0x014A 0x0148 0x0146 0x0143 0x013D 0x012E 0x0170 0x00AD 0x00A7 0x009E 0x0096 0x0087 0x004A" valuetype="hex">
+<description>High threasholds for each gear </description>
+</array>
+<field address="0x201352" name="bOcProtControl" type="u8" value="0x73" valuetype="hex">
+<description>Control byte (StartGear: 7..4 bits + GearStep: 3..1 bits + OcProtLoopEnabled: 0 bit ) </description>
+</field>
+<field address="0x201353" name="bAgcXi" type="u8" value="0x0" valuetype="hex">
+<description>Compensation value for the AGC </description>
+</field>
+<field address="0x201354" name="bDebug" type="u8" value="0x0" valuetype="hex">
+<description>Enable/Disable debug signals </description>
+</field>
+<field address="0x201355" name="bAgcShiftValue" type="u8" value="0x05" valuetype="hex">
+<description>Shift value for AGC dynamic low threshold adjustment </description>
+</field>
+<field address="0x201356" name="bSizeOfLUT" type="u8" value="0x09" valuetype="hex">
+<description>Number of fields in the following configuration look up table </description>
+</field>
+<array address="0x201357" name="bConfigLUT" size="15" type="u8" value="0xF9 0xF1 0xF3 0xF5 0xF7 0xF0 0xF2 0xF4 0xF6 0x96 0x66 0x46 0x36 0x26 0x16" valuetype="hex">
+<description>Look up table for configuration values </description>
+</array>
+</structure>
+<!--
+
+    $URL: https://www.collabnet.nxp.com/svn/pn640/pn640_docs/trunk/06_Validation/RF_Validation/Bring-up/PN640_RF_Settings/65x65_PLM/V1.9.2/5v/user_ee_RfPcdShaping.xml $
+    $Date: 2016-02-02 00:09:17 +0530 (Tue, 02 Feb 2016) $
+    $Id: user_ee_RfPcdShaping.xml 17667 2016-02-01 18:39:17Z Purnank G (ing05193) $
+    $Revision: 17667 $
+
+-->
+<structure name="RfPcdShaping" startAddress="0x201368" totalSize="84">
+<description>\see phhalRf_PcdShapeConfig_t</description>
+<array address="0x201368" name="dwConfiguration" size="20" type="u32" value="0x08079991 0x00089991 0x17A09991 0x0040F991 0x0010B992 0x00209BA2 0x0040E9A2 0x00089A92 0x0080F992 0x08479093 0x080799A7 0x00089997 0x17309997 0x00014681 0x00104A85 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000" valuetype="hex">
+<description>The lookup table for the configuration for PCD shaping.</description>
+</array>
+<field address="0x2013b8" name="bSizeOfLUT" type="u8" value="0x2D" valuetype="hex">
+<description>Number of elements in the following configuration look up table.</description>
+</field>
+</structure>
+<!--
+
+    $URL: https://www.collabnet.nxp.com/svn/pn640/pn640_docs/trunk/06_Validation/RF_Validation/Bring-up/PN640_RF_Settings/65x65_PLM/V1.9.2/user_ee_RfAPC.xml $
+    $Date: 2016-02-02 00:09:17 +0530 (Tue, 02 Feb 2016) $
+    $Id: user_ee_RfAPC.xml 17667 2016-02-01 18:39:17Z Purnank G (ing05193) $
+    $Revision: 17667 $
+
+-->
+<structure name="RfAPC" startAddress="0x2013bc" totalSize="72">
+<!-- Added 2015.09.07 -->
+<description> APC Settings
+
+</description>
+<field address="0x2013bc" name="bRssiTimer" type="u16" value="0x423" valuetype="hex">
+<description>Periodic timer to reapply RSSI while transceiver is in Wait4Data state. Unit is 128/fc (106kHz)
+if set to 0 it means feature is not used
+0423 == ~10ms </description>
+</field>
+<field address="0x2013be" name="bRssiLutSize" type="u8" value="0x10" valuetype="hex"><description>Size of LUT: DO NOT MODIFY this parameter</description></field>
+<field address="0x2013bf" name="bRssiNbEntries" type="u8" value="0x00" valuetype="hex"><description>Number of entries in RSSI look up table (it refers to dwRssiEntry0 to dwRssiEntryX).
+If set to 0 then no RSSI algo is applied</description></field>
+<array address="0x2013c0" name="dwRssiEntry" size="16" type="u32" value="0x84000000 0x009806C0 0x00C41180 0x00D81E00 0x00DA2580 0x01202F80 0x00243700 0x00AA3E80 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000" valuetype="hex">
+<description>
+Purpose of each bits:
+
+bits 26:24 = TXLDO output voltage: PMU_TXLDO_CONTROL_REG / TXLDO_SELECT
+
+bits 23:22 = CLIF_ANA_TX_AMPLITUDE_REG / TX_CW_AMPLITUDE_ALM_CM
+
+bits 21:21 = CLIF_TX_CONTROL_REG / TX_ALM_TYPE_SELECT
+
+bits 20:16 = CLIF_ANA_TX_AMPLITUDE_REG / TX_RESIDUAL_CARRIER
+
+bits 15:00 = CLIF_RSSI_REG / AGC_VALUE[15:6] + ADC_DATA_Q[5:0]</description>
+</array>
+<field address="0x201400" name="dwRssiEntry0overwrite" type="u32" value="0x03000000" valuetype="hex">
+<description>Replacement of dwRssiEntry[0] for trigger ReqA/ReqB</description>
+</field>
+</structure>
+<structure name="RfInterOpTimings" startAddress="0x201404" totalSize="20">
+<description>Rf Timings for the Inter-op issues</description>
+<field address="0x201404" name="dwExtRfOnTime" type="u32" value="302" valuetype="int">
+<description>Value of Time(us) for Peer to turn the Rf On</description>
+</field>
+<field address="0x201408" name="dwExtRfOffTime" type="u32" value="10" valuetype="int">
+<description>Value of Time(us) for Peer to turn the Rf off after Transmitting data</description>
+</field>
+<field address="0x20140c" name="dwIntRfOnTime" type="u32" value="302" valuetype="int">
+<description>Value of Time(us) for Internal Rf On in active communication</description>
+</field>
+<field address="0x201410" name="dwRRDDTime" type="u32" value="50" valuetype="int">
+<description>Value of Time(us) for RRDD for Jewel (((28 + (2 * 9.44)) + Tolerence) = 50).</description>
+</field>
+<field address="0x201414" name="dwTidtTimeAdjust" type="u32" value="50" valuetype="int">
+<description>Value of Time(us) for Tidt adjust to meet the spec timings of Tadt(Tadt &gt; 768/fc(~57)).</description>
+</field>
+</structure>
+<structure name="RfHalTimings" startAddress="0x201418" totalSize="16">
+<description>Rf Timings different algo.</description>
+<field address="0x201418" name="dwClkErrRecoveryTime" type="u32" value="50" valuetype="int">
+<description>Time(us) for Clock Error Recovery</description>
+</field>
+<field address="0x20141c" name="dwRfOffDeBouncingTime" type="u32" value="20" valuetype="int">
+<description>Time(us) for External Rf off De-Bouncing</description>
+</field>
+<field address="0x201420" name="dwPbfAlmFwResetTime" type="u32" value="100" valuetype="int">
+<description>Time(us) for Pbf Alm Fw Reset Timer</description>
+</field>
+<field address="0x201424" name="dwFelicaRxRMSigproTime" type="u32" value="2000" valuetype="int">
+<description>Time(us) for Felica Stuck Timer in Card mode when SIGPRO RM is used</description>
+</field>
+</structure>
+<structure name="DPLLCfg" startAddress="0x201428" totalSize="16">
+<description>DPLL Configurations</description>
+<field address="0x201428" name="DpllControl" type="u32" value="0x63" valuetype="hex">
+<description>Dpll Control</description>
+</field>
+<field address="0x20142c" name="DpllInit" type="u32" value="0x00171433" valuetype="hex">
+<description>Dpll Init</description>
+</field>
+<field address="0x201430" name="DpllGear" type="u32" value="0x00042A55" valuetype="hex">
+<description>Dpll Gear</description>
+</field>
+<field address="0x201434" name="DpllInitFreq" type="u32" value="0x80008591" valuetype="hex">
+<description>Dpll Init Freq</description>
+</field>
+</structure>
+<structure name="DPLLClkPhaseAdjustment" startAddress="0x201438" totalSize="24">
+<description>DPLL Clock Phase Adjustment Configuration</description>
+<field address="0x201438" name="DpllInitCeA" type="u32" value="0x00000000" valuetype="hex">
+<description>Dpll Init value for card emulation A</description>
+</field>
+<field address="0x20143c" name="AnaClkManCeA" type="u32" value="0x00000005" valuetype="hex">
+<description> Value of Ana Clk Man for card emulation A </description>
+</field>
+<field address="0x201440" name="DpllInitCeB" type="u32" value="0x00000000" valuetype="hex">
+<description>Dpll Init value for card emulation B</description>
+</field>
+<field address="0x201444" name="AnaClkManCeB" type="u32" value="0x00000005" valuetype="hex">
+<description> Value of Ana Clk Man for card emulation B </description>
+</field>
+<field address="0x201448" name="DpllInitCeF" type="u32" value="0x00000000" valuetype="hex">
+<description>Dpll Init value for card emulation F</description>
+</field>
+<field address="0x20144c" name="AnaClkManCeF" type="u32" value="0x00000005" valuetype="hex">
+<description> Value of Ana Clk Man for card emulation F </description>
+</field>
+</structure>
+<structure name="RfLdtParams" startAddress="0x201450" totalSize="4">
+<!-- Reviewed structure contents PGh: 2015.03.09 -->
+<description>\see phhalPcr_RfLdtParams_t</description>
+<field address="0x201450" name="bRfldRefLo" type="u8" value="02" valuetype="int">
+<description>
+                        Higher Reference Value for RF Level Detector
+                    </description>
+</field>
+<field address="0x201451" name="bRfldRefHi" type="u8" value="03" valuetype="int">
+<description>
+                        Lower Reference Value for RF Level Detector
+                    </description>
+</field>
+<field address="0x201452" name="bEnableAdvancedRFLD" type="u8" value="0" valuetype="int">
+<description>
+                        Should we used advanced RFLD Feature or normal RFLD Feature
+                    </description>
+</field>
+<field address="0x201453" name="bPadding" type="u8" value="0" valuetype="int">
+<description>
+                        Structure padding.
+                    </description>
+</field>
+</structure>
+<structure name="RfTestBus" startAddress="0x201454" totalSize="12">
+<!-- Updated on 2015.08.10 : See PT_SC3518: EEPROM Allocation needed for TestBus and CM Configuration -->
+<description>Test Bus configuration of RF</description>
+<field address="0x201454" name="dwAnaTB" type="u32" value="0x00000000" valuetype="hex">
+<description>
+                        0x00: No Analog Test Bus Signal Enabled
+                    </description>
+</field>
+<field address="0x201458" name="dwDAC" type="u32" value="0x00000000" valuetype="hex">
+<description>
+                        0x00 :  No Analog Test Bus Signal Enabled
+                    </description>
+</field>
+<field address="0x20145c" name="bTbDigi1" type="u8" value="0x02" valuetype="hex">
+<description>
+                        0x02 : Tx Active
+                    </description>
+</field>
+<field address="0x20145d" name="bTbDigi2" type="u8" value="0x00" valuetype="hex">
+<description>
+                        0x00 : No Digital Test Bus Signal2 Enabled
+                    </description>
+</field>
+</structure>
+<structure name="ClkGenClifClockStart" startAddress="0x201460" totalSize="4">
+<description>Configuration for ClkGen to start Clif Clock</description>
+<field address="0x201460" name="ClkModePassiveRm" type="u8" value="0x00" valuetype="hex">
+<description> Value of Ana Clk field for Passive Reader Mode </description>
+</field>
+<field address="0x201461" name="ClkModeActive" type="u8" value="0x10" valuetype="hex">
+<description> Value of Ana Clk field for Active Mode </description>
+</field>
+<field address="0x201462" name="ClkModePlmCm" type="u8" value="0x50" valuetype="hex">
+<description> Value of Ana Clk field for PLM Card Mode </description>
+</field>
+<field address="0x201463" name="ClkModeAlmCm" type="u8" value="0x50" valuetype="hex">
+<description> Value of Ana Clk field for Alm Card Mode </description>
+</field>
+</structure>
+<structure name="I2CM" startAddress="0x201464" totalSize="8">
+<!-- Reviewed structure contents PGh: 2015.03.09 -->
+<description>Default configuration for I2C Master. These values are primarily used for phExHif.</description>
+<field address="0x201464" name="dwDataRateHz" type="u32" value="100000" valuetype="int">
+<description>I2C Master transaction data rate in Hz.</description>
+</field>
+<field address="0x201468" name="bSlaveAddr" type="u8" value="0x28" valuetype="hex">
+<description>I2C 7-bit slave address.</description>
+</field>
+</structure>
+<structure name="SPIM" startAddress="0x20146c" totalSize="4">
+<!-- Reviewed structure contents PGh: 2015.03.09 -->
+<description>SPI Master configurations</description>
+<field address="0x20146c" name="bModes" type="u8" value="00" valuetype="hex">
+<description>Specifies the SPIM mode (CPOL, CPHA) of operation, \see phhalSPIM_Modes_t.</description>
+</field>
+<field address="0x20146d" name="bDataRate" type="u8" value="00" valuetype="hex">
+<description>Specifies the SPIM transaction data rate. \see phhalSPIM_Configure</description>
+<option description="1.0 MHz" value="0"/>
+<option description="1.51 MHz" value="1"/>
+<option description="2.09 MHz" value="2"/>
+<option description="2.47 MHz" value="3"/>
+<option description="3.01 MHz" value="4"/>
+<option description="4.52 MHz" value="5"/>
+<option description="5.42 MHz" value="6"/>
+<option description="6.78 MHz" value="7"/>
+</field>
+</structure>
+<structure name="HIF" startAddress="0x201470" totalSize="16">
+<description>Host interface configurations. These values are primarily used for phExHif.</description>
+<field address="0x201470" name="bInterface" type="u8" value="1" valuetype="hex">
+<description>Hif interfaces like I2C, SPI, HSU, USB or disabled.</description>
+<option description="Disabled" value="0"/>
+<option description="I2C" value="1"/>
+<option description="SPI" value="2"/>
+<option description="HSU" value="3"/>
+<option description="USB" value="4"/>
+</field>
+<field address="0x201471" name="bI2cConfig" type="u8" value="0x00" valuetype="hex">
+<description>Refer phhalHif_Config_t-&gt;sI2cConfig in Hif module.</description>
+</field>
+<field address="0x201472" name="bSpiConfig" type="u8" value="0x00" valuetype="hex">
+<description>Refer phhalHif_Config_t-&gt;sSpiConfig in Hif module.</description>
+</field>
+<field address="0x201473" name="bIsHsuBoot" type="u8" value="0x00" valuetype="hex">
+<description>Set the Hsu Wakeup simulation.</description>
+</field>
+<field address="0x201474" name="bEndOfFrame" type="u8" value="0x00" valuetype="hex">
+<description>Hsu Eof size - Maximum interbyte duration.</description>
+</field>
+<field address="0x201475" name="bStopBits" type="u8" value="0x00" valuetype="hex">
+<description>Number of Hsu stop bits.</description>
+</field>
+<field address="0x201476" name="bDummyBytes" type="u8" value="0x00" valuetype="hex">
+<description>Number of Dummy bytes, used during standby phase.</description>
+</field>
+<field address="0x201477" name="bBaudRate" type="u8" value="0x00" valuetype="hex">
+<description>Refer phhalHif_Hsu_BaudRate_t.</description>
+</field>
+<field address="0x201478" name="bBufferType" type="u8" value="0" valuetype="hex">
+<description>Hif interfaces like I2C, SPI, HSU, USB or disabled.</description>
+<option description="E_BUFFER_FORMAT_FREE, transparent (generic HW protocol format). " value="0"/>
+<option description="E_BUFFER_FORMAT_FIXED, Header + Payload + Crc. " value="1"/>
+<option description="E_BUFFER_FORMAT_NATIVE, transparent with Size at 1st Word. " value="2"/>
+</field>
+<field address="0x201479" name="bShortFrameLen" type="u8" value="0x00" valuetype="hex">
+<description>Number of bytes representing ShortFrame.</description>
+</field>
+<field address="0x20147a" name="bStoreErrData" type="u8" value="0x00" valuetype="hex">
+<description>Store error data or discard error data.</description>
+<option description="Disabled" value="0"/>
+<option description="Enabled" value="1"/>
+</field>
+<field address="0x20147b" name="bHeaderSize" type="u8" value="0x00" valuetype="hex">
+<description>Header Size in Fixed Format.</description>
+</field>
+<field address="0x20147c" name="bTimeout" type="u8" value="0x00" valuetype="hex">
+<description>Inter character Tx Timeout in steps of 3.6us.</description>
+</field>
+<field address="0x20147d" name="bEnableVBUSPullDown" type="u8" value="0x00" valuetype="hex">
+<description>
+If the user board takes more time than expected to detect discharge during self power mode,
+user can set this bit to discharge faster. There is a possibility of performance improvement
+of detecting USB disconnected based on PULLDOWN enabled/disabled.
+                    </description>
+</field>
+</structure>
+</page>
+<page name="phRFLP" startAddress="0x201480" totalSize="1536">
+<description>
+        Values for RF Load Protocol based on:
+
+&lt;pre&gt;
+
+               Name : 65x65_PLM_MRA3              
+            Antenna : 65x65 PLM              
+      Last Modified : 2/1/2016              
+        Last Author : Maniraj Ashirwad G              
+     Version Number : Comments              
+               V1.0 : Initial Version. Changes in this excel sheet and user_ee_65x65.xml &amp;  should be logged further. User_ee.xml should be same as user_ee_65x65.xml while generating the eeprom for 65x65 Antenna.              
+               V1.1 : DYNAMIC_BPSK_TH_ENABLE - Enabled for Felica Reader Mode Passive Initiator 212 and 424
+    CLIF_ANA_CLK_MAN_REG - Register Value added for Felica Passive CM transition (For ALM :  GTM and Felica values are different)              
+               V1.2 : All the test bus signal are disable except TX_ACTIVE on Digital Test Bus 1 (GPIO4) in user_ee_65x65_5V.xml
+               V1.3 : For Type A RM 848   in CLIF_ANA_TX_SHAPE_CONTROL_REG register   TX_SET_TAU_MOD_FALLING   TX_SET_TAU_MOD_RISING are changed for RM A-848 fixing ISO OverShoot Failure
+    For Type A RM 848 :  in CLIF_ANA_TX_AMPLITUDE_REG register   TX_GSN_MOD_RM is changed to fix ISO Overshoot Failure.
+              V1.4  : Integration with the excel sheet PN5180_RF_ConfigurationSnapshot_20151103              
+              V1.5  : 1. Bug Fix - SC3871
+    2. Bit Fields of &quot;CLIF_SIGPRO_ADCBCM_CONFIG_REG&quot; :  are updated with MRA2 Bit Fields
+             V1.5.1 : 1. Bug Fix - Type B update for &quot;CLIF_TX_SYMBOL1_DEF_REG&quot;              
+             V1.5.2 : Bug Fix - SC3897. TX_CW_AMP_REF2TVDD is set to '0' in the boot settings              
+               V1.6 : Integration with the PN5180 Eeprom Configuration &quot;PN5180 FW RC4 release - V0.143&quot;. 
+                    : Register Changes:
+                    : CLIF_ANA_RX_REG -  A212, A424,A848, B424, B848, 1800 - 18.88 SC424 2M, 1800 - 18.88 SC424 4M, 1800 - 18.88 SC848 2M,1800 - 18.88 SC848 4M, 1800 - 9.44 SC424 2M, 1800 - 9.44 SC424 4M, 1800 - 9.44 SC848 2M, 1800 - 9.44 SC848 4M
+                    : 
+                    : CLIF_SIGPRO_RM_CONFIG1_REG - A212, A424, A848, B212, B424, B848,1800 - 18.88 SC424 2M, 1800 - 18.88 SC424 4M, 1800 - 9.44 SC424 2M, 1800 - 9.44 SC424 4M              
+               V1.7 : No update - Created by Purnank              
+             V1.7.1 : TXOCP configuration update for 65x65 &lt;4v. Agc Ref = 220              
+             V1.7.2 : CLIF_SIGPRO_ADCBCM_CONFIG_REG configuration update based for MRA2 Addition bit fields.
+    CLIF_SIGPRO_ADCBCM_CONFIG_REG - GTM : CM - A106   A212   A424   A848   F212   F424   AI 212   AI 424
+             V1.7.3 : PCD Shaping configuration update for 65x65              
+             V1.7.4 : Renaming of TxOCP to DPC (eeprom xml files)              
+               V1.8 : Separate PCD configuration added for &lt;4v and &gt;4v configuration              
+             V1.8.1 : CLIF_ANA_NFCLD_REG value is updated - Initiator. 
+    EDGE_DETECT_TAP_SEL updated for Type A 424 :  848 CM - Target              
+             V1.8.2 : CLIF_ANA_NFCLD_REG set to 0x0C              
+             V1.8.3 : CLIF_ANA_NFCLD_REG set to 0x07              
+               V1.9 : 1. CLIF_TEST_CONTROL_REG added to the Initiator Tab
+             V1.9.1 : Change for 30x50mm 5V DPC Config (AGC Hi Threshold) no change for 65x65mm              
+             V1.9.2 : CLIF_ANA_NFCLD_REG set to 0x1C in boot setting              
+&lt;/pre&gt;
+
+    Generated from clifcsv_to_xml.py version 2016.01.21_00 on 2016-12-09
+    </description>
+<structure name="T_Tx_val" startAddress="0x201480" totalSize="220">
+<description>
+            Value to be applied to the corresponding CLIF register for CLIF Target Mode - Transmit.
+        </description>
+<field address="0x201480" name="u32_T_TX_GTM_00_TRANSCEIVE_CONTROL_REG" regname="CLIF_TRANSCEIVE_CONTROL_REG" rfprotocol="T_TX_GTM" type="u32" value="7200" valuetype="hex">
+<description>
+                Value for Register CLIF_TRANSCEIVE_CONTROL_REG.
+
+Note: Configuration: T_TX_GTM starts from here.
+            </description>
+</field>
+<field address="0x201484" name="u32_T_TX_GTM_01_ANA_PBF_CONTROL_REG" regname="CLIF_ANA_PBF_CONTROL_REG" rfprotocol="T_TX_GTM" type="u32" value="2c" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_PBF_CONTROL_REG.
+            </description>
+</field>
+<field address="0x201488" name="u32_T_TX_GTM_02_ANA_TX_AMPLITUDE_REG" regname="CLIF_ANA_TX_AMPLITUDE_REG" rfprotocol="T_TX_GTM" type="u32" value="ffff4000" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_AMPLITUDE_REG.
+            </description>
+</field>
+<field address="0x20148c" name="u32_T_TX_GTM_03_ANA_TX_CLK_CONTROL_REG" regname="CLIF_ANA_TX_CLK_CONTROL_REG" rfprotocol="T_TX_GTM" type="u32" value="1" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_CLK_CONTROL_REG.
+            </description>
+</field>
+<field address="0x201490" name="u32_T_TX_GTM_04_TX_UNDERSHOOT_CONFIG_REG" regname="CLIF_TX_UNDERSHOOT_CONFIG_REG" rfprotocol="T_TX_GTM" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_UNDERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201494" name="u32_T_TX_GTM_05_TX_OVERSHOOT_CONFIG_REG" regname="CLIF_TX_OVERSHOOT_CONFIG_REG" rfprotocol="T_TX_GTM" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_OVERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201498" name="u32_T_TX_GTM_06_ANA_TX_SHAPE_CONTROL_REG" regname="CLIF_ANA_TX_SHAPE_CONTROL_REG" rfprotocol="T_TX_GTM" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_SHAPE_CONTROL_REG.
+            </description>
+</field>
+<field address="0x20149c" name="u32_T_TX_GTM_07_TX_CONTROL_REG" regname="CLIF_TX_CONTROL_REG" rfprotocol="T_TX_GTM" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_CONTROL_REG.
+            </description>
+</field>
+<field address="0x2014a0" name="u32_T_TX_GTM_08_ANA_CLK_MAN_REG" regname="CLIF_ANA_CLK_MAN_REG" rfprotocol="T_TX_GTM" type="u32" value="10" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_CLK_MAN_REG.
+            </description>
+</field>
+<field address="0x2014a4" name="u32_T_TX_A_106_P_00_TRANSCEIVE_CONTROL_REG" regname="CLIF_TRANSCEIVE_CONTROL_REG" rfprotocol="T_TX_A_106_P" type="u32" value="7202" valuetype="hex">
+<description>
+                Value for Register CLIF_TRANSCEIVE_CONTROL_REG.
+
+Note: Configuration: T_TX_A_106_P starts from here.
+            </description>
+</field>
+<field address="0x2014a8" name="u32_T_TX_A_106_P_01_TX_UNDERSHOOT_CONFIG_REG" regname="CLIF_TX_UNDERSHOOT_CONFIG_REG" rfprotocol="T_TX_A_106_P" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_UNDERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2014ac" name="u32_T_TX_A_106_P_02_TX_OVERSHOOT_CONFIG_REG" regname="CLIF_TX_OVERSHOOT_CONFIG_REG" rfprotocol="T_TX_A_106_P" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_OVERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2014b0" name="u32_T_TX_A_212_00_TRANSCEIVE_CONTROL_REG" regname="CLIF_TRANSCEIVE_CONTROL_REG" rfprotocol="T_TX_A_212" type="u32" value="7202" valuetype="hex">
+<description>
+                Value for Register CLIF_TRANSCEIVE_CONTROL_REG.
+
+Note: Configuration: T_TX_A_212 starts from here.
+            </description>
+</field>
+<field address="0x2014b4" name="u32_T_TX_A_212_01_TX_UNDERSHOOT_CONFIG_REG" regname="CLIF_TX_UNDERSHOOT_CONFIG_REG" rfprotocol="T_TX_A_212" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_UNDERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2014b8" name="u32_T_TX_A_212_02_TX_OVERSHOOT_CONFIG_REG" regname="CLIF_TX_OVERSHOOT_CONFIG_REG" rfprotocol="T_TX_A_212" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_OVERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2014bc" name="u32_T_TX_A_424_00_TRANSCEIVE_CONTROL_REG" regname="CLIF_TRANSCEIVE_CONTROL_REG" rfprotocol="T_TX_A_424" type="u32" value="7202" valuetype="hex">
+<description>
+                Value for Register CLIF_TRANSCEIVE_CONTROL_REG.
+
+Note: Configuration: T_TX_A_424 starts from here.
+            </description>
+</field>
+<field address="0x2014c0" name="u32_T_TX_A_424_01_TX_UNDERSHOOT_CONFIG_REG" regname="CLIF_TX_UNDERSHOOT_CONFIG_REG" rfprotocol="T_TX_A_424" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_UNDERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2014c4" name="u32_T_TX_A_424_02_TX_OVERSHOOT_CONFIG_REG" regname="CLIF_TX_OVERSHOOT_CONFIG_REG" rfprotocol="T_TX_A_424" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_OVERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2014c8" name="u32_T_TX_A_848_00_TRANSCEIVE_CONTROL_REG" regname="CLIF_TRANSCEIVE_CONTROL_REG" rfprotocol="T_TX_A_848" type="u32" value="7202" valuetype="hex">
+<description>
+                Value for Register CLIF_TRANSCEIVE_CONTROL_REG.
+
+Note: Configuration: T_TX_A_848 starts from here.
+            </description>
+</field>
+<field address="0x2014cc" name="u32_T_TX_A_848_01_TX_UNDERSHOOT_CONFIG_REG" regname="CLIF_TX_UNDERSHOOT_CONFIG_REG" rfprotocol="T_TX_A_848" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_UNDERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2014d0" name="u32_T_TX_A_848_02_TX_OVERSHOOT_CONFIG_REG" regname="CLIF_TX_OVERSHOOT_CONFIG_REG" rfprotocol="T_TX_A_848" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_OVERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2014d4" name="u32_T_TX_F_P_00_TRANSCEIVE_CONTROL_REG" regname="CLIF_TRANSCEIVE_CONTROL_REG" rfprotocol="T_TX_F_P" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TRANSCEIVE_CONTROL_REG.
+
+Note: Configuration: T_TX_F_P starts from here.
+            </description>
+</field>
+<field address="0x2014d8" name="u32_T_TX_F_P_01_ANA_TX_AMPLITUDE_REG" regname="CLIF_ANA_TX_AMPLITUDE_REG" rfprotocol="T_TX_F_P" type="u32" value="ffff4000" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_AMPLITUDE_REG.
+            </description>
+</field>
+<field address="0x2014dc" name="u32_T_TX_F_P_02_TX_UNDERSHOOT_CONFIG_REG" regname="CLIF_TX_UNDERSHOOT_CONFIG_REG" rfprotocol="T_TX_F_P" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_UNDERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2014e0" name="u32_T_TX_F_P_03_TX_OVERSHOOT_CONFIG_REG" regname="CLIF_TX_OVERSHOOT_CONFIG_REG" rfprotocol="T_TX_F_P" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_OVERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2014e4" name="u32_T_TX_F_P_04_ANA_CLK_MAN_REG" regname="CLIF_ANA_CLK_MAN_REG" rfprotocol="T_TX_F_P" type="u32" value="10" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_CLK_MAN_REG.
+            </description>
+</field>
+<field address="0x2014e8" name="u32_T_TX_ACT_00_ANA_PBF_CONTROL_REG" regname="CLIF_ANA_PBF_CONTROL_REG" rfprotocol="T_TX_ACT" type="u32" value="a0" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_PBF_CONTROL_REG.
+
+Note: Configuration: T_TX_ACT starts from here.
+            </description>
+</field>
+<field address="0x2014ec" name="u32_T_TX_ACT_01_TX_CONTROL_REG" regname="CLIF_TX_CONTROL_REG" rfprotocol="T_TX_ACT" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_CONTROL_REG.
+            </description>
+</field>
+<field address="0x2014f0" name="u32_T_TX_ACT_02_ANA_CLK_MAN_REG" regname="CLIF_ANA_CLK_MAN_REG" rfprotocol="T_TX_ACT" type="u32" value="10" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_CLK_MAN_REG.
+            </description>
+</field>
+<field address="0x2014f4" name="u32_T_TX_A_106_ACT_00_TRANSCEIVE_CONTROL_REG" regname="CLIF_TRANSCEIVE_CONTROL_REG" rfprotocol="T_TX_A_106_ACT" type="u32" value="35002" valuetype="hex">
+<description>
+                Value for Register CLIF_TRANSCEIVE_CONTROL_REG.
+
+Note: Configuration: T_TX_A_106_ACT starts from here.
+            </description>
+</field>
+<field address="0x2014f8" name="u32_T_TX_A_106_ACT_01_ANA_TX_AMPLITUDE_REG" regname="CLIF_ANA_TX_AMPLITUDE_REG" rfprotocol="T_TX_A_106_ACT" type="u32" value="ffff50f4" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_AMPLITUDE_REG.
+            </description>
+</field>
+<field address="0x2014fc" name="u32_T_TX_A_106_ACT_02_ANA_TX_CLK_CONTROL_REG" regname="CLIF_ANA_TX_CLK_CONTROL_REG" rfprotocol="T_TX_A_106_ACT" type="u32" value="783" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_CLK_CONTROL_REG.
+            </description>
+</field>
+<field address="0x201500" name="u32_T_TX_A_106_ACT_03_TX_UNDERSHOOT_CONFIG_REG" regname="CLIF_TX_UNDERSHOOT_CONFIG_REG" rfprotocol="T_TX_A_106_ACT" type="u32" value="17" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_UNDERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201504" name="u32_T_TX_A_106_ACT_04_TX_OVERSHOOT_CONFIG_REG" regname="CLIF_TX_OVERSHOOT_CONFIG_REG" rfprotocol="T_TX_A_106_ACT" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_OVERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201508" name="u32_T_TX_A_106_ACT_05_ANA_TX_SHAPE_CONTROL_REG" regname="CLIF_ANA_TX_SHAPE_CONTROL_REG" rfprotocol="T_TX_A_106_ACT" type="u32" value="1b000f43" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_SHAPE_CONTROL_REG.
+            </description>
+</field>
+<field address="0x20150c" name="u32_T_TX_A_106_ACT_06_TX_DATA_MOD_REG" regname="CLIF_TX_DATA_MOD_REG" rfprotocol="T_TX_A_106_ACT" type="u32" value="230104" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_DATA_MOD_REG.
+            </description>
+</field>
+<field address="0x201510" name="u32_T_TX_A_106_ACT_07_TX_SYMBOL23_MOD_REG" regname="CLIF_TX_SYMBOL23_MOD_REG" rfprotocol="T_TX_A_106_ACT" type="u32" value="260104" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL23_MOD_REG.
+            </description>
+</field>
+<field address="0x201514" name="u32_T_TX_A_106_ACT_08_TX_SYMBOL01_MOD_REG" regname="CLIF_TX_SYMBOL01_MOD_REG" rfprotocol="T_TX_A_106_ACT" type="u32" value="230104" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL01_MOD_REG.
+            </description>
+</field>
+<field address="0x201518" name="u32_T_TX_F_212_ACT_00_TRANSCEIVE_CONTROL_REG" regname="CLIF_TRANSCEIVE_CONTROL_REG" rfprotocol="T_TX_F_212_ACT" type="u32" value="30000" valuetype="hex">
+<description>
+                Value for Register CLIF_TRANSCEIVE_CONTROL_REG.
+
+Note: Configuration: T_TX_F_212_ACT starts from here.
+            </description>
+</field>
+<field address="0x20151c" name="u32_T_TX_F_212_ACT_01_ANA_TX_AMPLITUDE_REG" regname="CLIF_ANA_TX_AMPLITUDE_REG" rfprotocol="T_TX_F_212_ACT" type="u32" value="ffff507c" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_AMPLITUDE_REG.
+            </description>
+</field>
+<field address="0x201520" name="u32_T_TX_F_212_ACT_02_ANA_TX_CLK_CONTROL_REG" regname="CLIF_ANA_TX_CLK_CONTROL_REG" rfprotocol="T_TX_F_212_ACT" type="u32" value="8f" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_CLK_CONTROL_REG.
+            </description>
+</field>
+<field address="0x201524" name="u32_T_TX_F_212_ACT_03_TX_UNDERSHOOT_CONFIG_REG" regname="CLIF_TX_UNDERSHOOT_CONFIG_REG" rfprotocol="T_TX_F_212_ACT" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_UNDERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201528" name="u32_T_TX_F_212_ACT_04_TX_OVERSHOOT_CONFIG_REG" regname="CLIF_TX_OVERSHOOT_CONFIG_REG" rfprotocol="T_TX_F_212_ACT" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_OVERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x20152c" name="u32_T_TX_F_212_ACT_05_ANA_TX_SHAPE_CONTROL_REG" regname="CLIF_ANA_TX_SHAPE_CONTROL_REG" rfprotocol="T_TX_F_212_ACT" type="u32" value="7010744" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_SHAPE_CONTROL_REG.
+            </description>
+</field>
+<field address="0x201530" name="u32_T_TX_F_212_ACT_06_TX_DATA_MOD_REG" regname="CLIF_TX_DATA_MOD_REG" rfprotocol="T_TX_F_212_ACT" type="u32" value="15" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_DATA_MOD_REG.
+            </description>
+</field>
+<field address="0x201534" name="u32_T_TX_F_212_ACT_07_TX_SYMBOL01_MOD_REG" regname="CLIF_TX_SYMBOL01_MOD_REG" rfprotocol="T_TX_F_212_ACT" type="u32" value="15" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL01_MOD_REG.
+            </description>
+</field>
+<field address="0x201538" name="u32_T_TX_F_424_ACT_00_TRANSCEIVE_CONTROL_REG" regname="CLIF_TRANSCEIVE_CONTROL_REG" rfprotocol="T_TX_F_424_ACT" type="u32" value="30000" valuetype="hex">
+<description>
+                Value for Register CLIF_TRANSCEIVE_CONTROL_REG.
+
+Note: Configuration: T_TX_F_424_ACT starts from here.
+            </description>
+</field>
+<field address="0x20153c" name="u32_T_TX_F_424_ACT_01_ANA_TX_AMPLITUDE_REG" regname="CLIF_ANA_TX_AMPLITUDE_REG" rfprotocol="T_TX_F_424_ACT" type="u32" value="ffff507c" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_AMPLITUDE_REG.
+            </description>
+</field>
+<field address="0x201540" name="u32_T_TX_F_424_ACT_02_ANA_TX_CLK_CONTROL_REG" regname="CLIF_ANA_TX_CLK_CONTROL_REG" rfprotocol="T_TX_F_424_ACT" type="u32" value="8f" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_CLK_CONTROL_REG.
+            </description>
+</field>
+<field address="0x201544" name="u32_T_TX_F_424_ACT_03_TX_UNDERSHOOT_CONFIG_REG" regname="CLIF_TX_UNDERSHOOT_CONFIG_REG" rfprotocol="T_TX_F_424_ACT" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_UNDERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201548" name="u32_T_TX_F_424_ACT_04_TX_OVERSHOOT_CONFIG_REG" regname="CLIF_TX_OVERSHOOT_CONFIG_REG" rfprotocol="T_TX_F_424_ACT" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_OVERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x20154c" name="u32_T_TX_F_424_ACT_05_ANA_TX_SHAPE_CONTROL_REG" regname="CLIF_ANA_TX_SHAPE_CONTROL_REG" rfprotocol="T_TX_F_424_ACT" type="u32" value="7010f33" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_SHAPE_CONTROL_REG.
+            </description>
+</field>
+<field address="0x201550" name="u32_T_TX_F_424_ACT_06_TX_DATA_MOD_REG" regname="CLIF_TX_DATA_MOD_REG" rfprotocol="T_TX_F_424_ACT" type="u32" value="16" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_DATA_MOD_REG.
+            </description>
+</field>
+<field address="0x201554" name="u32_T_TX_F_424_ACT_07_TX_SYMBOL01_MOD_REG" regname="CLIF_TX_SYMBOL01_MOD_REG" rfprotocol="T_TX_F_424_ACT" type="u32" value="16" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL01_MOD_REG.
+            </description>
+</field>
+<field address="0x201558" name="u32_T_TX_B_00_ANA_TX_AMPLITUDE_REG" regname="CLIF_ANA_TX_AMPLITUDE_REG" rfprotocol="T_TX_B" type="u32" value="ffff0000" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_AMPLITUDE_REG.
+
+Note: Configuration: T_TX_B starts from here.
+            </description>
+</field>
+</structure>
+<structure name="T_Rx_val" startAddress="0x20155c" totalSize="288">
+<description>
+            Value to be applied to the corresponding CLIF register for CLIF Target Mode - Receive.
+        </description>
+<field address="0x20155c" name="u32_T_RX_GTM_00_ANA_RX_REG" regname="CLIF_ANA_RX_REG" rfprotocol="T_RX_GTM" type="u32" value="390a3" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_RX_REG.
+
+Note: Configuration: T_RX_GTM starts from here.
+            </description>
+</field>
+<field address="0x201560" name="u32_T_RX_GTM_01_ANA_AGC_REG" regname="CLIF_ANA_AGC_REG" rfprotocol="T_RX_GTM" type="u32" value="2" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_AGC_REG.
+            </description>
+</field>
+<field address="0x201564" name="u32_T_RX_GTM_02_AGC_CONFIG1_REG" regname="CLIF_AGC_CONFIG1_REG" rfprotocol="T_RX_GTM" type="u32" value="10207ff7" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_CONFIG1_REG.
+            </description>
+</field>
+<field address="0x201568" name="u32_T_RX_GTM_03_AGC_CONFIG0_REG" regname="CLIF_AGC_CONFIG0_REG" rfprotocol="T_RX_GTM" type="u32" value="4003" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_CONFIG0_REG.
+            </description>
+</field>
+<field address="0x20156c" name="u32_T_RX_GTM_04_AGC_INPUT_REG" regname="CLIF_AGC_INPUT_REG" rfprotocol="T_RX_GTM" type="u32" value="3000150" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_INPUT_REG.
+            </description>
+</field>
+<field address="0x201570" name="u32_T_RX_GTM_05_SIGPRO_ADCBCM_THRESHOLD_REG" regname="CLIF_SIGPRO_ADCBCM_THRESHOLD_REG" rfprotocol="T_RX_GTM" type="u32" value="80060" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_ADCBCM_THRESHOLD_REG.
+            </description>
+</field>
+<field address="0x201574" name="u32_T_RX_GTM_06_SIGPRO_ADCBCM_CONFIG_REG" regname="CLIF_SIGPRO_ADCBCM_CONFIG_REG" rfprotocol="T_RX_GTM" type="u32" value="f809d0d" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_ADCBCM_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201578" name="u32_T_RX_GTM_07_ANA_CM_CONFIG_REG" regname="CLIF_ANA_CM_CONFIG_REG" rfprotocol="T_RX_GTM" type="u32" value="4080" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_CM_CONFIG_REG.
+            </description>
+</field>
+<field address="0x20157c" name="u32_T_RX_GTM_08_SIGPRO_CM_CONFIG_REG" regname="CLIF_SIGPRO_CM_CONFIG_REG" rfprotocol="T_RX_GTM" type="u32" value="6b40" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_CM_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201580" name="u32_T_RX_GTM_09_SIGPRO_RM_CONFIG1_REG" regname="CLIF_SIGPRO_RM_CONFIG1_REG" rfprotocol="T_RX_GTM" type="u32" value="10ccc05" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_RM_CONFIG1_REG.
+            </description>
+</field>
+<field address="0x201584" name="u32_T_RX_GTM_10_BBA_CONTROL_REG" regname="CLIF_BBA_CONTROL_REG" rfprotocol="T_RX_GTM" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_BBA_CONTROL_REG.
+            </description>
+</field>
+<field address="0x201588" name="u32_T_RX_A_00_SIGPRO_RM_CONFIG1_REG" regname="CLIF_SIGPRO_RM_CONFIG1_REG" rfprotocol="T_RX_A" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_RM_CONFIG1_REG.
+
+Note: Configuration: T_RX_A starts from here.
+            </description>
+</field>
+<field address="0x20158c" name="u32_T_RX_A_106_00_ANA_RX_REG" regname="CLIF_ANA_RX_REG" rfprotocol="T_RX_A_106" type="u32" value="390a3" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_RX_REG.
+
+Note: Configuration: T_RX_A_106 starts from here.
+            </description>
+</field>
+<field address="0x201590" name="u32_T_RX_A_106_01_AGC_CONFIG1_REG" regname="CLIF_AGC_CONFIG1_REG" rfprotocol="T_RX_A_106" type="u32" value="10207ff7" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_CONFIG1_REG.
+            </description>
+</field>
+<field address="0x201594" name="u32_T_RX_A_106_02_AGC_CONFIG0_REG" regname="CLIF_AGC_CONFIG0_REG" rfprotocol="T_RX_A_106" type="u32" value="44003" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_CONFIG0_REG.
+            </description>
+</field>
+<field address="0x201598" name="u32_T_RX_A_106_03_SIGPRO_ADCBCM_THRESHOLD_REG" regname="CLIF_SIGPRO_ADCBCM_THRESHOLD_REG" rfprotocol="T_RX_A_106" type="u32" value="4003c" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_ADCBCM_THRESHOLD_REG.
+            </description>
+</field>
+<field address="0x20159c" name="u32_T_RX_A_106_04_SIGPRO_ADCBCM_CONFIG_REG" regname="CLIF_SIGPRO_ADCBCM_CONFIG_REG" rfprotocol="T_RX_A_106" type="u32" value="180f9ed" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_ADCBCM_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2015a0" name="u32_T_RX_A_106_05_ANA_CM_CONFIG_REG" regname="CLIF_ANA_CM_CONFIG_REG" rfprotocol="T_RX_A_106" type="u32" value="4080" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_CM_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2015a4" name="u32_T_RX_A_106_06_SIGPRO_CM_CONFIG_REG" regname="CLIF_SIGPRO_CM_CONFIG_REG" rfprotocol="T_RX_A_106" type="u32" value="944" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_CM_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2015a8" name="u32_T_RX_A_106_07_BBA_CONTROL_REG" regname="CLIF_BBA_CONTROL_REG" rfprotocol="T_RX_A_106" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_BBA_CONTROL_REG.
+            </description>
+</field>
+<field address="0x2015ac" name="u32_T_RX_A_212_00_ANA_RX_REG" regname="CLIF_ANA_RX_REG" rfprotocol="T_RX_A_212" type="u32" value="390a3" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_RX_REG.
+
+Note: Configuration: T_RX_A_212 starts from here.
+            </description>
+</field>
+<field address="0x2015b0" name="u32_T_RX_A_212_01_AGC_CONFIG1_REG" regname="CLIF_AGC_CONFIG1_REG" rfprotocol="T_RX_A_212" type="u32" value="10207ff7" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_CONFIG1_REG.
+            </description>
+</field>
+<field address="0x2015b4" name="u32_T_RX_A_212_02_AGC_CONFIG0_REG" regname="CLIF_AGC_CONFIG0_REG" rfprotocol="T_RX_A_212" type="u32" value="44003" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_CONFIG0_REG.
+            </description>
+</field>
+<field address="0x2015b8" name="u32_T_RX_A_212_03_SIGPRO_ADCBCM_THRESHOLD_REG" regname="CLIF_SIGPRO_ADCBCM_THRESHOLD_REG" rfprotocol="T_RX_A_212" type="u32" value="3000e0" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_ADCBCM_THRESHOLD_REG.
+            </description>
+</field>
+<field address="0x2015bc" name="u32_T_RX_A_212_04_SIGPRO_ADCBCM_CONFIG_REG" regname="CLIF_SIGPRO_ADCBCM_CONFIG_REG" rfprotocol="T_RX_A_212" type="u32" value="880f9ef" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_ADCBCM_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2015c0" name="u32_T_RX_A_212_05_ANA_CM_CONFIG_REG" regname="CLIF_ANA_CM_CONFIG_REG" rfprotocol="T_RX_A_212" type="u32" value="7080" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_CM_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2015c4" name="u32_T_RX_A_212_06_SIGPRO_CM_CONFIG_REG" regname="CLIF_SIGPRO_CM_CONFIG_REG" rfprotocol="T_RX_A_212" type="u32" value="944" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_CM_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2015c8" name="u32_T_RX_A_212_07_BBA_CONTROL_REG" regname="CLIF_BBA_CONTROL_REG" rfprotocol="T_RX_A_212" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_BBA_CONTROL_REG.
+            </description>
+</field>
+<field address="0x2015cc" name="u32_T_RX_A_424_00_ANA_RX_REG" regname="CLIF_ANA_RX_REG" rfprotocol="T_RX_A_424" type="u32" value="390a3" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_RX_REG.
+
+Note: Configuration: T_RX_A_424 starts from here.
+            </description>
+</field>
+<field address="0x2015d0" name="u32_T_RX_A_424_01_AGC_CONFIG1_REG" regname="CLIF_AGC_CONFIG1_REG" rfprotocol="T_RX_A_424" type="u32" value="10207ff7" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_CONFIG1_REG.
+            </description>
+</field>
+<field address="0x2015d4" name="u32_T_RX_A_424_02_AGC_CONFIG0_REG" regname="CLIF_AGC_CONFIG0_REG" rfprotocol="T_RX_A_424" type="u32" value="44003" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_CONFIG0_REG.
+            </description>
+</field>
+<field address="0x2015d8" name="u32_T_RX_A_424_03_SIGPRO_ADCBCM_THRESHOLD_REG" regname="CLIF_SIGPRO_ADCBCM_THRESHOLD_REG" rfprotocol="T_RX_A_424" type="u32" value="200040" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_ADCBCM_THRESHOLD_REG.
+            </description>
+</field>
+<field address="0x2015dc" name="u32_T_RX_A_424_04_SIGPRO_ADCBCM_CONFIG_REG" regname="CLIF_SIGPRO_ADCBCM_CONFIG_REG" rfprotocol="T_RX_A_424" type="u32" value="8805d0f" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_ADCBCM_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2015e0" name="u32_T_RX_A_424_05_ANA_CM_CONFIG_REG" regname="CLIF_ANA_CM_CONFIG_REG" rfprotocol="T_RX_A_424" type="u32" value="4080" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_CM_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2015e4" name="u32_T_RX_A_424_06_SIGPRO_CM_CONFIG_REG" regname="CLIF_SIGPRO_CM_CONFIG_REG" rfprotocol="T_RX_A_424" type="u32" value="1144" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_CM_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2015e8" name="u32_T_RX_A_424_07_BBA_CONTROL_REG" regname="CLIF_BBA_CONTROL_REG" rfprotocol="T_RX_A_424" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_BBA_CONTROL_REG.
+            </description>
+</field>
+<field address="0x2015ec" name="u32_T_RX_A_848_00_ANA_RX_REG" regname="CLIF_ANA_RX_REG" rfprotocol="T_RX_A_848" type="u32" value="390af" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_RX_REG.
+
+Note: Configuration: T_RX_A_848 starts from here.
+            </description>
+</field>
+<field address="0x2015f0" name="u32_T_RX_A_848_01_AGC_CONFIG1_REG" regname="CLIF_AGC_CONFIG1_REG" rfprotocol="T_RX_A_848" type="u32" value="10207ff7" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_CONFIG1_REG.
+            </description>
+</field>
+<field address="0x2015f4" name="u32_T_RX_A_848_02_AGC_CONFIG0_REG" regname="CLIF_AGC_CONFIG0_REG" rfprotocol="T_RX_A_848" type="u32" value="44003" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_CONFIG0_REG.
+            </description>
+</field>
+<field address="0x2015f8" name="u32_T_RX_A_848_03_SIGPRO_ADCBCM_THRESHOLD_REG" regname="CLIF_SIGPRO_ADCBCM_THRESHOLD_REG" rfprotocol="T_RX_A_848" type="u32" value="180040" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_ADCBCM_THRESHOLD_REG.
+            </description>
+</field>
+<field address="0x2015fc" name="u32_T_RX_A_848_04_SIGPRO_ADCBCM_CONFIG_REG" regname="CLIF_SIGPRO_ADCBCM_CONFIG_REG" rfprotocol="T_RX_A_848" type="u32" value="41101e71" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_ADCBCM_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201600" name="u32_T_RX_A_848_05_ANA_CM_CONFIG_REG" regname="CLIF_ANA_CM_CONFIG_REG" rfprotocol="T_RX_A_848" type="u32" value="4080" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_CM_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201604" name="u32_T_RX_A_848_06_SIGPRO_CM_CONFIG_REG" regname="CLIF_SIGPRO_CM_CONFIG_REG" rfprotocol="T_RX_A_848" type="u32" value="1144" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_CM_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201608" name="u32_T_RX_A_848_07_BBA_CONTROL_REG" regname="CLIF_BBA_CONTROL_REG" rfprotocol="T_RX_A_848" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_BBA_CONTROL_REG.
+            </description>
+</field>
+<field address="0x20160c" name="u32_T_RX_F_00_ANA_RX_REG" regname="CLIF_ANA_RX_REG" rfprotocol="T_RX_F" type="u32" value="390a3" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_RX_REG.
+
+Note: Configuration: T_RX_F starts from here.
+            </description>
+</field>
+<field address="0x201610" name="u32_T_RX_F_01_AGC_CONFIG1_REG" regname="CLIF_AGC_CONFIG1_REG" rfprotocol="T_RX_F" type="u32" value="207ff6" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_CONFIG1_REG.
+            </description>
+</field>
+<field address="0x201614" name="u32_T_RX_F_02_AGC_CONFIG0_REG" regname="CLIF_AGC_CONFIG0_REG" rfprotocol="T_RX_F" type="u32" value="4400b" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_CONFIG0_REG.
+            </description>
+</field>
+<field address="0x201618" name="u32_T_RX_F_03_SIGPRO_ADCBCM_THRESHOLD_REG" regname="CLIF_SIGPRO_ADCBCM_THRESHOLD_REG" rfprotocol="T_RX_F" type="u32" value="80060" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_ADCBCM_THRESHOLD_REG.
+            </description>
+</field>
+<field address="0x20161c" name="u32_T_RX_F_04_BBA_CONTROL_REG" regname="CLIF_BBA_CONTROL_REG" rfprotocol="T_RX_F" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_BBA_CONTROL_REG.
+            </description>
+</field>
+<field address="0x201620" name="u32_T_RX_F_212_00_SIGPRO_ADCBCM_CONFIG_REG" regname="CLIF_SIGPRO_ADCBCM_CONFIG_REG" rfprotocol="T_RX_F_212" type="u32" value="f80ad05" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_ADCBCM_CONFIG_REG.
+
+Note: Configuration: T_RX_F_212 starts from here.
+            </description>
+</field>
+<field address="0x201624" name="u32_T_RX_F_212_01_SIGPRO_CM_CONFIG_REG" regname="CLIF_SIGPRO_CM_CONFIG_REG" rfprotocol="T_RX_F_212" type="u32" value="6206" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_CM_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201628" name="u32_T_RX_F_424_00_SIGPRO_ADCBCM_CONFIG_REG" regname="CLIF_SIGPRO_ADCBCM_CONFIG_REG" rfprotocol="T_RX_F_424" type="u32" value="f80ad09" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_ADCBCM_CONFIG_REG.
+
+Note: Configuration: T_RX_F_424 starts from here.
+            </description>
+</field>
+<field address="0x20162c" name="u32_T_RX_F_424_01_SIGPRO_CM_CONFIG_REG" regname="CLIF_SIGPRO_CM_CONFIG_REG" rfprotocol="T_RX_F_424" type="u32" value="6206" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_CM_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201630" name="u32_T_RX_ACT_00_AGC_CONFIG1_REG" regname="CLIF_AGC_CONFIG1_REG" rfprotocol="T_RX_ACT" type="u32" value="207ff6" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_CONFIG1_REG.
+
+Note: Configuration: T_RX_ACT starts from here.
+            </description>
+</field>
+<field address="0x201634" name="u32_T_RX_ACT_01_AGC_CONFIG0_REG" regname="CLIF_AGC_CONFIG0_REG" rfprotocol="T_RX_ACT" type="u32" value="4400b" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_CONFIG0_REG.
+            </description>
+</field>
+<field address="0x201638" name="u32_T_RX_A_106_ACT_00_SIGPRO_CM_CONFIG_REG" regname="CLIF_SIGPRO_CM_CONFIG_REG" rfprotocol="T_RX_A_106_ACT" type="u32" value="104" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_CM_CONFIG_REG.
+
+Note: Configuration: T_RX_A_106_ACT starts from here.
+            </description>
+</field>
+<field address="0x20163c" name="u32_T_RX_F_212_ACT_00_SIGPRO_ADCBCM_THRESHOLD_REG" regname="CLIF_SIGPRO_ADCBCM_THRESHOLD_REG" rfprotocol="T_RX_F_212_ACT" type="u32" value="80060" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_ADCBCM_THRESHOLD_REG.
+
+Note: Configuration: T_RX_F_212_ACT starts from here.
+            </description>
+</field>
+<field address="0x201640" name="u32_T_RX_F_212_ACT_01_SIGPRO_ADCBCM_CONFIG_REG" regname="CLIF_SIGPRO_ADCBCM_CONFIG_REG" rfprotocol="T_RX_F_212_ACT" type="u32" value="f801c85" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_ADCBCM_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201644" name="u32_T_RX_F_212_ACT_02_SIGPRO_CM_CONFIG_REG" regname="CLIF_SIGPRO_CM_CONFIG_REG" rfprotocol="T_RX_F_212_ACT" type="u32" value="6206" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_CM_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201648" name="u32_T_RX_F_424_ACT_00_SIGPRO_ADCBCM_THRESHOLD_REG" regname="CLIF_SIGPRO_ADCBCM_THRESHOLD_REG" rfprotocol="T_RX_F_424_ACT" type="u32" value="80060" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_ADCBCM_THRESHOLD_REG.
+
+Note: Configuration: T_RX_F_424_ACT starts from here.
+            </description>
+</field>
+<field address="0x20164c" name="u32_T_RX_F_424_ACT_01_SIGPRO_ADCBCM_CONFIG_REG" regname="CLIF_SIGPRO_ADCBCM_CONFIG_REG" rfprotocol="T_RX_F_424_ACT" type="u32" value="f801c89" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_ADCBCM_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201650" name="u32_T_RX_F_424_ACT_02_SIGPRO_CM_CONFIG_REG" regname="CLIF_SIGPRO_CM_CONFIG_REG" rfprotocol="T_RX_F_424_ACT" type="u32" value="6206" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_CM_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201654" name="u32_T_RX_B_00_ANA_RX_REG" regname="CLIF_ANA_RX_REG" rfprotocol="T_RX_B" type="u32" value="390a3" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_RX_REG.
+
+Note: Configuration: T_RX_B starts from here.
+            </description>
+</field>
+<field address="0x201658" name="u32_T_RX_B_01_BBA_CONTROL_REG" regname="CLIF_BBA_CONTROL_REG" rfprotocol="T_RX_B" type="u32" value="341" valuetype="hex">
+<description>
+                Value for Register CLIF_BBA_CONTROL_REG.
+            </description>
+</field>
+<field address="0x20165c" name="u32_T_RX_B_106_00_SIGPRO_ADCBCM_THRESHOLD_REG" regname="CLIF_SIGPRO_ADCBCM_THRESHOLD_REG" rfprotocol="T_RX_B_106" type="u32" value="6400c8" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_ADCBCM_THRESHOLD_REG.
+
+Note: Configuration: T_RX_B_106 starts from here.
+            </description>
+</field>
+<field address="0x201660" name="u32_T_RX_B_106_01_SIGPRO_ADCBCM_CONFIG_REG" regname="CLIF_SIGPRO_ADCBCM_CONFIG_REG" rfprotocol="T_RX_B_106" type="u32" value="1780adef" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_ADCBCM_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201664" name="u32_T_RX_B_212_00_SIGPRO_ADCBCM_THRESHOLD_REG" regname="CLIF_SIGPRO_ADCBCM_THRESHOLD_REG" rfprotocol="T_RX_B_212" type="u32" value="6400c8" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_ADCBCM_THRESHOLD_REG.
+
+Note: Configuration: T_RX_B_212 starts from here.
+            </description>
+</field>
+<field address="0x201668" name="u32_T_RX_B_212_01_SIGPRO_ADCBCM_CONFIG_REG" regname="CLIF_SIGPRO_ADCBCM_CONFIG_REG" rfprotocol="T_RX_B_212" type="u32" value="17805def" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_ADCBCM_CONFIG_REG.
+            </description>
+</field>
+<field address="0x20166c" name="u32_T_RX_B_424_00_SIGPRO_ADCBCM_THRESHOLD_REG" regname="CLIF_SIGPRO_ADCBCM_THRESHOLD_REG" rfprotocol="T_RX_B_424" type="u32" value="6400c8" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_ADCBCM_THRESHOLD_REG.
+
+Note: Configuration: T_RX_B_424 starts from here.
+            </description>
+</field>
+<field address="0x201670" name="u32_T_RX_B_424_01_SIGPRO_ADCBCM_CONFIG_REG" regname="CLIF_SIGPRO_ADCBCM_CONFIG_REG" rfprotocol="T_RX_B_424" type="u32" value="17805def" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_ADCBCM_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201674" name="u32_T_RX_B_848_00_SIGPRO_ADCBCM_THRESHOLD_REG" regname="CLIF_SIGPRO_ADCBCM_THRESHOLD_REG" rfprotocol="T_RX_B_848" type="u32" value="6400a8" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_ADCBCM_THRESHOLD_REG.
+
+Note: Configuration: T_RX_B_848 starts from here.
+            </description>
+</field>
+<field address="0x201678" name="u32_T_RX_B_848_01_SIGPRO_ADCBCM_CONFIG_REG" regname="CLIF_SIGPRO_ADCBCM_CONFIG_REG" rfprotocol="T_RX_B_848" type="u32" value="17805c71" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_ADCBCM_CONFIG_REG.
+            </description>
+</field>
+</structure>
+<structure name="I_Tx_val" startAddress="0x20167c" totalSize="608">
+<description>
+            Value to be applied to the corresponding CLIF register for CLIF Initiator Mode - Transmit.
+        </description>
+<field address="0x20167c" name="u32_I_TX_00_ANA_PBF_CONTROL_REG" regname="CLIF_ANA_PBF_CONTROL_REG" rfprotocol="I_TX" type="u32" value="a0" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_PBF_CONTROL_REG.
+
+Note: Configuration: I_TX starts from here.
+            </description>
+</field>
+<field address="0x201680" name="u32_I_TX_A_00_TRANSCEIVE_CONTROL_REG" regname="CLIF_TRANSCEIVE_CONTROL_REG" rfprotocol="I_TX_A" type="u32" value="5041" valuetype="hex">
+<description>
+                Value for Register CLIF_TRANSCEIVE_CONTROL_REG.
+
+Note: Configuration: I_TX_A starts from here.
+            </description>
+</field>
+<field address="0x201684" name="u32_I_TX_A_106_00_ANA_TX_AMPLITUDE_REG" regname="CLIF_ANA_TX_AMPLITUDE_REG" rfprotocol="I_TX_A_106" type="u32" value="ffff50f4" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_AMPLITUDE_REG.
+
+Note: Configuration: I_TX_A_106 starts from here.
+            </description>
+</field>
+<field address="0x201688" name="u32_I_TX_A_106_01_ANA_TX_CLK_CONTROL_REG" regname="CLIF_ANA_TX_CLK_CONTROL_REG" rfprotocol="I_TX_A_106" type="u32" value="783" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_CLK_CONTROL_REG.
+            </description>
+</field>
+<field address="0x20168c" name="u32_I_TX_A_106_02_TX_UNDERSHOOT_CONFIG_REG" regname="CLIF_TX_UNDERSHOOT_CONFIG_REG" rfprotocol="I_TX_A_106" type="u32" value="17" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_UNDERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201690" name="u32_I_TX_A_106_03_TX_OVERSHOOT_CONFIG_REG" regname="CLIF_TX_OVERSHOOT_CONFIG_REG" rfprotocol="I_TX_A_106" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_OVERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201694" name="u32_I_TX_A_106_04_ANA_TX_SHAPE_CONTROL_REG" regname="CLIF_ANA_TX_SHAPE_CONTROL_REG" rfprotocol="I_TX_A_106" type="u32" value="1b000f43" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_SHAPE_CONTROL_REG.
+            </description>
+</field>
+<field address="0x201698" name="u32_I_TX_A_106_05_TX_DATA_MOD_REG" regname="CLIF_TX_DATA_MOD_REG" rfprotocol="I_TX_A_106" type="u32" value="230104" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_DATA_MOD_REG.
+            </description>
+</field>
+<field address="0x20169c" name="u32_I_TX_A_106_06_TX_SYMBOL23_MOD_REG" regname="CLIF_TX_SYMBOL23_MOD_REG" rfprotocol="I_TX_A_106" type="u32" value="230104" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL23_MOD_REG.
+            </description>
+</field>
+<field address="0x2016a0" name="u32_I_TX_A_106_07_TX_SYMBOL_CONFIG_REG" regname="CLIF_TX_SYMBOL_CONFIG_REG" rfprotocol="I_TX_A_106" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2016a4" name="u32_I_TX_A_106_08_TX_SYMBOL01_MOD_REG" regname="CLIF_TX_SYMBOL01_MOD_REG" rfprotocol="I_TX_A_106" type="u32" value="230104" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL01_MOD_REG.
+            </description>
+</field>
+<field address="0x2016a8" name="u32_I_TX_A_212_00_ANA_TX_AMPLITUDE_REG" regname="CLIF_ANA_TX_AMPLITUDE_REG" rfprotocol="I_TX_A_212" type="u32" value="ffff50f4" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_AMPLITUDE_REG.
+
+Note: Configuration: I_TX_A_212 starts from here.
+            </description>
+</field>
+<field address="0x2016ac" name="u32_I_TX_A_212_01_ANA_TX_CLK_CONTROL_REG" regname="CLIF_ANA_TX_CLK_CONTROL_REG" rfprotocol="I_TX_A_212" type="u32" value="83" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_CLK_CONTROL_REG.
+            </description>
+</field>
+<field address="0x2016b0" name="u32_I_TX_A_212_02_TX_UNDERSHOOT_CONFIG_REG" regname="CLIF_TX_UNDERSHOOT_CONFIG_REG" rfprotocol="I_TX_A_212" type="u32" value="5" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_UNDERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2016b4" name="u32_I_TX_A_212_03_TX_OVERSHOOT_CONFIG_REG" regname="CLIF_TX_OVERSHOOT_CONFIG_REG" rfprotocol="I_TX_A_212" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_OVERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2016b8" name="u32_I_TX_A_212_04_ANA_TX_SHAPE_CONTROL_REG" regname="CLIF_ANA_TX_SHAPE_CONTROL_REG" rfprotocol="I_TX_A_212" type="u32" value="1b000f43" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_SHAPE_CONTROL_REG.
+            </description>
+</field>
+<field address="0x2016bc" name="u32_I_TX_A_212_05_TX_DATA_MOD_REG" regname="CLIF_TX_DATA_MOD_REG" rfprotocol="I_TX_A_212" type="u32" value="f0105" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_DATA_MOD_REG.
+            </description>
+</field>
+<field address="0x2016c0" name="u32_I_TX_A_212_06_TX_SYMBOL23_MOD_REG" regname="CLIF_TX_SYMBOL23_MOD_REG" rfprotocol="I_TX_A_212" type="u32" value="f0105" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL23_MOD_REG.
+            </description>
+</field>
+<field address="0x2016c4" name="u32_I_TX_A_212_07_TX_SYMBOL_CONFIG_REG" regname="CLIF_TX_SYMBOL_CONFIG_REG" rfprotocol="I_TX_A_212" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2016c8" name="u32_I_TX_A_424_00_ANA_TX_AMPLITUDE_REG" regname="CLIF_ANA_TX_AMPLITUDE_REG" rfprotocol="I_TX_A_424" type="u32" value="ffff50f4" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_AMPLITUDE_REG.
+
+Note: Configuration: I_TX_A_424 starts from here.
+            </description>
+</field>
+<field address="0x2016cc" name="u32_I_TX_A_424_01_ANA_TX_CLK_CONTROL_REG" regname="CLIF_ANA_TX_CLK_CONTROL_REG" rfprotocol="I_TX_A_424" type="u32" value="83" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_CLK_CONTROL_REG.
+            </description>
+</field>
+<field address="0x2016d0" name="u32_I_TX_A_424_02_TX_UNDERSHOOT_CONFIG_REG" regname="CLIF_TX_UNDERSHOOT_CONFIG_REG" rfprotocol="I_TX_A_424" type="u32" value="5" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_UNDERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2016d4" name="u32_I_TX_A_424_03_TX_OVERSHOOT_CONFIG_REG" regname="CLIF_TX_OVERSHOOT_CONFIG_REG" rfprotocol="I_TX_A_424" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_OVERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2016d8" name="u32_I_TX_A_424_04_ANA_TX_SHAPE_CONTROL_REG" regname="CLIF_ANA_TX_SHAPE_CONTROL_REG" rfprotocol="I_TX_A_424" type="u32" value="1b000f43" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_SHAPE_CONTROL_REG.
+            </description>
+</field>
+<field address="0x2016dc" name="u32_I_TX_A_424_05_TX_DATA_MOD_REG" regname="CLIF_TX_DATA_MOD_REG" rfprotocol="I_TX_A_424" type="u32" value="60106" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_DATA_MOD_REG.
+            </description>
+</field>
+<field address="0x2016e0" name="u32_I_TX_A_424_06_TX_SYMBOL23_MOD_REG" regname="CLIF_TX_SYMBOL23_MOD_REG" rfprotocol="I_TX_A_424" type="u32" value="60106" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL23_MOD_REG.
+            </description>
+</field>
+<field address="0x2016e4" name="u32_I_TX_A_424_07_TX_SYMBOL_CONFIG_REG" regname="CLIF_TX_SYMBOL_CONFIG_REG" rfprotocol="I_TX_A_424" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2016e8" name="u32_I_TX_A_848_00_ANA_TX_AMPLITUDE_REG" regname="CLIF_ANA_TX_AMPLITUDE_REG" rfprotocol="I_TX_A_848" type="u32" value="ffff507c" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_AMPLITUDE_REG.
+
+Note: Configuration: I_TX_A_848 starts from here.
+            </description>
+</field>
+<field address="0x2016ec" name="u32_I_TX_A_848_01_ANA_TX_CLK_CONTROL_REG" regname="CLIF_ANA_TX_CLK_CONTROL_REG" rfprotocol="I_TX_A_848" type="u32" value="83" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_CLK_CONTROL_REG.
+            </description>
+</field>
+<field address="0x2016f0" name="u32_I_TX_A_848_02_TX_UNDERSHOOT_CONFIG_REG" regname="CLIF_TX_UNDERSHOOT_CONFIG_REG" rfprotocol="I_TX_A_848" type="u32" value="1" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_UNDERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2016f4" name="u32_I_TX_A_848_03_TX_OVERSHOOT_CONFIG_REG" regname="CLIF_TX_OVERSHOOT_CONFIG_REG" rfprotocol="I_TX_A_848" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_OVERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2016f8" name="u32_I_TX_A_848_04_ANA_TX_SHAPE_CONTROL_REG" regname="CLIF_ANA_TX_SHAPE_CONTROL_REG" rfprotocol="I_TX_A_848" type="u32" value="1f000f45" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_SHAPE_CONTROL_REG.
+            </description>
+</field>
+<field address="0x2016fc" name="u32_I_TX_A_848_05_TX_DATA_MOD_REG" regname="CLIF_TX_DATA_MOD_REG" rfprotocol="I_TX_A_848" type="u32" value="10107" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_DATA_MOD_REG.
+            </description>
+</field>
+<field address="0x201700" name="u32_I_TX_A_848_06_TX_SYMBOL23_MOD_REG" regname="CLIF_TX_SYMBOL23_MOD_REG" rfprotocol="I_TX_A_848" type="u32" value="10107" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL23_MOD_REG.
+            </description>
+</field>
+<field address="0x201704" name="u32_I_TX_A_848_07_TX_SYMBOL_CONFIG_REG" regname="CLIF_TX_SYMBOL_CONFIG_REG" rfprotocol="I_TX_A_848" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201708" name="u32_I_TX_B_106_00_ANA_TX_AMPLITUDE_REG" regname="CLIF_ANA_TX_AMPLITUDE_REG" rfprotocol="I_TX_B_106" type="u32" value="ffff5094" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_AMPLITUDE_REG.
+
+Note: Configuration: I_TX_B_106 starts from here.
+            </description>
+</field>
+<field address="0x20170c" name="u32_I_TX_B_106_01_ANA_TX_CLK_CONTROL_REG" regname="CLIF_ANA_TX_CLK_CONTROL_REG" rfprotocol="I_TX_B_106" type="u32" value="8f" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_CLK_CONTROL_REG.
+            </description>
+</field>
+<field address="0x201710" name="u32_I_TX_B_106_02_TX_UNDERSHOOT_CONFIG_REG" regname="CLIF_TX_UNDERSHOOT_CONFIG_REG" rfprotocol="I_TX_B_106" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_UNDERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201714" name="u32_I_TX_B_106_03_TX_OVERSHOOT_CONFIG_REG" regname="CLIF_TX_OVERSHOOT_CONFIG_REG" rfprotocol="I_TX_B_106" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_OVERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201718" name="u32_I_TX_B_106_04_ANA_TX_SHAPE_CONTROL_REG" regname="CLIF_ANA_TX_SHAPE_CONTROL_REG" rfprotocol="I_TX_B_106" type="u32" value="7000756" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_SHAPE_CONTROL_REG.
+            </description>
+</field>
+<field address="0x20171c" name="u32_I_TX_B_106_05_TX_SYMBOL_CONFIG_REG" regname="CLIF_TX_SYMBOL_CONFIG_REG" rfprotocol="I_TX_B_106" type="u32" value="402b9" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201720" name="u32_I_TX_B_106_06_TX_SYMBOL01_MOD_REG" regname="CLIF_TX_SYMBOL01_MOD_REG" rfprotocol="I_TX_B_106" type="u32" value="85" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL01_MOD_REG.
+            </description>
+</field>
+<field address="0x201724" name="u32_I_TX_B_106_07_TX_SYMBOL0_DEF_REG" regname="CLIF_TX_SYMBOL0_DEF_REG" rfprotocol="I_TX_B_106" type="u32" value="1f" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL0_DEF_REG.
+            </description>
+</field>
+<field address="0x201728" name="u32_I_TX_B_212_00_ANA_TX_AMPLITUDE_REG" regname="CLIF_ANA_TX_AMPLITUDE_REG" rfprotocol="I_TX_B_212" type="u32" value="ffff5074" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_AMPLITUDE_REG.
+
+Note: Configuration: I_TX_B_212 starts from here.
+            </description>
+</field>
+<field address="0x20172c" name="u32_I_TX_B_212_01_ANA_TX_CLK_CONTROL_REG" regname="CLIF_ANA_TX_CLK_CONTROL_REG" rfprotocol="I_TX_B_212" type="u32" value="8f" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_CLK_CONTROL_REG.
+            </description>
+</field>
+<field address="0x201730" name="u32_I_TX_B_212_02_TX_UNDERSHOOT_CONFIG_REG" regname="CLIF_TX_UNDERSHOOT_CONFIG_REG" rfprotocol="I_TX_B_212" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_UNDERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201734" name="u32_I_TX_B_212_03_TX_OVERSHOOT_CONFIG_REG" regname="CLIF_TX_OVERSHOOT_CONFIG_REG" rfprotocol="I_TX_B_212" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_OVERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201738" name="u32_I_TX_B_212_04_ANA_TX_SHAPE_CONTROL_REG" regname="CLIF_ANA_TX_SHAPE_CONTROL_REG" rfprotocol="I_TX_B_212" type="u32" value="7000746" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_SHAPE_CONTROL_REG.
+            </description>
+</field>
+<field address="0x20173c" name="u32_I_TX_B_212_05_TX_SYMBOL_CONFIG_REG" regname="CLIF_TX_SYMBOL_CONFIG_REG" rfprotocol="I_TX_B_212" type="u32" value="4014c" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201740" name="u32_I_TX_B_212_06_TX_SYMBOL01_MOD_REG" regname="CLIF_TX_SYMBOL01_MOD_REG" rfprotocol="I_TX_B_212" type="u32" value="85" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL01_MOD_REG.
+            </description>
+</field>
+<field address="0x201744" name="u32_I_TX_B_212_07_TX_SYMBOL0_DEF_REG" regname="CLIF_TX_SYMBOL0_DEF_REG" rfprotocol="I_TX_B_212" type="u32" value="3" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL0_DEF_REG.
+            </description>
+</field>
+<field address="0x201748" name="u32_I_TX_B_424_00_ANA_TX_AMPLITUDE_REG" regname="CLIF_ANA_TX_AMPLITUDE_REG" rfprotocol="I_TX_B_424" type="u32" value="ffff5074" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_AMPLITUDE_REG.
+
+Note: Configuration: I_TX_B_424 starts from here.
+            </description>
+</field>
+<field address="0x20174c" name="u32_I_TX_B_424_01_ANA_TX_CLK_CONTROL_REG" regname="CLIF_ANA_TX_CLK_CONTROL_REG" rfprotocol="I_TX_B_424" type="u32" value="78f" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_CLK_CONTROL_REG.
+            </description>
+</field>
+<field address="0x201750" name="u32_I_TX_B_424_02_TX_UNDERSHOOT_CONFIG_REG" regname="CLIF_TX_UNDERSHOOT_CONFIG_REG" rfprotocol="I_TX_B_424" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_UNDERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201754" name="u32_I_TX_B_424_03_TX_OVERSHOOT_CONFIG_REG" regname="CLIF_TX_OVERSHOOT_CONFIG_REG" rfprotocol="I_TX_B_424" type="u32" value="1fe0013" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_OVERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201758" name="u32_I_TX_B_424_04_ANA_TX_SHAPE_CONTROL_REG" regname="CLIF_ANA_TX_SHAPE_CONTROL_REG" rfprotocol="I_TX_B_424" type="u32" value="e000f54" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_SHAPE_CONTROL_REG.
+            </description>
+</field>
+<field address="0x20175c" name="u32_I_TX_B_424_05_TX_SYMBOL_CONFIG_REG" regname="CLIF_TX_SYMBOL_CONFIG_REG" rfprotocol="I_TX_B_424" type="u32" value="4014c" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201760" name="u32_I_TX_B_424_06_TX_SYMBOL01_MOD_REG" regname="CLIF_TX_SYMBOL01_MOD_REG" rfprotocol="I_TX_B_424" type="u32" value="86" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL01_MOD_REG.
+            </description>
+</field>
+<field address="0x201764" name="u32_I_TX_B_424_07_TX_SYMBOL0_DEF_REG" regname="CLIF_TX_SYMBOL0_DEF_REG" rfprotocol="I_TX_B_424" type="u32" value="3" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL0_DEF_REG.
+            </description>
+</field>
+<field address="0x201768" name="u32_I_TX_B_848_00_ANA_TX_AMPLITUDE_REG" regname="CLIF_ANA_TX_AMPLITUDE_REG" rfprotocol="I_TX_B_848" type="u32" value="ffff506c" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_AMPLITUDE_REG.
+
+Note: Configuration: I_TX_B_848 starts from here.
+            </description>
+</field>
+<field address="0x20176c" name="u32_I_TX_B_848_01_ANA_TX_CLK_CONTROL_REG" regname="CLIF_ANA_TX_CLK_CONTROL_REG" rfprotocol="I_TX_B_848" type="u32" value="78f" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_CLK_CONTROL_REG.
+            </description>
+</field>
+<field address="0x201770" name="u32_I_TX_B_848_02_TX_UNDERSHOOT_CONFIG_REG" regname="CLIF_TX_UNDERSHOOT_CONFIG_REG" rfprotocol="I_TX_B_848" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_UNDERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201774" name="u32_I_TX_B_848_03_TX_OVERSHOOT_CONFIG_REG" regname="CLIF_TX_OVERSHOOT_CONFIG_REG" rfprotocol="I_TX_B_848" type="u32" value="7e000d" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_OVERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201778" name="u32_I_TX_B_848_04_ANA_TX_SHAPE_CONTROL_REG" regname="CLIF_ANA_TX_SHAPE_CONTROL_REG" rfprotocol="I_TX_B_848" type="u32" value="d000f32" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_SHAPE_CONTROL_REG.
+            </description>
+</field>
+<field address="0x20177c" name="u32_I_TX_B_848_05_TX_SYMBOL_CONFIG_REG" regname="CLIF_TX_SYMBOL_CONFIG_REG" rfprotocol="I_TX_B_848" type="u32" value="4014c" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201780" name="u32_I_TX_B_848_06_TX_SYMBOL01_MOD_REG" regname="CLIF_TX_SYMBOL01_MOD_REG" rfprotocol="I_TX_B_848" type="u32" value="87" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL01_MOD_REG.
+            </description>
+</field>
+<field address="0x201784" name="u32_I_TX_B_848_07_TX_SYMBOL0_DEF_REG" regname="CLIF_TX_SYMBOL0_DEF_REG" rfprotocol="I_TX_B_848" type="u32" value="3" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL0_DEF_REG.
+            </description>
+</field>
+<field address="0x201788" name="u32_I_TX_F_00_ANA_TX_CLK_CONTROL_REG" regname="CLIF_ANA_TX_CLK_CONTROL_REG" rfprotocol="I_TX_F" type="u32" value="8f" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_CLK_CONTROL_REG.
+
+Note: Configuration: I_TX_F starts from here.
+            </description>
+</field>
+<field address="0x20178c" name="u32_I_TX_F_212_00_ANA_TX_AMPLITUDE_REG" regname="CLIF_ANA_TX_AMPLITUDE_REG" rfprotocol="I_TX_F_212" type="u32" value="ffff507c" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_AMPLITUDE_REG.
+
+Note: Configuration: I_TX_F_212 starts from here.
+            </description>
+</field>
+<field address="0x201790" name="u32_I_TX_F_212_01_TX_UNDERSHOOT_CONFIG_REG" regname="CLIF_TX_UNDERSHOOT_CONFIG_REG" rfprotocol="I_TX_F_212" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_UNDERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201794" name="u32_I_TX_F_212_02_TX_OVERSHOOT_CONFIG_REG" regname="CLIF_TX_OVERSHOOT_CONFIG_REG" rfprotocol="I_TX_F_212" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_OVERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201798" name="u32_I_TX_F_212_03_ANA_TX_SHAPE_CONTROL_REG" regname="CLIF_ANA_TX_SHAPE_CONTROL_REG" rfprotocol="I_TX_F_212" type="u32" value="7010744" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_SHAPE_CONTROL_REG.
+            </description>
+</field>
+<field address="0x20179c" name="u32_I_TX_F_424_00_ANA_TX_AMPLITUDE_REG" regname="CLIF_ANA_TX_AMPLITUDE_REG" rfprotocol="I_TX_F_424" type="u32" value="ffff507c" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_AMPLITUDE_REG.
+
+Note: Configuration: I_TX_F_424 starts from here.
+            </description>
+</field>
+<field address="0x2017a0" name="u32_I_TX_F_424_01_TX_UNDERSHOOT_CONFIG_REG" regname="CLIF_TX_UNDERSHOOT_CONFIG_REG" rfprotocol="I_TX_F_424" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_UNDERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2017a4" name="u32_I_TX_F_424_02_TX_OVERSHOOT_CONFIG_REG" regname="CLIF_TX_OVERSHOOT_CONFIG_REG" rfprotocol="I_TX_F_424" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_OVERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2017a8" name="u32_I_TX_F_424_03_ANA_TX_SHAPE_CONTROL_REG" regname="CLIF_ANA_TX_SHAPE_CONTROL_REG" rfprotocol="I_TX_F_424" type="u32" value="7010f33" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_SHAPE_CONTROL_REG.
+            </description>
+</field>
+<field address="0x2017ac" name="u32_I_TX_15693_100_00_ANA_TX_AMPLITUDE_REG" regname="CLIF_ANA_TX_AMPLITUDE_REG" rfprotocol="I_TX_15693_100" type="u32" value="ffff50f4" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_AMPLITUDE_REG.
+
+Note: Configuration: I_TX_15693_100 starts from here.
+            </description>
+</field>
+<field address="0x2017b0" name="u32_I_TX_15693_100_01_ANA_TX_CLK_CONTROL_REG" regname="CLIF_ANA_TX_CLK_CONTROL_REG" rfprotocol="I_TX_15693_100" type="u32" value="783" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_CLK_CONTROL_REG.
+            </description>
+</field>
+<field address="0x2017b4" name="u32_I_TX_15693_100_02_TX_UNDERSHOOT_CONFIG_REG" regname="CLIF_TX_UNDERSHOOT_CONFIG_REG" rfprotocol="I_TX_15693_100" type="u32" value="f000001f" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_UNDERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2017b8" name="u32_I_TX_15693_100_03_TX_OVERSHOOT_CONFIG_REG" regname="CLIF_TX_OVERSHOOT_CONFIG_REG" rfprotocol="I_TX_15693_100" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_OVERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2017bc" name="u32_I_TX_15693_100_04_ANA_TX_SHAPE_CONTROL_REG" regname="CLIF_ANA_TX_SHAPE_CONTROL_REG" rfprotocol="I_TX_15693_100" type="u32" value="1b000745" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_SHAPE_CONTROL_REG.
+            </description>
+</field>
+<field address="0x2017c0" name="u32_I_TX_15693_100_05_TX_DATA_MOD_REG" regname="CLIF_TX_DATA_MOD_REG" rfprotocol="I_TX_15693_100" type="u32" value="43" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_DATA_MOD_REG.
+            </description>
+</field>
+<field address="0x2017c4" name="u32_I_TX_15693_100_06_TX_SYMBOL23_MOD_REG" regname="CLIF_TX_SYMBOL23_MOD_REG" rfprotocol="I_TX_15693_100" type="u32" value="4" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL23_MOD_REG.
+            </description>
+</field>
+<field address="0x2017c8" name="u32_I_TX_15693_100_07_TX_SYMBOL_CONFIG_REG" regname="CLIF_TX_SYMBOL_CONFIG_REG" rfprotocol="I_TX_15693_100" type="u32" value="7c00" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2017cc" name="u32_I_TX_15693_10_00_ANA_TX_AMPLITUDE_REG" regname="CLIF_ANA_TX_AMPLITUDE_REG" rfprotocol="I_TX_15693_10" type="u32" value="ffff5090" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_AMPLITUDE_REG.
+
+Note: Configuration: I_TX_15693_10 starts from here.
+            </description>
+</field>
+<field address="0x2017d0" name="u32_I_TX_15693_10_01_ANA_TX_CLK_CONTROL_REG" regname="CLIF_ANA_TX_CLK_CONTROL_REG" rfprotocol="I_TX_15693_10" type="u32" value="8f" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_CLK_CONTROL_REG.
+            </description>
+</field>
+<field address="0x2017d4" name="u32_I_TX_15693_10_02_TX_UNDERSHOOT_CONFIG_REG" regname="CLIF_TX_UNDERSHOOT_CONFIG_REG" rfprotocol="I_TX_15693_10" type="u32" value="ff000f" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_UNDERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2017d8" name="u32_I_TX_15693_10_03_TX_OVERSHOOT_CONFIG_REG" regname="CLIF_TX_OVERSHOOT_CONFIG_REG" rfprotocol="I_TX_15693_10" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_OVERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2017dc" name="u32_I_TX_15693_10_04_ANA_TX_SHAPE_CONTROL_REG" regname="CLIF_ANA_TX_SHAPE_CONTROL_REG" rfprotocol="I_TX_15693_10" type="u32" value="7010f44" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_SHAPE_CONTROL_REG.
+            </description>
+</field>
+<field address="0x2017e0" name="u32_I_TX_15693_10_05_TX_DATA_MOD_REG" regname="CLIF_TX_DATA_MOD_REG" rfprotocol="I_TX_15693_10" type="u32" value="43" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_DATA_MOD_REG.
+            </description>
+</field>
+<field address="0x2017e4" name="u32_I_TX_15693_10_06_TX_SYMBOL23_MOD_REG" regname="CLIF_TX_SYMBOL23_MOD_REG" rfprotocol="I_TX_15693_10" type="u32" value="4" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL23_MOD_REG.
+            </description>
+</field>
+<field address="0x2017e8" name="u32_I_TX_15693_10_07_TX_SYMBOL_CONFIG_REG" regname="CLIF_TX_SYMBOL_CONFIG_REG" rfprotocol="I_TX_15693_10" type="u32" value="7c00" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2017ec" name="u32_I_TX_EPCV2_TARI_9_44_00_ANA_TX_AMPLITUDE_REG" regname="CLIF_ANA_TX_AMPLITUDE_REG" rfprotocol="I_TX_EPCV2_TARI_9_44" type="u32" value="fffff094" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_AMPLITUDE_REG.
+
+Note: Configuration: I_TX_EPCV2_TARI_9_44 starts from here.
+            </description>
+</field>
+<field address="0x2017f0" name="u32_I_TX_EPCV2_TARI_9_44_01_ANA_TX_CLK_CONTROL_REG" regname="CLIF_ANA_TX_CLK_CONTROL_REG" rfprotocol="I_TX_EPCV2_TARI_9_44" type="u32" value="8f" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_CLK_CONTROL_REG.
+            </description>
+</field>
+<field address="0x2017f4" name="u32_I_TX_EPCV2_TARI_9_44_02_TX_UNDERSHOOT_CONFIG_REG" regname="CLIF_TX_UNDERSHOOT_CONFIG_REG" rfprotocol="I_TX_EPCV2_TARI_9_44" type="u32" value="ff000f" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_UNDERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2017f8" name="u32_I_TX_EPCV2_TARI_9_44_03_TX_OVERSHOOT_CONFIG_REG" regname="CLIF_TX_OVERSHOOT_CONFIG_REG" rfprotocol="I_TX_EPCV2_TARI_9_44" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_OVERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2017fc" name="u32_I_TX_EPCV2_TARI_9_44_04_ANA_TX_SHAPE_CONTROL_REG" regname="CLIF_ANA_TX_SHAPE_CONTROL_REG" rfprotocol="I_TX_EPCV2_TARI_9_44" type="u32" value="7000734" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_SHAPE_CONTROL_REG.
+            </description>
+</field>
+<field address="0x201800" name="u32_I_TX_EPCV2_TARI_9_44_05_TX_SYMBOL_CONFIG_REG" regname="CLIF_TX_SYMBOL_CONFIG_REG" rfprotocol="I_TX_EPCV2_TARI_9_44" type="u32" value="ed" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201804" name="u32_I_TX_EPCV2_TARI_9_44_06_TX_SYMBOL0_DEF_REG" regname="CLIF_TX_SYMBOL0_DEF_REG" rfprotocol="I_TX_EPCV2_TARI_9_44" type="u32" value="2841" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL0_DEF_REG.
+            </description>
+</field>
+<field address="0x201808" name="u32_I_TX_EPCV2_TARI_9_44_07_TX_SYMBOL1_DEF_REG" regname="CLIF_TX_SYMBOL1_DEF_REG" rfprotocol="I_TX_EPCV2_TARI_9_44" type="u32" value="a1" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL1_DEF_REG.
+            </description>
+</field>
+<field address="0x20180c" name="u32_I_TX_EPCV2_TARI_18_88_00_ANA_TX_AMPLITUDE_REG" regname="CLIF_ANA_TX_AMPLITUDE_REG" rfprotocol="I_TX_EPCV2_TARI_18_88" type="u32" value="fffff08c" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_AMPLITUDE_REG.
+
+Note: Configuration: I_TX_EPCV2_TARI_18_88 starts from here.
+            </description>
+</field>
+<field address="0x201810" name="u32_I_TX_EPCV2_TARI_18_88_01_ANA_TX_CLK_CONTROL_REG" regname="CLIF_ANA_TX_CLK_CONTROL_REG" rfprotocol="I_TX_EPCV2_TARI_18_88" type="u32" value="8f" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_CLK_CONTROL_REG.
+            </description>
+</field>
+<field address="0x201814" name="u32_I_TX_EPCV2_TARI_18_88_02_TX_UNDERSHOOT_CONFIG_REG" regname="CLIF_TX_UNDERSHOOT_CONFIG_REG" rfprotocol="I_TX_EPCV2_TARI_18_88" type="u32" value="ff000f" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_UNDERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201818" name="u32_I_TX_EPCV2_TARI_18_88_03_TX_OVERSHOOT_CONFIG_REG" regname="CLIF_TX_OVERSHOOT_CONFIG_REG" rfprotocol="I_TX_EPCV2_TARI_18_88" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_OVERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x20181c" name="u32_I_TX_EPCV2_TARI_18_88_04_ANA_TX_SHAPE_CONTROL_REG" regname="CLIF_ANA_TX_SHAPE_CONTROL_REG" rfprotocol="I_TX_EPCV2_TARI_18_88" type="u32" value="7000734" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_SHAPE_CONTROL_REG.
+            </description>
+</field>
+<field address="0x201820" name="u32_I_TX_EPCV2_TARI_18_88_05_TX_SYMBOL_CONFIG_REG" regname="CLIF_TX_SYMBOL_CONFIG_REG" rfprotocol="I_TX_EPCV2_TARI_18_88" type="u32" value="ed" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201824" name="u32_I_TX_EPCV2_TARI_18_88_06_TX_SYMBOL0_DEF_REG" regname="CLIF_TX_SYMBOL0_DEF_REG" rfprotocol="I_TX_EPCV2_TARI_18_88" type="u32" value="2841" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL0_DEF_REG.
+            </description>
+</field>
+<field address="0x201828" name="u32_I_TX_EPCV2_TARI_18_88_07_TX_SYMBOL1_DEF_REG" regname="CLIF_TX_SYMBOL1_DEF_REG" rfprotocol="I_TX_EPCV2_TARI_18_88" type="u32" value="a1" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL1_DEF_REG.
+            </description>
+</field>
+<field address="0x20182c" name="u32_I_TX_ACT_00_ANA_PBF_CONTROL_REG" regname="CLIF_ANA_PBF_CONTROL_REG" rfprotocol="I_TX_ACT" type="u32" value="a0" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_PBF_CONTROL_REG.
+
+Note: Configuration: I_TX_ACT starts from here.
+            </description>
+</field>
+<field address="0x201830" name="u32_I_TX_ACT_106_00_TRANSCEIVE_CONTROL_REG" regname="CLIF_TRANSCEIVE_CONTROL_REG" rfprotocol="I_TX_ACT_106" type="u32" value="35003" valuetype="hex">
+<description>
+                Value for Register CLIF_TRANSCEIVE_CONTROL_REG.
+
+Note: Configuration: I_TX_ACT_106 starts from here.
+            </description>
+</field>
+<field address="0x201834" name="u32_I_TX_ACT_106_01_ANA_TX_AMPLITUDE_REG" regname="CLIF_ANA_TX_AMPLITUDE_REG" rfprotocol="I_TX_ACT_106" type="u32" value="ffff50f4" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_AMPLITUDE_REG.
+            </description>
+</field>
+<field address="0x201838" name="u32_I_TX_ACT_106_02_ANA_TX_CLK_CONTROL_REG" regname="CLIF_ANA_TX_CLK_CONTROL_REG" rfprotocol="I_TX_ACT_106" type="u32" value="783" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_CLK_CONTROL_REG.
+            </description>
+</field>
+<field address="0x20183c" name="u32_I_TX_ACT_106_03_TX_UNDERSHOOT_CONFIG_REG" regname="CLIF_TX_UNDERSHOOT_CONFIG_REG" rfprotocol="I_TX_ACT_106" type="u32" value="17" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_UNDERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201840" name="u32_I_TX_ACT_106_04_TX_OVERSHOOT_CONFIG_REG" regname="CLIF_TX_OVERSHOOT_CONFIG_REG" rfprotocol="I_TX_ACT_106" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_OVERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201844" name="u32_I_TX_ACT_106_05_ANA_TX_SHAPE_CONTROL_REG" regname="CLIF_ANA_TX_SHAPE_CONTROL_REG" rfprotocol="I_TX_ACT_106" type="u32" value="1b000f43" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_SHAPE_CONTROL_REG.
+            </description>
+</field>
+<field address="0x201848" name="u32_I_TX_ACT_106_06_TX_DATA_MOD_REG" regname="CLIF_TX_DATA_MOD_REG" rfprotocol="I_TX_ACT_106" type="u32" value="230104" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_DATA_MOD_REG.
+            </description>
+</field>
+<field address="0x20184c" name="u32_I_TX_ACT_106_07_TX_SYMBOL23_MOD_REG" regname="CLIF_TX_SYMBOL23_MOD_REG" rfprotocol="I_TX_ACT_106" type="u32" value="260104" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL23_MOD_REG.
+            </description>
+</field>
+<field address="0x201850" name="u32_I_TX_ACT_106_08_TX_SYMBOL_CONFIG_REG" regname="CLIF_TX_SYMBOL_CONFIG_REG" rfprotocol="I_TX_ACT_106" type="u32" value="9" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201854" name="u32_I_TX_ACT_106_09_TX_SYMBOL01_MOD_REG" regname="CLIF_TX_SYMBOL01_MOD_REG" rfprotocol="I_TX_ACT_106" type="u32" value="230104" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL01_MOD_REG.
+            </description>
+</field>
+<field address="0x201858" name="u32_I_TX_ACT_212_00_TRANSCEIVE_CONTROL_REG" regname="CLIF_TRANSCEIVE_CONTROL_REG" rfprotocol="I_TX_ACT_212" type="u32" value="30001" valuetype="hex">
+<description>
+                Value for Register CLIF_TRANSCEIVE_CONTROL_REG.
+
+Note: Configuration: I_TX_ACT_212 starts from here.
+            </description>
+</field>
+<field address="0x20185c" name="u32_I_TX_ACT_212_01_ANA_TX_AMPLITUDE_REG" regname="CLIF_ANA_TX_AMPLITUDE_REG" rfprotocol="I_TX_ACT_212" type="u32" value="ffff507c" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_AMPLITUDE_REG.
+            </description>
+</field>
+<field address="0x201860" name="u32_I_TX_ACT_212_02_ANA_TX_CLK_CONTROL_REG" regname="CLIF_ANA_TX_CLK_CONTROL_REG" rfprotocol="I_TX_ACT_212" type="u32" value="8f" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_CLK_CONTROL_REG.
+            </description>
+</field>
+<field address="0x201864" name="u32_I_TX_ACT_212_03_TX_UNDERSHOOT_CONFIG_REG" regname="CLIF_TX_UNDERSHOOT_CONFIG_REG" rfprotocol="I_TX_ACT_212" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_UNDERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201868" name="u32_I_TX_ACT_212_04_TX_OVERSHOOT_CONFIG_REG" regname="CLIF_TX_OVERSHOOT_CONFIG_REG" rfprotocol="I_TX_ACT_212" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_OVERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x20186c" name="u32_I_TX_ACT_212_05_ANA_TX_SHAPE_CONTROL_REG" regname="CLIF_ANA_TX_SHAPE_CONTROL_REG" rfprotocol="I_TX_ACT_212" type="u32" value="7010f44" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_SHAPE_CONTROL_REG.
+            </description>
+</field>
+<field address="0x201870" name="u32_I_TX_ACT_212_06_TX_DATA_MOD_REG" regname="CLIF_TX_DATA_MOD_REG" rfprotocol="I_TX_ACT_212" type="u32" value="15" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_DATA_MOD_REG.
+            </description>
+</field>
+<field address="0x201874" name="u32_I_TX_ACT_212_07_TX_SYMBOL_CONFIG_REG" regname="CLIF_TX_SYMBOL_CONFIG_REG" rfprotocol="I_TX_ACT_212" type="u32" value="31000f" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201878" name="u32_I_TX_ACT_212_08_TX_SYMBOL01_MOD_REG" regname="CLIF_TX_SYMBOL01_MOD_REG" rfprotocol="I_TX_ACT_212" type="u32" value="15" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL01_MOD_REG.
+            </description>
+</field>
+<field address="0x20187c" name="u32_I_TX_ACT_424_00_TRANSCEIVE_CONTROL_REG" regname="CLIF_TRANSCEIVE_CONTROL_REG" rfprotocol="I_TX_ACT_424" type="u32" value="30001" valuetype="hex">
+<description>
+                Value for Register CLIF_TRANSCEIVE_CONTROL_REG.
+
+Note: Configuration: I_TX_ACT_424 starts from here.
+            </description>
+</field>
+<field address="0x201880" name="u32_I_TX_ACT_424_01_ANA_TX_AMPLITUDE_REG" regname="CLIF_ANA_TX_AMPLITUDE_REG" rfprotocol="I_TX_ACT_424" type="u32" value="ffff507c" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_AMPLITUDE_REG.
+            </description>
+</field>
+<field address="0x201884" name="u32_I_TX_ACT_424_02_ANA_TX_CLK_CONTROL_REG" regname="CLIF_ANA_TX_CLK_CONTROL_REG" rfprotocol="I_TX_ACT_424" type="u32" value="8f" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_CLK_CONTROL_REG.
+            </description>
+</field>
+<field address="0x201888" name="u32_I_TX_ACT_424_03_TX_UNDERSHOOT_CONFIG_REG" regname="CLIF_TX_UNDERSHOOT_CONFIG_REG" rfprotocol="I_TX_ACT_424" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_UNDERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x20188c" name="u32_I_TX_ACT_424_04_TX_OVERSHOOT_CONFIG_REG" regname="CLIF_TX_OVERSHOOT_CONFIG_REG" rfprotocol="I_TX_ACT_424" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_OVERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201890" name="u32_I_TX_ACT_424_05_ANA_TX_SHAPE_CONTROL_REG" regname="CLIF_ANA_TX_SHAPE_CONTROL_REG" rfprotocol="I_TX_ACT_424" type="u32" value="7010f33" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_SHAPE_CONTROL_REG.
+            </description>
+</field>
+<field address="0x201894" name="u32_I_TX_ACT_424_06_TX_DATA_MOD_REG" regname="CLIF_TX_DATA_MOD_REG" rfprotocol="I_TX_ACT_424" type="u32" value="16" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_DATA_MOD_REG.
+            </description>
+</field>
+<field address="0x201898" name="u32_I_TX_ACT_424_07_TX_SYMBOL_CONFIG_REG" regname="CLIF_TX_SYMBOL_CONFIG_REG" rfprotocol="I_TX_ACT_424" type="u32" value="31000f" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL_CONFIG_REG.
+            </description>
+</field>
+<field address="0x20189c" name="u32_I_TX_ACT_424_08_TX_SYMBOL01_MOD_REG" regname="CLIF_TX_SYMBOL01_MOD_REG" rfprotocol="I_TX_ACT_424" type="u32" value="16" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL01_MOD_REG.
+            </description>
+</field>
+<field address="0x2018a0" name="u32_I_TX_BOOT_00_TRANSCEIVE_CONTROL_REG" regname="CLIF_TRANSCEIVE_CONTROL_REG" rfprotocol="I_TX_BOOT" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TRANSCEIVE_CONTROL_REG.
+
+Note: Configuration: I_TX_BOOT starts from here.
+            </description>
+</field>
+<field address="0x2018a4" name="u32_I_TX_BOOT_01_ANA_PBF_CONTROL_REG" regname="CLIF_ANA_PBF_CONTROL_REG" rfprotocol="I_TX_BOOT" type="u32" value="a0" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_PBF_CONTROL_REG.
+            </description>
+</field>
+<field address="0x2018a8" name="u32_I_TX_BOOT_02_ANA_TX_AMPLITUDE_REG" regname="CLIF_ANA_TX_AMPLITUDE_REG" rfprotocol="I_TX_BOOT" type="u32" value="ffff0003" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_AMPLITUDE_REG.
+            </description>
+</field>
+<field address="0x2018ac" name="u32_I_TX_BOOT_03_ANA_TX_CLK_CONTROL_REG" regname="CLIF_ANA_TX_CLK_CONTROL_REG" rfprotocol="I_TX_BOOT" type="u32" value="83" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_CLK_CONTROL_REG.
+            </description>
+</field>
+<field address="0x2018b0" name="u32_I_TX_BOOT_04_TX_UNDERSHOOT_CONFIG_REG" regname="CLIF_TX_UNDERSHOOT_CONFIG_REG" rfprotocol="I_TX_BOOT" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_UNDERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2018b4" name="u32_I_TX_BOOT_05_TX_OVERSHOOT_CONFIG_REG" regname="CLIF_TX_OVERSHOOT_CONFIG_REG" rfprotocol="I_TX_BOOT" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_OVERSHOOT_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2018b8" name="u32_I_TX_BOOT_06_ANA_TX_SHAPE_CONTROL_REG" regname="CLIF_ANA_TX_SHAPE_CONTROL_REG" rfprotocol="I_TX_BOOT" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TX_SHAPE_CONTROL_REG.
+            </description>
+</field>
+<field address="0x2018bc" name="u32_I_TX_BOOT_07_TX_DATA_MOD_REG" regname="CLIF_TX_DATA_MOD_REG" rfprotocol="I_TX_BOOT" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_DATA_MOD_REG.
+            </description>
+</field>
+<field address="0x2018c0" name="u32_I_TX_BOOT_08_TX_SYMBOL23_MOD_REG" regname="CLIF_TX_SYMBOL23_MOD_REG" rfprotocol="I_TX_BOOT" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL23_MOD_REG.
+            </description>
+</field>
+<field address="0x2018c4" name="u32_I_TX_BOOT_09_TX_SYMBOL_CONFIG_REG" regname="CLIF_TX_SYMBOL_CONFIG_REG" rfprotocol="I_TX_BOOT" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2018c8" name="u32_I_TX_BOOT_10_ANA_CLK_MAN_REG" regname="CLIF_ANA_CLK_MAN_REG" rfprotocol="I_TX_BOOT" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_CLK_MAN_REG.
+            </description>
+</field>
+<field address="0x2018cc" name="u32_I_TX_BOOT_11_TX_SYMBOL01_MOD_REG" regname="CLIF_TX_SYMBOL01_MOD_REG" rfprotocol="I_TX_BOOT" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL01_MOD_REG.
+            </description>
+</field>
+<field address="0x2018d0" name="u32_I_TX_BOOT_12_TX_SYMBOL0_DEF_REG" regname="CLIF_TX_SYMBOL0_DEF_REG" rfprotocol="I_TX_BOOT" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL0_DEF_REG.
+            </description>
+</field>
+<field address="0x2018d4" name="u32_I_TX_BOOT_13_TX_SYMBOL1_DEF_REG" regname="CLIF_TX_SYMBOL1_DEF_REG" rfprotocol="I_TX_BOOT" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_TX_SYMBOL1_DEF_REG.
+            </description>
+</field>
+<field address="0x2018d8" name="u32_I_TX_BOOT_14_TEST_CONTROL_REG" regname="CLIF_TEST_CONTROL_REG" rfprotocol="I_TX_BOOT" type="u32" value="280000" valuetype="hex">
+<description>
+                Value for Register CLIF_TEST_CONTROL_REG.
+            </description>
+</field>
+</structure>
+<structure name="I_Rx_val" startAddress="0x2018dc" totalSize="384">
+<description>
+            Value to be applied to the corresponding CLIF register for CLIF Initiator Mode - Receive.
+        </description>
+<field address="0x2018dc" name="u32_I_RX_PASS_00_ANA_AGC_REG" regname="CLIF_ANA_AGC_REG" rfprotocol="I_RX_PASS" type="u32" value="2" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_AGC_REG.
+
+Note: Configuration: I_RX_PASS starts from here.
+            </description>
+</field>
+<field address="0x2018e0" name="u32_I_RX_PASS_01_AGC_INPUT_REG" regname="CLIF_AGC_INPUT_REG" rfprotocol="I_RX_PASS" type="u32" value="20001f0" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_INPUT_REG.
+            </description>
+</field>
+<field address="0x2018e4" name="u32_I_RX_A_106_P_00_ANA_RX_REG" regname="CLIF_ANA_RX_REG" rfprotocol="I_RX_A_106_P" type="u32" value="2002f" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_RX_REG.
+
+Note: Configuration: I_RX_A_106_P starts from here.
+            </description>
+</field>
+<field address="0x2018e8" name="u32_I_RX_A_106_P_01_SIGPRO_RM_CONFIG1_REG" regname="CLIF_SIGPRO_RM_CONFIG1_REG" rfprotocol="I_RX_A_106_P" type="u32" value="440dc" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_RM_CONFIG1_REG.
+            </description>
+</field>
+<field address="0x2018ec" name="u32_I_RX_A_106_P_02_AGC_CONFIG1_REG" regname="CLIF_AGC_CONFIG1_REG" rfprotocol="I_RX_A_106_P" type="u32" value="3e40104" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_CONFIG1_REG.
+            </description>
+</field>
+<field address="0x2018f0" name="u32_I_RX_A_106_P_03_AGC_CONFIG0_REG" regname="CLIF_AGC_CONFIG0_REG" rfprotocol="I_RX_A_106_P" type="u32" value="7001008b" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_CONFIG0_REG.
+            </description>
+</field>
+<field address="0x2018f4" name="u32_I_RX_A_106_P_04_RX_CONFIG_REG" regname="CLIF_RX_CONFIG_REG" rfprotocol="I_RX_A_106_P" type="u32" value="3" valuetype="hex">
+<description>
+                Value for Register CLIF_RX_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2018f8" name="u32_I_RX_A_212_00_ANA_RX_REG" regname="CLIF_ANA_RX_REG" rfprotocol="I_RX_A_212" type="u32" value="20026" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_RX_REG.
+
+Note: Configuration: I_RX_A_212 starts from here.
+            </description>
+</field>
+<field address="0x2018fc" name="u32_I_RX_A_212_01_SIGPRO_RM_CONFIG1_REG" regname="CLIF_SIGPRO_RM_CONFIG1_REG" rfprotocol="I_RX_A_212" type="u32" value="1192605" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_RM_CONFIG1_REG.
+            </description>
+</field>
+<field address="0x201900" name="u32_I_RX_A_212_02_AGC_CONFIG1_REG" regname="CLIF_AGC_CONFIG1_REG" rfprotocol="I_RX_A_212" type="u32" value="3e10a04" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_CONFIG1_REG.
+            </description>
+</field>
+<field address="0x201904" name="u32_I_RX_A_212_03_AGC_CONFIG0_REG" regname="CLIF_AGC_CONFIG0_REG" rfprotocol="I_RX_A_212" type="u32" value="40c0b" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_CONFIG0_REG.
+            </description>
+</field>
+<field address="0x201908" name="u32_I_RX_A_212_04_RX_CONFIG_REG" regname="CLIF_RX_CONFIG_REG" rfprotocol="I_RX_A_212" type="u32" value="23" valuetype="hex">
+<description>
+                Value for Register CLIF_RX_CONFIG_REG.
+            </description>
+</field>
+<field address="0x20190c" name="u32_I_RX_A_424_00_ANA_RX_REG" regname="CLIF_ANA_RX_REG" rfprotocol="I_RX_A_424" type="u32" value="20026" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_RX_REG.
+
+Note: Configuration: I_RX_A_424 starts from here.
+            </description>
+</field>
+<field address="0x201910" name="u32_I_RX_A_424_01_SIGPRO_RM_CONFIG1_REG" regname="CLIF_SIGPRO_RM_CONFIG1_REG" rfprotocol="I_RX_A_424" type="u32" value="1192905" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_RM_CONFIG1_REG.
+            </description>
+</field>
+<field address="0x201914" name="u32_I_RX_A_424_02_AGC_CONFIG1_REG" regname="CLIF_AGC_CONFIG1_REG" rfprotocol="I_RX_A_424" type="u32" value="3e10a04" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_CONFIG1_REG.
+            </description>
+</field>
+<field address="0x201918" name="u32_I_RX_A_424_03_AGC_CONFIG0_REG" regname="CLIF_AGC_CONFIG0_REG" rfprotocol="I_RX_A_424" type="u32" value="40c0b" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_CONFIG0_REG.
+            </description>
+</field>
+<field address="0x20191c" name="u32_I_RX_A_424_04_RX_CONFIG_REG" regname="CLIF_RX_CONFIG_REG" rfprotocol="I_RX_A_424" type="u32" value="23" valuetype="hex">
+<description>
+                Value for Register CLIF_RX_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201920" name="u32_I_RX_A_848_00_ANA_RX_REG" regname="CLIF_ANA_RX_REG" rfprotocol="I_RX_A_848" type="u32" value="20021" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_RX_REG.
+
+Note: Configuration: I_RX_A_848 starts from here.
+            </description>
+</field>
+<field address="0x201924" name="u32_I_RX_A_848_01_SIGPRO_RM_CONFIG1_REG" regname="CLIF_SIGPRO_RM_CONFIG1_REG" rfprotocol="I_RX_A_848" type="u32" value="10f2505" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_RM_CONFIG1_REG.
+            </description>
+</field>
+<field address="0x201928" name="u32_I_RX_A_848_02_AGC_CONFIG1_REG" regname="CLIF_AGC_CONFIG1_REG" rfprotocol="I_RX_A_848" type="u32" value="3e10a04" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_CONFIG1_REG.
+            </description>
+</field>
+<field address="0x20192c" name="u32_I_RX_A_848_03_AGC_CONFIG0_REG" regname="CLIF_AGC_CONFIG0_REG" rfprotocol="I_RX_A_848" type="u32" value="40c0b" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_CONFIG0_REG.
+            </description>
+</field>
+<field address="0x201930" name="u32_I_RX_A_848_04_RX_CONFIG_REG" regname="CLIF_RX_CONFIG_REG" rfprotocol="I_RX_A_848" type="u32" value="23" valuetype="hex">
+<description>
+                Value for Register CLIF_RX_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201934" name="u32_I_RX_B_00_AGC_CONFIG1_REG" regname="CLIF_AGC_CONFIG1_REG" rfprotocol="I_RX_B" type="u32" value="3e10a04" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_CONFIG1_REG.
+
+Note: Configuration: I_RX_B starts from here.
+            </description>
+</field>
+<field address="0x201938" name="u32_I_RX_B_01_AGC_CONFIG0_REG" regname="CLIF_AGC_CONFIG0_REG" rfprotocol="I_RX_B" type="u32" value="40c0b" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_CONFIG0_REG.
+            </description>
+</field>
+<field address="0x20193c" name="u32_I_RX_B_02_RX_CONFIG_REG" regname="CLIF_RX_CONFIG_REG" rfprotocol="I_RX_B" type="u32" value="54" valuetype="hex">
+<description>
+                Value for Register CLIF_RX_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201940" name="u32_I_RX_B_106_00_ANA_RX_REG" regname="CLIF_ANA_RX_REG" rfprotocol="I_RX_B_106" type="u32" value="2002b" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_RX_REG.
+
+Note: Configuration: I_RX_B_106 starts from here.
+            </description>
+</field>
+<field address="0x201944" name="u32_I_RX_B_106_01_SIGPRO_RM_CONFIG1_REG" regname="CLIF_SIGPRO_RM_CONFIG1_REG" rfprotocol="I_RX_B_106" type="u32" value="11f4615" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_RM_CONFIG1_REG.
+            </description>
+</field>
+<field address="0x201948" name="u32_I_RX_B_212_00_ANA_RX_REG" regname="CLIF_ANA_RX_REG" rfprotocol="I_RX_B_212" type="u32" value="20026" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_RX_REG.
+
+Note: Configuration: I_RX_B_212 starts from here.
+            </description>
+</field>
+<field address="0x20194c" name="u32_I_RX_B_212_01_SIGPRO_RM_CONFIG1_REG" regname="CLIF_SIGPRO_RM_CONFIG1_REG" rfprotocol="I_RX_B_212" type="u32" value="1192805" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_RM_CONFIG1_REG.
+            </description>
+</field>
+<field address="0x201950" name="u32_I_RX_B_424_00_ANA_RX_REG" regname="CLIF_ANA_RX_REG" rfprotocol="I_RX_B_424" type="u32" value="20026" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_RX_REG.
+
+Note: Configuration: I_RX_B_424 starts from here.
+            </description>
+</field>
+<field address="0x201954" name="u32_I_RX_B_424_01_SIGPRO_RM_CONFIG1_REG" regname="CLIF_SIGPRO_RM_CONFIG1_REG" rfprotocol="I_RX_B_424" type="u32" value="1192a05" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_RM_CONFIG1_REG.
+            </description>
+</field>
+<field address="0x201958" name="u32_I_RX_B_848_00_ANA_RX_REG" regname="CLIF_ANA_RX_REG" rfprotocol="I_RX_B_848" type="u32" value="2002a" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_RX_REG.
+
+Note: Configuration: I_RX_B_848 starts from here.
+            </description>
+</field>
+<field address="0x20195c" name="u32_I_RX_B_848_01_SIGPRO_RM_CONFIG1_REG" regname="CLIF_SIGPRO_RM_CONFIG1_REG" rfprotocol="I_RX_B_848" type="u32" value="10f2505" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_RM_CONFIG1_REG.
+            </description>
+</field>
+<field address="0x201960" name="u32_I_RX_F_P_00_AGC_CONFIG1_REG" regname="CLIF_AGC_CONFIG1_REG" rfprotocol="I_RX_F_P" type="u32" value="3e10a04" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_CONFIG1_REG.
+
+Note: Configuration: I_RX_F_P starts from here.
+            </description>
+</field>
+<field address="0x201964" name="u32_I_RX_F_P_01_AGC_CONFIG0_REG" regname="CLIF_AGC_CONFIG0_REG" rfprotocol="I_RX_F_P" type="u32" value="40c0b" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_CONFIG0_REG.
+            </description>
+</field>
+<field address="0x201968" name="u32_I_RX_F_P_02_RX_CONFIG_REG" regname="CLIF_RX_CONFIG_REG" rfprotocol="I_RX_F_P" type="u32" value="38" valuetype="hex">
+<description>
+                Value for Register CLIF_RX_CONFIG_REG.
+            </description>
+</field>
+<field address="0x20196c" name="u32_I_RX_F_212_P_00_ANA_RX_REG" regname="CLIF_ANA_RX_REG" rfprotocol="I_RX_F_212_P" type="u32" value="20021" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_RX_REG.
+
+Note: Configuration: I_RX_F_212_P starts from here.
+            </description>
+</field>
+<field address="0x201970" name="u32_I_RX_F_212_P_01_SIGPRO_RM_CONFIG1_REG" regname="CLIF_SIGPRO_RM_CONFIG1_REG" rfprotocol="I_RX_F_212_P" type="u32" value="10f2605" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_RM_CONFIG1_REG.
+            </description>
+</field>
+<field address="0x201974" name="u32_I_RX_F_424_P_00_ANA_RX_REG" regname="CLIF_ANA_RX_REG" rfprotocol="I_RX_F_424_P" type="u32" value="20025" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_RX_REG.
+
+Note: Configuration: I_RX_F_424_P starts from here.
+            </description>
+</field>
+<field address="0x201978" name="u32_I_RX_F_424_P_01_SIGPRO_RM_CONFIG1_REG" regname="CLIF_SIGPRO_RM_CONFIG1_REG" rfprotocol="I_RX_F_424_P" type="u32" value="10f2605" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_RM_CONFIG1_REG.
+            </description>
+</field>
+<field address="0x20197c" name="u32_I_RX_15693_00_AGC_CONFIG1_REG" regname="CLIF_AGC_CONFIG1_REG" rfprotocol="I_RX_15693" type="u32" value="3e40104" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_CONFIG1_REG.
+
+Note: Configuration: I_RX_15693 starts from here.
+            </description>
+</field>
+<field address="0x201980" name="u32_I_RX_15693_01_AGC_CONFIG0_REG" regname="CLIF_AGC_CONFIG0_REG" rfprotocol="I_RX_15693" type="u32" value="7000008b" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_CONFIG0_REG.
+            </description>
+</field>
+<field address="0x201984" name="u32_I_RX_15693_02_RX_CONFIG_REG" regname="CLIF_RX_CONFIG_REG" rfprotocol="I_RX_15693" type="u32" value="1d10" valuetype="hex">
+<description>
+                Value for Register CLIF_RX_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201988" name="u32_I_RX_15693_26_00_ANA_RX_REG" regname="CLIF_ANA_RX_REG" rfprotocol="I_RX_15693_26" type="u32" value="2002a" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_RX_REG.
+
+Note: Configuration: I_RX_15693_26 starts from here.
+            </description>
+</field>
+<field address="0x20198c" name="u32_I_RX_15693_26_01_SIGPRO_RM_CONFIG1_REG" regname="CLIF_SIGPRO_RM_CONFIG1_REG" rfprotocol="I_RX_15693_26" type="u32" value="c4010" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_RM_CONFIG1_REG.
+            </description>
+</field>
+<field address="0x201990" name="u32_I_RX_15693_53_00_ANA_RX_REG" regname="CLIF_ANA_RX_REG" rfprotocol="I_RX_15693_53" type="u32" value="2002a" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_RX_REG.
+
+Note: Configuration: I_RX_15693_53 starts from here.
+            </description>
+</field>
+<field address="0x201994" name="u32_I_RX_15693_53_01_SIGPRO_RM_CONFIG1_REG" regname="CLIF_SIGPRO_RM_CONFIG1_REG" rfprotocol="I_RX_15693_53" type="u32" value="c4010" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_RM_CONFIG1_REG.
+            </description>
+</field>
+<field address="0x201998" name="u32_I_RX_EPCV2_00_AGC_CONFIG1_REG" regname="CLIF_AGC_CONFIG1_REG" rfprotocol="I_RX_EPCV2" type="u32" value="3e40a04" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_CONFIG1_REG.
+
+Note: Configuration: I_RX_EPCV2 starts from here.
+            </description>
+</field>
+<field address="0x20199c" name="u32_I_RX_EPCV2_01_AGC_CONFIG0_REG" regname="CLIF_AGC_CONFIG0_REG" rfprotocol="I_RX_EPCV2" type="u32" value="c0b" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_CONFIG0_REG.
+            </description>
+</field>
+<field address="0x2019a0" name="u32_I_RX_EPCV2_SC424_2MP_00_ANA_RX_REG" regname="CLIF_ANA_RX_REG" rfprotocol="I_RX_EPCV2_SC424_2MP" type="u32" value="2002e" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_RX_REG.
+
+Note: Configuration: I_RX_EPCV2_SC424_2MP starts from here.
+            </description>
+</field>
+<field address="0x2019a4" name="u32_I_RX_EPCV2_SC424_2MP_01_SIGPRO_RM_CONFIG1_REG" regname="CLIF_SIGPRO_RM_CONFIG1_REG" rfprotocol="I_RX_EPCV2_SC424_2MP" type="u32" value="c6014" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_RM_CONFIG1_REG.
+            </description>
+</field>
+<field address="0x2019a8" name="u32_I_RX_EPCV2_SC424_4MP_00_ANA_RX_REG" regname="CLIF_ANA_RX_REG" rfprotocol="I_RX_EPCV2_SC424_4MP" type="u32" value="2002a" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_RX_REG.
+
+Note: Configuration: I_RX_EPCV2_SC424_4MP starts from here.
+            </description>
+</field>
+<field address="0x2019ac" name="u32_I_RX_EPCV2_SC424_4MP_01_SIGPRO_RM_CONFIG1_REG" regname="CLIF_SIGPRO_RM_CONFIG1_REG" rfprotocol="I_RX_EPCV2_SC424_4MP" type="u32" value="c8014" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_RM_CONFIG1_REG.
+            </description>
+</field>
+<field address="0x2019b0" name="u32_I_RX_EPCV2_SC848_2MP_00_ANA_RX_REG" regname="CLIF_ANA_RX_REG" rfprotocol="I_RX_EPCV2_SC848_2MP" type="u32" value="2002f" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_RX_REG.
+
+Note: Configuration: I_RX_EPCV2_SC848_2MP starts from here.
+            </description>
+</field>
+<field address="0x2019b4" name="u32_I_RX_EPCV2_SC848_2MP_01_SIGPRO_RM_CONFIG1_REG" regname="CLIF_SIGPRO_RM_CONFIG1_REG" rfprotocol="I_RX_EPCV2_SC848_2MP" type="u32" value="c8094" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_RM_CONFIG1_REG.
+            </description>
+</field>
+<field address="0x2019b8" name="u32_I_RX_EPCV2_SC848_4MP_00_ANA_RX_REG" regname="CLIF_ANA_RX_REG" rfprotocol="I_RX_EPCV2_SC848_4MP" type="u32" value="20022" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_RX_REG.
+
+Note: Configuration: I_RX_EPCV2_SC848_4MP starts from here.
+            </description>
+</field>
+<field address="0x2019bc" name="u32_I_RX_EPCV2_SC848_4MP_01_SIGPRO_RM_CONFIG1_REG" regname="CLIF_SIGPRO_RM_CONFIG1_REG" rfprotocol="I_RX_EPCV2_SC848_4MP" type="u32" value="c7094" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_RM_CONFIG1_REG.
+            </description>
+</field>
+<field address="0x2019c0" name="u32_I_RX_ACT_00_ANA_AGC_REG" regname="CLIF_ANA_AGC_REG" rfprotocol="I_RX_ACT" type="u32" value="2" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_AGC_REG.
+
+Note: Configuration: I_RX_ACT starts from here.
+            </description>
+</field>
+<field address="0x2019c4" name="u32_I_RX_ACT_01_SIGPRO_RM_CONFIG1_REG" regname="CLIF_SIGPRO_RM_CONFIG1_REG" rfprotocol="I_RX_ACT" type="u32" value="10ccc05" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_RM_CONFIG1_REG.
+            </description>
+</field>
+<field address="0x2019c8" name="u32_I_RX_ACT_02_AGC_INPUT_REG" regname="CLIF_AGC_INPUT_REG" rfprotocol="I_RX_ACT" type="u32" value="3000150" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_INPUT_REG.
+            </description>
+</field>
+<field address="0x2019cc" name="u32_I_RX_ACT_03_ANA_CM_CONFIG_REG" regname="CLIF_ANA_CM_CONFIG_REG" rfprotocol="I_RX_ACT" type="u32" value="14080" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_CM_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2019d0" name="u32_I_RX_ACT_04_BBA_CONTROL_REG" regname="CLIF_BBA_CONTROL_REG" rfprotocol="I_RX_ACT" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_BBA_CONTROL_REG.
+            </description>
+</field>
+<field address="0x2019d4" name="u32_I_RX_ACT_05_ANA_CLK_MAN_REG" regname="CLIF_ANA_CLK_MAN_REG" rfprotocol="I_RX_ACT" type="u32" value="10" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_CLK_MAN_REG.
+            </description>
+</field>
+<field address="0x2019d8" name="u32_I_RX_ACT_106_00_ANA_RX_REG" regname="CLIF_ANA_RX_REG" rfprotocol="I_RX_ACT_106" type="u32" value="390a3" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_RX_REG.
+
+Note: Configuration: I_RX_ACT_106 starts from here.
+            </description>
+</field>
+<field address="0x2019dc" name="u32_I_RX_ACT_106_01_AGC_CONFIG1_REG" regname="CLIF_AGC_CONFIG1_REG" rfprotocol="I_RX_ACT_106" type="u32" value="207ff6" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_CONFIG1_REG.
+            </description>
+</field>
+<field address="0x2019e0" name="u32_I_RX_ACT_106_02_AGC_CONFIG0_REG" regname="CLIF_AGC_CONFIG0_REG" rfprotocol="I_RX_ACT_106" type="u32" value="4400b" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_CONFIG0_REG.
+            </description>
+</field>
+<field address="0x2019e4" name="u32_I_RX_ACT_106_03_SIGPRO_CM_CONFIG_REG" regname="CLIF_SIGPRO_CM_CONFIG_REG" rfprotocol="I_RX_ACT_106" type="u32" value="104" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_CM_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2019e8" name="u32_I_RX_ACT_106_04_RX_CONFIG_REG" regname="CLIF_RX_CONFIG_REG" rfprotocol="I_RX_ACT_106" type="u32" value="113" valuetype="hex">
+<description>
+                Value for Register CLIF_RX_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2019ec" name="u32_I_RX_ACT_212_00_ANA_RX_REG" regname="CLIF_ANA_RX_REG" rfprotocol="I_RX_ACT_212" type="u32" value="390a3" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_RX_REG.
+
+Note: Configuration: I_RX_ACT_212 starts from here.
+            </description>
+</field>
+<field address="0x2019f0" name="u32_I_RX_ACT_212_01_AGC_CONFIG1_REG" regname="CLIF_AGC_CONFIG1_REG" rfprotocol="I_RX_ACT_212" type="u32" value="207ff6" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_CONFIG1_REG.
+            </description>
+</field>
+<field address="0x2019f4" name="u32_I_RX_ACT_212_02_AGC_CONFIG0_REG" regname="CLIF_AGC_CONFIG0_REG" rfprotocol="I_RX_ACT_212" type="u32" value="4400b" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_CONFIG0_REG.
+            </description>
+</field>
+<field address="0x2019f8" name="u32_I_RX_ACT_212_03_SIGPRO_CM_CONFIG_REG" regname="CLIF_SIGPRO_CM_CONFIG_REG" rfprotocol="I_RX_ACT_212" type="u32" value="6206" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_CM_CONFIG_REG.
+            </description>
+</field>
+<field address="0x2019fc" name="u32_I_RX_ACT_212_04_SIGPRO_ADCBCM_THRESHOLD_REG" regname="CLIF_SIGPRO_ADCBCM_THRESHOLD_REG" rfprotocol="I_RX_ACT_212" type="u32" value="80060" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_ADCBCM_THRESHOLD_REG.
+            </description>
+</field>
+<field address="0x201a00" name="u32_I_RX_ACT_212_05_SIGPRO_ADCBCM_CONFIG_REG" regname="CLIF_SIGPRO_ADCBCM_CONFIG_REG" rfprotocol="I_RX_ACT_212" type="u32" value="f805d05" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_ADCBCM_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201a04" name="u32_I_RX_ACT_212_06_RX_CONFIG_REG" regname="CLIF_RX_CONFIG_REG" rfprotocol="I_RX_ACT_212" type="u32" value="38" valuetype="hex">
+<description>
+                Value for Register CLIF_RX_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201a08" name="u32_I_RX_ACT_424_00_ANA_RX_REG" regname="CLIF_ANA_RX_REG" rfprotocol="I_RX_ACT_424" type="u32" value="390a3" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_RX_REG.
+
+Note: Configuration: I_RX_ACT_424 starts from here.
+            </description>
+</field>
+<field address="0x201a0c" name="u32_I_RX_ACT_424_01_AGC_CONFIG1_REG" regname="CLIF_AGC_CONFIG1_REG" rfprotocol="I_RX_ACT_424" type="u32" value="207ff6" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_CONFIG1_REG.
+            </description>
+</field>
+<field address="0x201a10" name="u32_I_RX_ACT_424_02_AGC_CONFIG0_REG" regname="CLIF_AGC_CONFIG0_REG" rfprotocol="I_RX_ACT_424" type="u32" value="4400b" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_CONFIG0_REG.
+            </description>
+</field>
+<field address="0x201a14" name="u32_I_RX_ACT_424_03_SIGPRO_CM_CONFIG_REG" regname="CLIF_SIGPRO_CM_CONFIG_REG" rfprotocol="I_RX_ACT_424" type="u32" value="6206" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_CM_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201a18" name="u32_I_RX_ACT_424_04_SIGPRO_ADCBCM_THRESHOLD_REG" regname="CLIF_SIGPRO_ADCBCM_THRESHOLD_REG" rfprotocol="I_RX_ACT_424" type="u32" value="80060" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_ADCBCM_THRESHOLD_REG.
+            </description>
+</field>
+<field address="0x201a1c" name="u32_I_RX_ACT_424_05_SIGPRO_ADCBCM_CONFIG_REG" regname="CLIF_SIGPRO_ADCBCM_CONFIG_REG" rfprotocol="I_RX_ACT_424" type="u32" value="f805d09" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_ADCBCM_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201a20" name="u32_I_RX_ACT_424_06_RX_CONFIG_REG" regname="CLIF_RX_CONFIG_REG" rfprotocol="I_RX_ACT_424" type="u32" value="38" valuetype="hex">
+<description>
+                Value for Register CLIF_RX_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201a24" name="u32_I_RX_BOOT_00_ANA_RX_REG" regname="CLIF_ANA_RX_REG" rfprotocol="I_RX_BOOT" type="u32" value="3db20" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_RX_REG.
+
+Note: Configuration: I_RX_BOOT starts from here.
+            </description>
+</field>
+<field address="0x201a28" name="u32_I_RX_BOOT_01_ANA_AGC_REG" regname="CLIF_ANA_AGC_REG" rfprotocol="I_RX_BOOT" type="u32" value="2" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_AGC_REG.
+            </description>
+</field>
+<field address="0x201a2c" name="u32_I_RX_BOOT_02_SIGPRO_RM_CONFIG1_REG" regname="CLIF_SIGPRO_RM_CONFIG1_REG" rfprotocol="I_RX_BOOT" type="u32" value="c0000" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_RM_CONFIG1_REG.
+            </description>
+</field>
+<field address="0x201a30" name="u32_I_RX_BOOT_03_AGC_CONFIG1_REG" regname="CLIF_AGC_CONFIG1_REG" rfprotocol="I_RX_BOOT" type="u32" value="10107ff7" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_CONFIG1_REG.
+            </description>
+</field>
+<field address="0x201a34" name="u32_I_RX_BOOT_04_AGC_CONFIG0_REG" regname="CLIF_AGC_CONFIG0_REG" rfprotocol="I_RX_BOOT" type="u32" value="4007" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_CONFIG0_REG.
+            </description>
+</field>
+<field address="0x201a38" name="u32_I_RX_BOOT_05_AGC_INPUT_REG" regname="CLIF_AGC_INPUT_REG" rfprotocol="I_RX_BOOT" type="u32" value="3000150" valuetype="hex">
+<description>
+                Value for Register CLIF_AGC_INPUT_REG.
+            </description>
+</field>
+<field address="0x201a3c" name="u32_I_RX_BOOT_06_ANA_CM_CONFIG_REG" regname="CLIF_ANA_CM_CONFIG_REG" rfprotocol="I_RX_BOOT" type="u32" value="c080" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_CM_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201a40" name="u32_I_RX_BOOT_07_ANA_TEST_REG" regname="CLIF_ANA_TEST_REG" rfprotocol="I_RX_BOOT" type="u32" value="50004a" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_TEST_REG.
+            </description>
+</field>
+<field address="0x201a44" name="u32_I_RX_BOOT_08_ANA_NFCLD_REG" regname="CLIF_ANA_NFCLD_REG" rfprotocol="I_RX_BOOT" type="u32" value="1c" valuetype="hex">
+<description>
+                Value for Register CLIF_ANA_NFCLD_REG.
+            </description>
+</field>
+<field address="0x201a48" name="u32_I_RX_BOOT_09_SIGPRO_CM_CONFIG_REG" regname="CLIF_SIGPRO_CM_CONFIG_REG" rfprotocol="I_RX_BOOT" type="u32" value="4" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_CM_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201a4c" name="u32_I_RX_BOOT_10_SIGPRO_ADCBCM_THRESHOLD_REG" regname="CLIF_SIGPRO_ADCBCM_THRESHOLD_REG" rfprotocol="I_RX_BOOT" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_ADCBCM_THRESHOLD_REG.
+            </description>
+</field>
+<field address="0x201a50" name="u32_I_RX_BOOT_11_SIGPRO_ADCBCM_CONFIG_REG" regname="CLIF_SIGPRO_ADCBCM_CONFIG_REG" rfprotocol="I_RX_BOOT" type="u32" value="1000000" valuetype="hex">
+<description>
+                Value for Register CLIF_SIGPRO_ADCBCM_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201a54" name="u32_I_RX_BOOT_12_RX_CONFIG_REG" regname="CLIF_RX_CONFIG_REG" rfprotocol="I_RX_BOOT" type="u32" value="2" valuetype="hex">
+<description>
+                Value for Register CLIF_RX_CONFIG_REG.
+            </description>
+</field>
+<field address="0x201a58" name="u32_I_RX_BOOT_13_BBA_CONTROL_REG" regname="CLIF_BBA_CONTROL_REG" rfprotocol="I_RX_BOOT" type="u32" value="0" valuetype="hex">
+<description>
+                Value for Register CLIF_BBA_CONTROL_REG.
+            </description>
+</field>
+</structure>
+</page>
+<page name="Trailer" startAddress="0x201a80" totalSize="64">
+<description>
+                Trailer region of the EEPROM.  This region does not contain any function data/values.
+                Test cases can write scratch data beyond this region.
+            </description>
+<structure name="Last" startAddress="0x201a80" totalSize="4">
+<description>
+                    Last structure on EEPROM. Starting from this address/region,
+                    there is nothing relevent for the example/reference implementation.
+                </description>
+<field address="0x201a80" name="dummyByte" type="u32" value="0x32363437" valuetype="hex">
+<description>Dummy Byte for the Structure</description>
+</field>
+</structure>
+</page>
+</pages>
+</UserEE>

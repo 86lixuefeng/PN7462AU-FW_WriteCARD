@@ -1,0 +1,6 @@
+digraph "phSysSv_Clif_MF_Authenticate_Parameters_t"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node0 [label="{phSysSv_Clif_MF_Authenticate\l_Parameters_t\n|+ ab_Key\l+ ab_Uid\l+ buidsz\l+ _bReserved\l+ _bReserved1\l+ dwRA\l+ dwRB\l+ dwRB1\l+ dwRB11\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}

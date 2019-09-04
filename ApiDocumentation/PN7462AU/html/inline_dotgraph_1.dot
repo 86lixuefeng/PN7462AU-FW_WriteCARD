@@ -1,0 +1,37 @@
+
+     digraph "Sample Usage"{
+         node [shape=oval, fontname="Helvetica", fontsize=10];
+         End;
+         Start;
+
+         node [shape=record, fontname="Helvetica", fontsize=10];
+
+     //Nodes
+         phhalTimer_Configure [URL ="\ref phhalTimer_Configure"];
+         phhalTimer_DeInit [URL ="\ref phhalTimer_DeInit"];
+         phhalTimer_GetStatus [URL ="\ref phhalTimer_GetStatus"];
+         phhalTimer_Init [URL ="\ref phhalTimer_Init"];
+         phhalTimer_ReleaseTimer [URL ="\ref phhalTimer_ReleaseTimer"];
+         phhalTimer_RequestTimer [URL ="\ref phhalTimer_RequestTimer"];
+         phhalTimer_Start [URL ="\ref phhalTimer_Start"];
+         phhalTimer_Stop [URL ="\ref phhalTimer_Stop"];
+
+     //Logical Flow
+         Start -> phhalTimer_Init -> phhalTimer_RequestTimer;
+         phhalTimer_RequestTimer -> phhalTimer_Start -> phhalTimer_Stop;
+         phhalTimer_Stop -> phhalTimer_Start;
+         phhalTimer_Stop -> phhalTimer_DeInit;
+         phhalTimer_Stop -> phhalTimer_ReleaseTimer;
+         phhalTimer_ReleaseTimer -> phhalTimer_DeInit;
+         phhalTimer_DeInit -> End;
+
+     //optionals
+         edge [ style="dashed", color="blue" ];
+         phhalTimer_Start -> phhalTimer_GetStatus;
+         phhalTimer_RequestTimer -> phhalTimer_Configure;
+         phhalTimer_Configure -> phhalTimer_Start;
+
+     //error/abort cases
+         edge [ style="dashed", color="red" ];
+
+     }

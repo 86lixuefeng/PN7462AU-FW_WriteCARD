@@ -1,0 +1,16 @@
+.\objects\phalt1t.o: ..\NxpNfcRdLib\comps\phalT1T\src\phalT1T.c
+.\objects\phalt1t.o: ..\PN7462AU\phCommon\inc\ph_Status.h
+.\objects\phalt1t.o: ..\PN7462AU\phCommon\inc\ph_NxpBuild.h
+.\objects\phalt1t.o: .\inc\APP_NxpBuild.h
+.\objects\phalt1t.o: ..\PN7462AU\phCommon\inc\ph_Datatypes.h
+.\objects\phalt1t.o: ..\PN7462AU\phCommon\inc\ph_Platform.h
+.\objects\phalt1t.o: ..\PN7462AU\phCommon\inc\ph_Config.h
+.\objects\phalt1t.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\phalt1t.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\phalt1t.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\phalt1t.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\phalt1t.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\phalt1t.o: ..\NxpNfcRdLib\intfs\phalT1T.h
+.\objects\phalt1t.o: ..\PN7462AU\phCommon\inc\ph_RefDefs.h
+.\objects\phalt1t.o: ..\PN7462AU\phCommon\inc\ph_TypeDefs.h
+.\objects\phalt1t.o: ..\NxpNfcRdLib\comps\phalT1T\src\Sw/phalT1T_Sw.h

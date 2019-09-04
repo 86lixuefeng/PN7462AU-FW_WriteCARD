@@ -1,0 +1,11 @@
+digraph "Error Code: ClkGen HAL"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir=LR;
+  Node2 [label="CLKGEN HAL",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d5e/group__phhal_clk_gen.html",tooltip="The Clock Generation APIs. "];
+  Node1 [label="Component Specific\l Error",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/dea/group__grp__comp_specific_error.html",tooltip="Component specific Error Codes. "];
+  Node0 [label="Error Code: ClkGen HAL",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1->Node0 [shape=plaintext, dir="back", style="solid"];
+  Node2->Node0 [shape=plaintext, dir="back", style="solid"];
+}

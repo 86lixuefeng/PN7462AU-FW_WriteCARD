@@ -1,0 +1,8 @@
+<map id="Other" name="Other">
+<area shape="rect" id="node1" href="$d1/d20/group__ph__Status.html" title="Contains definitions which are generic throughout the library. " alt="" coords="117,5,248,32"/>
+<area shape="rect" id="node2" href="$d9/d2b/group__ph__RefDefs.html" title="Platform depending definitions for memory location of variables. " alt="" coords="115,56,250,83"/>
+<area shape="rect" id="node3" href="$dc/dce/group__ph__Error.html" title="Common Error Codes. " alt="" coords="110,107,255,133"/>
+<area shape="rect" id="node4" href="$d7/d83/group__ph__Typedefs.html" title="Contains definitions for types defined within NxpRdLib. " alt="" coords="125,157,240,184"/>
+<area shape="rect" id="node6" href="$d8/d4c/group__ph__NxpBuild.html" title="Controls build behaviour of components. " alt="" coords="143,208,223,235"/>
+<area shape="rect" id="node7" href="$dc/d52/group__ph__Private.html" title="Private definitions and functions of all components. " alt="" coords="117,259,248,285"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="ROM Interface HAL" name="ROM Interface HAL">
+<area shape="rect" id="node1" href="$da/d83/group__ph_sys_sv___t_e_s_t_bus.html" title="APIs and Structrues for CLIF Test BUS Access. " alt="" coords="384,5,547,32"/>
+<area shape="rect" id="node2" href="$d7/d8d/group__ph_sys_sv___m_i_s_c.html" title="APIs and Structrues for Miscellaneous ROM Interface. " alt="" coords="386,56,545,83"/>
+<area shape="rect" id="node3" href="$d2/db1/group__ph_sys_sv___p_v_d_d.html" title="APIs and Structrues for PVDD Settings. " alt="" coords="384,107,547,133"/>
+<area shape="rect" id="node4" href="$d6/d66/group__grp__hal.html" title="Hardware Abstraction\l Layer" alt="" coords="5,125,152,166"/>
+<area shape="rect" id="node5" href="$d3/d73/group__ph_sys_sv___s_e_c_r_o_w.html" title="APIs and Structrues for SECROW Settings. " alt="" coords="398,157,533,184"/>
+<area shape="rect" id="node7" href="$d4/da5/group__ph_sys_sv___c_l_i_f.html" title="APIs and Structrues for CLIF related ROM Interface. " alt="" coords="397,208,533,235"/>
+<area shape="rect" id="node8" href="$d8/d49/group__ph_sys_sv___u_s_b_d_l.html" title="APIs and Structrues for USB Primary Download related settings. " alt="" coords="386,259,545,301"/>
+</map>

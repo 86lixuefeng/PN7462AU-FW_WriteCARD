@@ -1,0 +1,11 @@
+.\objects\phhalhif_usb.o: ..\PN7462AU\phHal\phhalHif\src\phhalHif_Usb.c
+.\objects\phhalhif_usb.o: ..\PN7462AU\phCommon\inc\ph_Datatypes.h
+.\objects\phhalhif_usb.o: ..\PN7462AU\phCommon\inc\ph_Platform.h
+.\objects\phhalhif_usb.o: ..\PN7462AU\phCommon\inc\ph_Config.h
+.\objects\phhalhif_usb.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\phhalhif_usb.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\phhalhif_usb.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\phhalhif_usb.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\phhalhif_usb.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\phhalhif_usb.o: ..\PN7462AU\phCommon\inc\ph_NxpBuild.h
+.\objects\phhalhif_usb.o: .\inc\APP_NxpBuild.h

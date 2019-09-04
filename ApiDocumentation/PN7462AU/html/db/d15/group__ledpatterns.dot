@@ -1,0 +1,11 @@
+digraph "Patterns for LED"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir=LR;
+  Node1 [label="Led",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/dd7/group__led.html",tooltip="LED Handling. "];
+  Node0 [label="Patterns for LED",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node2 [label="Bits for LED",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/ded/group__bitsforled.html",tooltip="Bits to identify which LED has to be swithed on. "];
+  Node1->Node0 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node2 [shape=plaintext, dir="back", style="solid"];
+}

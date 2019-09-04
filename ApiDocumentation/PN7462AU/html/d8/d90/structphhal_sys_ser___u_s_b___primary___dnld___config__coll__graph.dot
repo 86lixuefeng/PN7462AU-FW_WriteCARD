@@ -1,0 +1,6 @@
+digraph "phhalSysSer_USB_Primary_Dnld_Config"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node0 [label="{phhalSysSer_USB_Primary\l_Dnld_Config\n|+ Primary_Dnld_Disable\l+ CRP_Level\l+ DRP_Level\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}

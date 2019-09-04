@@ -1,0 +1,11 @@
+digraph "Masking Codes"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir=LR;
+  Node2 [label="Success Conditions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d93/group__grp___success___err___code.html",tooltip="Return status that denote a sucessful operation. "];
+  Node0 [label="Masking Codes",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 [label="Other",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/d86/group__grp__others.html"];
+  Node1->Node0 [shape=plaintext, dir="back", style="solid"];
+  Node2->Node0 [shape=plaintext, dir="back", style="solid"];
+}

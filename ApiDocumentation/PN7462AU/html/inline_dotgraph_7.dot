@@ -1,0 +1,42 @@
+
+
+ digraph "Sample Usage" {
+         node [shape=oval, fontname="Helvetica", fontsize=10];
+         Start;
+         End;
+
+         node [shape=record, fontname="Helvetica", fontsize=10];
+
+     //Nodes
+         phhalI2CM_Config [ URL="\ref phhalI2CM_Config"];
+         phhalI2CM_DeInit[ URL="\ref phhalI2CM_DeInit"];
+         phhalI2CM_GenCallReset [ URL="\ref phhalI2CM_GenCallReset"];
+         phhalI2CM_Init [ URL="\ref phhalI2CM_Init"];
+         //phhalI2CM_QueueRx [ URL="\ref phhalI2CM_QueueRx"];
+         //phhalI2CM_QueueTx [ URL="\ref phhalI2CM_QueueTx"];
+         phhalI2CM_Receive [ URL="\ref phhalI2CM_Receive"];
+         phhalI2CM_Reset [ URL="\ref phhalI2CM_Reset"];
+         phhalI2CM_SlaveCheck [ URL="\ref phhalI2CM_SlaveCheck"];
+         //phhalI2CM_Start [ URL="\ref phhalI2CM_Start"];
+         phhalI2CM_Transmit [ URL="\ref phhalI2CM_Transmit"];
+
+     //Logical Flow
+         Start -> phhalI2CM_Init -> phhalI2CM_Config;
+         phhalI2CM_Config -> phhalI2CM_Receive;
+         phhalI2CM_Config -> phhalI2CM_Transmit;
+         phhalI2CM_Receive -> phhalI2CM_DeInit;
+         phhalI2CM_Transmit -> phhalI2CM_DeInit;
+         phhalI2CM_DeInit -> End;
+
+     //optionals
+         edge [ style="dashed", color="blue" ];
+         phhalI2CM_Config -> phhalI2CM_SlaveCheck [label = "If there are\nmultiple slaves"];
+         phhalI2CM_SlaveCheck -> phhalI2CM_Receive;
+         phhalI2CM_SlaveCheck -> phhalI2CM_Transmit;
+         phhalI2CM_Config -> phhalI2CM_GenCallReset;
+
+     //error/abort cases
+         edge [ style="dashed", color="red" ];
+         phhalI2CM_Reset -> End;
+
+     }

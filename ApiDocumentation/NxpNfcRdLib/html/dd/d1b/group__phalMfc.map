@@ -1,0 +1,4 @@
+<map id="MIFARE Classic contactless IC" name="MIFARE Classic contactless IC">
+<area shape="rect" id="node2" href="$dc/d86/group__phalMfc__Sw.html" title="Component : Software" alt="" coords="430,5,581,32"/>
+<area shape="rect" id="node3" href="$d3/d6e/group__phal.html" title="Contains Application specific implementations for various contactless cards (MIFARE DESFire..." alt="" coords="5,5,128,32"/>
+</map>

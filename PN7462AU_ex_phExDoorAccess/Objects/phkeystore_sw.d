@@ -1,0 +1,16 @@
+.\objects\phkeystore_sw.o: ..\NxpNfcRdLib\comps\phKeyStore\src\Sw\phKeyStore_Sw.c
+.\objects\phkeystore_sw.o: ..\PN7462AU\phCommon\inc\ph_Status.h
+.\objects\phkeystore_sw.o: ..\PN7462AU\phCommon\inc\ph_NxpBuild.h
+.\objects\phkeystore_sw.o: .\inc\APP_NxpBuild.h
+.\objects\phkeystore_sw.o: ..\PN7462AU\phCommon\inc\ph_Datatypes.h
+.\objects\phkeystore_sw.o: ..\PN7462AU\phCommon\inc\ph_Platform.h
+.\objects\phkeystore_sw.o: ..\PN7462AU\phCommon\inc\ph_Config.h
+.\objects\phkeystore_sw.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\phkeystore_sw.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\phkeystore_sw.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\phkeystore_sw.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\phkeystore_sw.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\phkeystore_sw.o: ..\NxpNfcRdLib\intfs\phKeyStore.h
+.\objects\phkeystore_sw.o: ..\NxpNfcRdLib\comps\phKeyStore\src\Sw\phKeyStore_Sw.h
+.\objects\phkeystore_sw.o: ..\NxpNfcRdLib\comps\phKeyStore\src\Sw\phKeyStore_Sw_Int.h
+.\objects\phkeystore_sw.o: ..\NxpNfcRdLib\comps\phKeyStore\src\Sw\../phKeyStore_Int.h

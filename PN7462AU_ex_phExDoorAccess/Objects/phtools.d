@@ -1,0 +1,16 @@
+.\objects\phtools.o: ..\NxpNfcRdLib\comps\phTools\src\phTools.c
+.\objects\phtools.o: ..\NxpNfcRdLib\intfs\phTools.h
+.\objects\phtools.o: ..\PN7462AU\phCommon\inc\ph_Status.h
+.\objects\phtools.o: ..\PN7462AU\phCommon\inc\ph_NxpBuild.h
+.\objects\phtools.o: .\inc\APP_NxpBuild.h
+.\objects\phtools.o: ..\PN7462AU\phCommon\inc\ph_Datatypes.h
+.\objects\phtools.o: ..\PN7462AU\phCommon\inc\ph_Platform.h
+.\objects\phtools.o: ..\PN7462AU\phCommon\inc\ph_Config.h
+.\objects\phtools.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\phtools.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\phtools.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\phtools.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\phtools.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\phtools.o: ..\PN7462AU\phCommon\inc\ph_RefDefs.h
+.\objects\phtools.o: ..\PN7462AU\phCommon\inc\ph_TypeDefs.h
+.\objects\phtools.o: ..\NxpNfcRdLib\intfs\NxpNfcRdLib_Ver.h

@@ -1,0 +1,14 @@
+.\objects\phhalsysser_ds5.o: ..\PN7462AU\phROMIntf\phhalSysSer\src\phhalSysSer_DS5.c
+.\objects\phhalsysser_ds5.o: ..\PN7462AU\phCommon\inc\ph_Datatypes.h
+.\objects\phhalsysser_ds5.o: ..\PN7462AU\phCommon\inc\ph_Platform.h
+.\objects\phhalsysser_ds5.o: ..\PN7462AU\phCommon\inc\ph_Config.h
+.\objects\phhalsysser_ds5.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\phhalsysser_ds5.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\phhalsysser_ds5.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\phhalsysser_ds5.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\phhalsysser_ds5.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\phhalsysser_ds5.o: ..\PN7462AU\phCommon\inc\ph_Status.h
+.\objects\phhalsysser_ds5.o: ..\PN7462AU\phCommon\inc\ph_NxpBuild.h
+.\objects\phhalsysser_ds5.o: .\inc\APP_NxpBuild.h
+.\objects\phhalsysser_ds5.o: ..\PN7462AU\phCommon\inc\phhalSysSer.h
+.\objects\phhalsysser_ds5.o: ..\PN7462AU\phCommon\inc\phSysSv_Data.h

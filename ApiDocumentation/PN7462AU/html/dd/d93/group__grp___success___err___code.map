@@ -1,0 +1,7 @@
+<map id="Success Conditions" name="Success Conditions">
+<area shape="rect" id="node2" href="$dd/d5e/group__ph_comp_codes_m_a_s_k.html" title="Macros to mask/recover Component Codes for error status. " alt="" coords="423,5,535,32"/>
+<area shape="rect" id="node3" href="$da/d3f/group__grp___comm___err___code.html" title="Return status that denote failures of communication/IO/Tx&#45;Rx. " alt="" coords="403,56,554,83"/>
+<area shape="rect" id="node4" href="$d8/d94/group__grp___generic___err___code.html" title="Return status that denote common failures. " alt="" coords="425,107,532,133"/>
+<area shape="rect" id="node6" href="$de/d44/group__ph_comp_codes.html" title="IDs/Codes of NxpNfcLib Components. " alt="" coords="387,157,570,184"/>
+<area shape="rect" id="node5" href="$d9/d00/group__ph___error.html" title="Error Code Collection" alt="" coords="6,81,151,108"/>
+</map>

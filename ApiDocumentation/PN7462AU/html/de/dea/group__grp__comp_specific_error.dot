@@ -1,0 +1,29 @@
+digraph "Component Specific Error"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir=LR;
+  Node2 [label="Error Code: CT HAL",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d71/group__grp_err___hal_ct.html",tooltip="Error codes for CT HAL. "];
+  Node7 [label="Error Code: PMU HAL",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d3/d3d/group__grp_err___hal_p_m_u.html",tooltip="Error codes for PMU HAL. "];
+  Node3 [label="Error Code: CT (Sync) HAL",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/df5/group__grp_err___hal_sync_c_t.html",tooltip="Error codes for Synchronous CT HAL. "];
+  Node5 [label="Error Code: USB HAL",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d94/group__grp_err___hal_u_s_b.html",tooltip="Error codes for USB HAL. "];
+  Node4 [label="Error Code: HIF HAL",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/de4/group__grp_err___hal_hif.html",tooltip="Error codes for HIF HAL. "];
+  Node1 [label="Error Code Collection",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/d00/group__ph___error.html"];
+  Node8 [label="Error Code: I2CM HAL",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/df1/group__grp_err___hal_i2_c_m.html",tooltip="Error codes for I2C Master HAL. "];
+  Node9 [label="Error Code: SPIM HAL",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d24/group__grp_err___hal_s_p_i_m.html",tooltip="Error codes for SPI Master HAL. "];
+  Node0 [label="Component Specific\l Error",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node10 [label="Error Code: ClkGen HAL",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/db2/group__grp_err___hal_clk_gen.html",tooltip="Error codes for CLKGen HAL. "];
+  Node11 [label="Error Code: CT PAL",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$db/d78/group__grp_err___pal_ct.html",tooltip="Error codes for CT PAL. "];
+  Node6 [label="Error Code: PCR HAL",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/d6c/group__grp_err___hal_p_c_r.html",tooltip="Error codes for PCR HAL. "];
+  Node1->Node0 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node2 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node3 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node4 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node5 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node6 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node7 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node8 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node9 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node10 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node11 [shape=plaintext, dir="back", style="solid"];
+}

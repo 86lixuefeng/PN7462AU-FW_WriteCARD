@@ -1,0 +1,17 @@
+digraph "Other"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir=LR;
+  Node3 [label="Component Codes",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/d23/group__grp___component___codes.html"];
+  Node4 [label="Masking Codes",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d5e/group__ph_comp_codes_m_a_s_k.html",tooltip="Macros to mask/recover Component Codes for error status. "];
+  Node1 [label="RTOS wrapper",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/dbf/group__ph_rtos.html",tooltip="The RTOS Abstraction APIs. "];
+  Node2 [label="Generic Definitions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/da6/group__ph___status.html",tooltip="Generic Definitions. "];
+  Node5 [label="Error Code Collection",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/d00/group__ph___error.html"];
+  Node0 [label="Other",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node0->Node1 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node2 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node3 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node4 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node5 [shape=plaintext, dir="back", style="solid"];
+}

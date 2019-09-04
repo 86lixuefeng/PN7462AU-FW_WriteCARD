@@ -1,0 +1,16 @@
+.\objects\phuser.o: ..\PN7462AU\phCommon\src\phUser.c
+.\objects\phuser.o: ..\PN7462AU\phCommon\inc\ph_Datatypes.h
+.\objects\phuser.o: ..\PN7462AU\phCommon\inc\ph_Platform.h
+.\objects\phuser.o: ..\PN7462AU\phCommon\inc\ph_Config.h
+.\objects\phuser.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\phuser.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\phuser.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\phuser.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\phuser.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\phuser.o: ..\PN7462AU\phCommon\inc\ph_Status.h
+.\objects\phuser.o: ..\PN7462AU\phCommon\inc\ph_NxpBuild.h
+.\objects\phuser.o: .\inc\APP_NxpBuild.h
+.\objects\phuser.o: ..\PN7462AU\phCommon\inc\phUser.h
+.\objects\phuser.o: ..\PN7462AU\phCommon\inc\ph_Log.h
+.\objects\phuser.o: ..\PN7462AU\phCommon\inc\phhalTimer.h
+.\objects\phuser.o: ..\PN7462AU\phCommon\inc\PN7462AU_ROM3.h

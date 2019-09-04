@@ -1,0 +1,6 @@
+digraph "phCfg_EE_phRFLP_T_Rx_val"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node0 [label="{phCfg_EE_phRFLP_T_Rx_val\n|+ u32_T_RX_GTM_00_ANA\l_RX_REG\l+ u32_T_RX_GTM_01_ANA\l_AGC_REG\l+ u32_T_RX_GTM_02_AGC\l_CONFIG1_REG\l+ u32_T_RX_GTM_03_AGC\l_CONFIG0_REG\l+ u32_T_RX_GTM_04_AGC\l_INPUT_REG\l+ u32_T_RX_GTM_05_SIGPRO\l_ADCBCM_THRESHOLD_REG\l+ u32_T_RX_GTM_06_SIGPRO\l_ADCBCM_CONFIG_REG\l+ u32_T_RX_GTM_07_ANA\l_CM_CONFIG_REG\l+ u32_T_RX_GTM_08_SIGPRO\l_CM_CONFIG_REG\l+ u32_T_RX_GTM_09_SIGPRO\l_RM_CONFIG1_REG\land 62 more...\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}

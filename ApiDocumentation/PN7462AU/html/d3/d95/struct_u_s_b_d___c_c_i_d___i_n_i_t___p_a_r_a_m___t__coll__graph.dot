@@ -1,0 +1,6 @@
+digraph "USBD_CCID_INIT_PARAM_T"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node0 [label="{USBD_CCID_INIT_PARAM_T\n|+ mem_base\l+ mem_size\l+ intf_desc\l+ CCID_Ep0_Hdlr\l+ CCID_EpIntIn_Hdlr\l+ CCID_EpBulkIn_Hdlr\l+ CCID_EpBulkOut_Hdlr\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}

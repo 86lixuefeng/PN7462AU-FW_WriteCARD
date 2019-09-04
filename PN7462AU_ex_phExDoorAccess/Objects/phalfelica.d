@@ -1,0 +1,15 @@
+.\objects\phalfelica.o: ..\NxpNfcRdLib\comps\phalFelica\src\phalFelica.c
+.\objects\phalfelica.o: ..\NxpNfcRdLib\intfs\phalFelica.h
+.\objects\phalfelica.o: ..\PN7462AU\phCommon\inc\ph_Status.h
+.\objects\phalfelica.o: ..\PN7462AU\phCommon\inc\ph_NxpBuild.h
+.\objects\phalfelica.o: .\inc\APP_NxpBuild.h
+.\objects\phalfelica.o: ..\PN7462AU\phCommon\inc\ph_Datatypes.h
+.\objects\phalfelica.o: ..\PN7462AU\phCommon\inc\ph_Platform.h
+.\objects\phalfelica.o: ..\PN7462AU\phCommon\inc\ph_Config.h
+.\objects\phalfelica.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\phalfelica.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\phalfelica.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\phalfelica.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\phalfelica.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\phalfelica.o: ..\PN7462AU\phCommon\inc\ph_RefDefs.h
+.\objects\phalfelica.o: ..\PN7462AU\phCommon\inc\ph_TypeDefs.h

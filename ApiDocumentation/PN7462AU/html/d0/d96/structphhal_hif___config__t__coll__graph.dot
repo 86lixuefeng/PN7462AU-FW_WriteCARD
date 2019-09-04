@@ -1,0 +1,10 @@
+digraph "phhalHif_Config_t"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node0 [label="{phhalHif_Config_t\n|+ bTimeout\l+ eInterface\l+ eBufferType\l+ bShortFrameLen\l+ bStoreErrData\l+ bHeaderSize\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node0 [color="grey25",fontsize="10",style="solid",label=" +sConfig" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node1 [label="{phhalHif_Config_t::\lphhalHif_IntfConfig\n|+ sI2cConfig\l+ sSpiConfig\l|}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d5f/unionphhal_hif___config__t_1_1phhal_hif___intf_config.html",tooltip="For Cofiguring the I2C,SPI and HSU register. "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +sHsuConfig" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{phhalHif_Hsu_t\n|+ bIsHsuBoot\l+ bEOF\l+ bStopBits\l+ bDummyBytes\l+ bBaudRate\l|}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d0/d92/structphhal_hif___hsu__t.html",tooltip="This structure gives the configuration parameters needed for HSU initialization. "];
+}

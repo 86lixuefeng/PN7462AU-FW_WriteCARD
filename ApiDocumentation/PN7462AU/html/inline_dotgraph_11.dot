@@ -1,0 +1,28 @@
+
+     digraph {
+         node [shape=oval, fontname="Helvetica", fontsize=10];
+         End;
+         Start;
+
+         node [shape=record, fontname="Helvetica", fontsize=10];
+
+     //Nodes
+         phhalRf_Init [ URL="\ref phhalRf_Init"];
+         phhalRf_DeInit [ URL="\ref phhalRf_DeInit"];
+         phhalRf_FieldOff [ URL="\ref phhalRf_FieldOff"];
+         phhalRf_FieldOn [ URL="\ref phhalRf_FieldOn"];
+         phhalRf_LoadProtocol_Initiator [ URL="\ref phhalRf_LoadProtocol_Initiator"];
+         phhalRf_PCD_SetExchgFdt [ URL="\ref phhalRf_PCD_SetExchgFdt"];
+         phhalRf_SetConfig [ URL="\ref PHHAL_RF_CONFIG_RXWAIT_US"];
+
+     //Logical Flow
+         Start ->phhalRf_Init -> phhalRf_LoadProtocol_Initiator;
+         phhalRf_LoadProtocol_Initiator -> phhalRf_FieldOn;
+         phhalRf_FieldOn -> phhalRf_PCD_SetExchgFdt;
+         phhalRf_PCD_SetExchgFdt -> phhalRf_SetMinGuardTime;
+         phhalRf_SetMinGuardTime -> phhalRf_PCD_Exchg;
+         phhalRf_PCD_Exchg -> phhalRf_FieldOff;
+         phhalRf_FieldOff -> phhalRf_DeInit;
+         phhalRf_DeInit -> End;
+
+     }

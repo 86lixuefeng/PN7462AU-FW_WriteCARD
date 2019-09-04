@@ -1,0 +1,13 @@
+digraph "Host Interface HAL"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir=LR;
+  Node3 [label="USB HAL",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d3/d9e/group__phhal_hif___u_s_b.html",tooltip="The USB (HAL) APIs. "];
+  Node2 [label="HIF (I2C,SPI,HSU) HAL",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d3/dad/group__phhal_hif.html",tooltip="The HOST Interface APIs. "];
+  Node0 [label="Host Interface HAL",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 [label="Hardware Abstraction\l Layer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/d66/group__grp__hal.html"];
+  Node1->Node0 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node2 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node3 [shape=plaintext, dir="back", style="solid"];
+}

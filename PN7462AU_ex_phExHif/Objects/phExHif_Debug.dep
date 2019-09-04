@@ -1,0 +1,679 @@
+Dependencies for Project 'phExHif', Target 'Debug': (DO NOT MODIFY !)
+F (..\PN7462AU\phBoot\src\phFlashBoot.c)(0x5B6D62A6)(--c99 -c --cpu Cortex-M0 -g -O1 --apcs=interwork --split_sections -I .\inc -I ..\PN7462AU\phCommon\inc -I ..\PN7462AU\phRtos\inc -I ..\PN7462AU\phBoot\inc -I ..\PN7462AU\phHal\phCfg\inc -I ..\PN7462AU\phHal\phhalClkGen\inc -I ..\PN7462AU\phHal\phhalFlash\inc -I ..\PN7462AU\phHal\phhalPcr\inc -I ..\PN7462AU\phHal\phhalPmu\inc -I ..\PN7462AU\phHal\phhalRf\inc -I ..\PN7462AU\phHal\phhalTimer\inc -I ..\PN7462AU\phHal\phLED\inc -I ..\PN7462AU\phROMIntf\phhalSysSer\inc-I.\RTE\_Debug-IC:\Keil_v5\ARM\PACK\NXP\PN7xxxxx\0.9.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -D__PN74XXXX__ -DPHFL_APP_NXBUILD_CONFIG-o .\objects\phflashboot.o --omf_browse .\objects\phflashboot.crf --depend .\objects\phflashboot.d)
+I (..\PN7462AU\phCommon\inc\ph_Datatypes.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Platform.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Config.h)(0x5B6D62A4)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
+I (..\PN7462AU\phCommon\inc\phFlashBoot.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Status.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_NxpBuild.h)(0x5B6D62A4)
+I (.\inc\APP_NxpBuild.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_pcr.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_pcr_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalPcr.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU_ROM3.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalPmu.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phUser.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalNvic.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_regcore.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Reg.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_regcore_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phCfg_EE.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalTimer.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalGpio.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalRng.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalEeprom.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_MemoryMap.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalFlash.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalClkGen.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_clkgen.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_clkgen_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalSysSer.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phSysSv_Data.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phRtos.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\wrapper/phRtos_NoRtos.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalCt.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_ctip.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_ctip_rorw.h)(0x5B6D62A4)
+F (..\PN7462AU\phHal\phCfg\src\phCfg_EE.c)(0x5B6D62A6)(--c99 -c --cpu Cortex-M0 -g -O1 --apcs=interwork --split_sections -I .\inc -I ..\PN7462AU\phCommon\inc -I ..\PN7462AU\phRtos\inc -I ..\PN7462AU\phBoot\inc -I ..\PN7462AU\phHal\phCfg\inc -I ..\PN7462AU\phHal\phhalClkGen\inc -I ..\PN7462AU\phHal\phhalFlash\inc -I ..\PN7462AU\phHal\phhalPcr\inc -I ..\PN7462AU\phHal\phhalPmu\inc -I ..\PN7462AU\phHal\phhalRf\inc -I ..\PN7462AU\phHal\phhalTimer\inc -I ..\PN7462AU\phHal\phLED\inc -I ..\PN7462AU\phROMIntf\phhalSysSer\inc-I.\RTE\_Debug-IC:\Keil_v5\ARM\PACK\NXP\PN7xxxxx\0.9.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -D__PN74XXXX__ -DPHFL_APP_NXBUILD_CONFIG-o .\objects\phcfg_ee.o --omf_browse .\objects\phcfg_ee.crf --depend .\objects\phcfg_ee.d)
+I (..\PN7462AU\phCommon\inc\ph_Datatypes.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Platform.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Config.h)(0x5B6D62A4)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
+I (..\PN7462AU\phCommon\inc\ph_NxpBuild.h)(0x5B6D62A4)
+I (.\inc\APP_NxpBuild.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phCfg_EE.h)(0x5B6D62A4)
+F (..\PN7462AU\phHal\phCfg\src\phCfg_PF.c)(0x5B6D62A6)(--c99 -c --cpu Cortex-M0 -g -O1 --apcs=interwork --split_sections -I .\inc -I ..\PN7462AU\phCommon\inc -I ..\PN7462AU\phRtos\inc -I ..\PN7462AU\phBoot\inc -I ..\PN7462AU\phHal\phCfg\inc -I ..\PN7462AU\phHal\phhalClkGen\inc -I ..\PN7462AU\phHal\phhalFlash\inc -I ..\PN7462AU\phHal\phhalPcr\inc -I ..\PN7462AU\phHal\phhalPmu\inc -I ..\PN7462AU\phHal\phhalRf\inc -I ..\PN7462AU\phHal\phhalTimer\inc -I ..\PN7462AU\phHal\phLED\inc -I ..\PN7462AU\phROMIntf\phhalSysSer\inc-I.\RTE\_Debug-IC:\Keil_v5\ARM\PACK\NXP\PN7xxxxx\0.9.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -D__PN74XXXX__ -DPHFL_APP_NXBUILD_CONFIG-o .\objects\phcfg_pf.o --omf_browse .\objects\phcfg_pf.crf --depend .\objects\phcfg_pf.d)
+I (..\PN7462AU\phCommon\inc\ph_Datatypes.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Platform.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Config.h)(0x5B6D62A4)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
+I (..\PN7462AU\phCommon\inc\ph_NxpBuild.h)(0x5B6D62A4)
+I (.\inc\APP_NxpBuild.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phCfg_EE.h)(0x5B6D62A4)
+F (..\PN7462AU\phHal\phhalClkGen\src\phhalClkGen.c)(0x5B6D62A6)(--c99 -c --cpu Cortex-M0 -g -O1 --apcs=interwork --split_sections -I .\inc -I ..\PN7462AU\phCommon\inc -I ..\PN7462AU\phRtos\inc -I ..\PN7462AU\phBoot\inc -I ..\PN7462AU\phHal\phCfg\inc -I ..\PN7462AU\phHal\phhalClkGen\inc -I ..\PN7462AU\phHal\phhalFlash\inc -I ..\PN7462AU\phHal\phhalPcr\inc -I ..\PN7462AU\phHal\phhalPmu\inc -I ..\PN7462AU\phHal\phhalRf\inc -I ..\PN7462AU\phHal\phhalTimer\inc -I ..\PN7462AU\phHal\phLED\inc -I ..\PN7462AU\phROMIntf\phhalSysSer\inc-I.\RTE\_Debug-IC:\Keil_v5\ARM\PACK\NXP\PN7xxxxx\0.9.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -D__PN74XXXX__ -DPHFL_APP_NXBUILD_CONFIG-o .\objects\phhalclkgen.o --omf_browse .\objects\phhalclkgen.crf --depend .\objects\phhalclkgen.d)
+I (..\PN7462AU\phCommon\inc\ph_Datatypes.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Platform.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Config.h)(0x5B6D62A4)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
+I (..\PN7462AU\phCommon\inc\ph_NxpBuild.h)(0x5B6D62A4)
+I (.\inc\APP_NxpBuild.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_pcr.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_pcr_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalClkGen.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_clkgen.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_clkgen_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Status.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Reg.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_clif.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_clif_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phUser.h)(0x5B6D62A4)
+F (..\PN7462AU\phCommon\src\phUser.c)(0x5B6D62A4)(--c99 -c --cpu Cortex-M0 -g -O1 --apcs=interwork --split_sections -I .\inc -I ..\PN7462AU\phCommon\inc -I ..\PN7462AU\phRtos\inc -I ..\PN7462AU\phBoot\inc -I ..\PN7462AU\phHal\phCfg\inc -I ..\PN7462AU\phHal\phhalClkGen\inc -I ..\PN7462AU\phHal\phhalFlash\inc -I ..\PN7462AU\phHal\phhalPcr\inc -I ..\PN7462AU\phHal\phhalPmu\inc -I ..\PN7462AU\phHal\phhalRf\inc -I ..\PN7462AU\phHal\phhalTimer\inc -I ..\PN7462AU\phHal\phLED\inc -I ..\PN7462AU\phROMIntf\phhalSysSer\inc-I.\RTE\_Debug-IC:\Keil_v5\ARM\PACK\NXP\PN7xxxxx\0.9.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -D__PN74XXXX__ -DPHFL_APP_NXBUILD_CONFIG-o .\objects\phuser.o --omf_browse .\objects\phuser.crf --depend .\objects\phuser.d)
+I (..\PN7462AU\phCommon\inc\ph_Datatypes.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Platform.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Config.h)(0x5B6D62A4)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
+I (..\PN7462AU\phCommon\inc\ph_Status.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_NxpBuild.h)(0x5B6D62A4)
+I (.\inc\APP_NxpBuild.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phUser.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Log.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalTimer.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU_ROM3.h)(0x5B6D62A4)
+F (..\PN7462AU\phHal\phLED\src\phLED.c)(0x5B6D62A6)(--c99 -c --cpu Cortex-M0 -g -O1 --apcs=interwork --split_sections -I .\inc -I ..\PN7462AU\phCommon\inc -I ..\PN7462AU\phRtos\inc -I ..\PN7462AU\phBoot\inc -I ..\PN7462AU\phHal\phCfg\inc -I ..\PN7462AU\phHal\phhalClkGen\inc -I ..\PN7462AU\phHal\phhalFlash\inc -I ..\PN7462AU\phHal\phhalPcr\inc -I ..\PN7462AU\phHal\phhalPmu\inc -I ..\PN7462AU\phHal\phhalRf\inc -I ..\PN7462AU\phHal\phhalTimer\inc -I ..\PN7462AU\phHal\phLED\inc -I ..\PN7462AU\phROMIntf\phhalSysSer\inc-I.\RTE\_Debug-IC:\Keil_v5\ARM\PACK\NXP\PN7xxxxx\0.9.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -D__PN74XXXX__ -DPHFL_APP_NXBUILD_CONFIG-o .\objects\phled.o --omf_browse .\objects\phled.crf --depend .\objects\phled.d)
+I (..\PN7462AU\phCommon\inc\ph_Datatypes.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Platform.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Config.h)(0x5B6D62A4)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
+I (..\PN7462AU\phCommon\inc\ph_NxpBuild.h)(0x5B6D62A4)
+I (.\inc\APP_NxpBuild.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalGpio.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_pcr.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_pcr_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU_ROM3.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Status.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phLED.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phUser.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Reg.h)(0x5B6D62A4)
+F (..\PN7462AU\phHal\phhalPcr\src\phhalGpio.c)(0x5B6D62A4)(--c99 -c --cpu Cortex-M0 -g -O1 --apcs=interwork --split_sections -I .\inc -I ..\PN7462AU\phCommon\inc -I ..\PN7462AU\phRtos\inc -I ..\PN7462AU\phBoot\inc -I ..\PN7462AU\phHal\phCfg\inc -I ..\PN7462AU\phHal\phhalClkGen\inc -I ..\PN7462AU\phHal\phhalFlash\inc -I ..\PN7462AU\phHal\phhalPcr\inc -I ..\PN7462AU\phHal\phhalPmu\inc -I ..\PN7462AU\phHal\phhalRf\inc -I ..\PN7462AU\phHal\phhalTimer\inc -I ..\PN7462AU\phHal\phLED\inc -I ..\PN7462AU\phROMIntf\phhalSysSer\inc-I.\RTE\_Debug-IC:\Keil_v5\ARM\PACK\NXP\PN7xxxxx\0.9.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -D__PN74XXXX__ -DPHFL_APP_NXBUILD_CONFIG-o .\objects\phhalgpio.o --omf_browse .\objects\phhalgpio.crf --depend .\objects\phhalgpio.d)
+I (..\PN7462AU\phCommon\inc\ph_Datatypes.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Platform.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Config.h)(0x5B6D62A4)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
+I (..\PN7462AU\phCommon\inc\ph_NxpBuild.h)(0x5B6D62A4)
+I (.\inc\APP_NxpBuild.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalGpio.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_pcr.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_pcr_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU_ROM3.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Status.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_regcore.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Reg.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_regcore_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalNvic.h)(0x5B6D62A4)
+F (..\PN7462AU\phHal\phhalPcr\src\phhalPcr.c)(0x5B6D62A6)(--c99 -c --cpu Cortex-M0 -g -O1 --apcs=interwork --split_sections -I .\inc -I ..\PN7462AU\phCommon\inc -I ..\PN7462AU\phRtos\inc -I ..\PN7462AU\phBoot\inc -I ..\PN7462AU\phHal\phCfg\inc -I ..\PN7462AU\phHal\phhalClkGen\inc -I ..\PN7462AU\phHal\phhalFlash\inc -I ..\PN7462AU\phHal\phhalPcr\inc -I ..\PN7462AU\phHal\phhalPmu\inc -I ..\PN7462AU\phHal\phhalRf\inc -I ..\PN7462AU\phHal\phhalTimer\inc -I ..\PN7462AU\phHal\phLED\inc -I ..\PN7462AU\phROMIntf\phhalSysSer\inc-I.\RTE\_Debug-IC:\Keil_v5\ARM\PACK\NXP\PN7xxxxx\0.9.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -D__PN74XXXX__ -DPHFL_APP_NXBUILD_CONFIG-o .\objects\phhalpcr.o --omf_browse .\objects\phhalpcr.crf --depend .\objects\phhalpcr.d)
+I (..\PN7462AU\phCommon\inc\ph_Datatypes.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Platform.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Config.h)(0x5B6D62A4)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
+I (..\PN7462AU\phCommon\inc\ph_NxpBuild.h)(0x5B6D62A4)
+I (.\inc\APP_NxpBuild.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalNvic.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_regcore.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Reg.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_regcore_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalPcr.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_pcr.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_pcr_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Status.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU_ROM3.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalPmu.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalGpio.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phUser.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_ctip.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_ctip_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_clkgen.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_clkgen_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_clif.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_clif_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalCt.h)(0x5B6D62A4)
+F (..\PN7462AU\phHal\phhalRf\src\phhalRf_Event.c)(0x5B6D62A6)(--c99 -c --cpu Cortex-M0 -g -O1 --apcs=interwork --split_sections -I .\inc -I ..\PN7462AU\phCommon\inc -I ..\PN7462AU\phRtos\inc -I ..\PN7462AU\phBoot\inc -I ..\PN7462AU\phHal\phCfg\inc -I ..\PN7462AU\phHal\phhalClkGen\inc -I ..\PN7462AU\phHal\phhalFlash\inc -I ..\PN7462AU\phHal\phhalPcr\inc -I ..\PN7462AU\phHal\phhalPmu\inc -I ..\PN7462AU\phHal\phhalRf\inc -I ..\PN7462AU\phHal\phhalTimer\inc -I ..\PN7462AU\phHal\phLED\inc -I ..\PN7462AU\phROMIntf\phhalSysSer\inc-I.\RTE\_Debug-IC:\Keil_v5\ARM\PACK\NXP\PN7xxxxx\0.9.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -D__PN74XXXX__ -DPHFL_APP_NXBUILD_CONFIG-o .\objects\phhalrf_event.o --omf_browse .\objects\phhalrf_event.crf --depend .\objects\phhalrf_event.d)
+I (..\PN7462AU\phCommon\inc\ph_Datatypes.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Platform.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Config.h)(0x5B6D62A4)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
+I (..\PN7462AU\phCommon\inc\ph_NxpBuild.h)(0x5B6D62A4)
+I (.\inc\APP_NxpBuild.h)(0x5B6D62A4)
+F (..\PN7462AU\phHal\phhalRf\src\phhalRf_LP_V.c)(0x5B6D62A6)(--c99 -c --cpu Cortex-M0 -g -O1 --apcs=interwork --split_sections -I .\inc -I ..\PN7462AU\phCommon\inc -I ..\PN7462AU\phRtos\inc -I ..\PN7462AU\phBoot\inc -I ..\PN7462AU\phHal\phCfg\inc -I ..\PN7462AU\phHal\phhalClkGen\inc -I ..\PN7462AU\phHal\phhalFlash\inc -I ..\PN7462AU\phHal\phhalPcr\inc -I ..\PN7462AU\phHal\phhalPmu\inc -I ..\PN7462AU\phHal\phhalRf\inc -I ..\PN7462AU\phHal\phhalTimer\inc -I ..\PN7462AU\phHal\phLED\inc -I ..\PN7462AU\phROMIntf\phhalSysSer\inc-I.\RTE\_Debug-IC:\Keil_v5\ARM\PACK\NXP\PN7xxxxx\0.9.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -D__PN74XXXX__ -DPHFL_APP_NXBUILD_CONFIG-o .\objects\phhalrf_lp_v.o --omf_browse .\objects\phhalrf_lp_v.crf --depend .\objects\phhalrf_lp_v.d)
+I (..\PN7462AU\phCommon\inc\ph_Datatypes.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Platform.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Config.h)(0x5B6D62A4)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
+I (..\PN7462AU\phCommon\inc\ph_NxpBuild.h)(0x5B6D62A4)
+I (.\inc\APP_NxpBuild.h)(0x5B6D62A4)
+I (..\PN7462AU\phHal\phhalRf\src\phhalRf_LP_V.h)(0x5B6D62A6)
+I (..\PN7462AU\phCommon\inc\phhalRf.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_clif.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_clif_rorw.h)(0x5B6D62A4)
+F (.\src\phExHif.c)(0x5B6D62A4)(--c99 -c --cpu Cortex-M0 -g -O1 --apcs=interwork --split_sections -I .\inc -I ..\PN7462AU\phCommon\inc -I ..\PN7462AU\phRtos\inc -I ..\PN7462AU\phBoot\inc -I ..\PN7462AU\phHal\phCfg\inc -I ..\PN7462AU\phHal\phhalClkGen\inc -I ..\PN7462AU\phHal\phhalFlash\inc -I ..\PN7462AU\phHal\phhalPcr\inc -I ..\PN7462AU\phHal\phhalPmu\inc -I ..\PN7462AU\phHal\phhalRf\inc -I ..\PN7462AU\phHal\phhalTimer\inc -I ..\PN7462AU\phHal\phLED\inc -I ..\PN7462AU\phROMIntf\phhalSysSer\inc-I.\RTE\_Debug-IC:\Keil_v5\ARM\PACK\NXP\PN7xxxxx\0.9.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -D__PN74XXXX__ -DPHFL_APP_NXBUILD_CONFIG-o .\objects\phexhif.o --omf_browse .\objects\phexhif.crf --depend .\objects\phexhif.d)
+I (..\PN7462AU\phCommon\inc\ph_Datatypes.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Platform.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Config.h)(0x5B6D62A4)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
+I (..\PN7462AU\phCommon\inc\ph_Status.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_NxpBuild.h)(0x5B6D62A4)
+I (.\inc\APP_NxpBuild.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phCfg_EE.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phFlashBoot.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_pcr.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_pcr_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalPcr.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU_ROM3.h)(0x5B6D62A4)
+I (.\inc\phExHif.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phRtos.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\wrapper/phRtos_NoRtos.h)(0x5B6D62A4)
+I (.\inc\phExHif_Hw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phpalCt.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalCt.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_ctip.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_ctip_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Reg.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phLED.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Log.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalGpio.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phUser.h)(0x5B6D62A4)
+F (.\src\phExHif_Hw.c)(0x5B6D62A4)(--c99 -c --cpu Cortex-M0 -g -O1 --apcs=interwork --split_sections -I .\inc -I ..\PN7462AU\phCommon\inc -I ..\PN7462AU\phRtos\inc -I ..\PN7462AU\phBoot\inc -I ..\PN7462AU\phHal\phCfg\inc -I ..\PN7462AU\phHal\phhalClkGen\inc -I ..\PN7462AU\phHal\phhalFlash\inc -I ..\PN7462AU\phHal\phhalPcr\inc -I ..\PN7462AU\phHal\phhalPmu\inc -I ..\PN7462AU\phHal\phhalRf\inc -I ..\PN7462AU\phHal\phhalTimer\inc -I ..\PN7462AU\phHal\phLED\inc -I ..\PN7462AU\phROMIntf\phhalSysSer\inc-I.\RTE\_Debug-IC:\Keil_v5\ARM\PACK\NXP\PN7xxxxx\0.9.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -D__PN74XXXX__ -DPHFL_APP_NXBUILD_CONFIG-o .\objects\phexhif_hw.o --omf_browse .\objects\phexhif_hw.crf --depend .\objects\phexhif_hw.d)
+I (..\PN7462AU\phCommon\inc\ph_Datatypes.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Platform.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Config.h)(0x5B6D62A4)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
+I (..\PN7462AU\phCommon\inc\ph_Status.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_NxpBuild.h)(0x5B6D62A4)
+I (.\inc\APP_NxpBuild.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phCfg_EE.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phRtos.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\wrapper/phRtos_NoRtos.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phUser.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalHif.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU_ROM3.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalI2CM.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalSPIM.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalEeprom.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_MemoryMap.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalFlash.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_hif.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_hif_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalPcr.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_pcr.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_pcr_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalCt.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_ctip.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_ctip_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Reg.h)(0x5B6D62A4)
+I (.\inc\phExHif_Hw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phpalCt.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Log.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phLED.h)(0x5B6D62A4)
+F (..\PN7462AU\phHal\phhalPmu\src\phhalPmu.c)(0x5B6D62A6)(--c99 -c --cpu Cortex-M0 -g -O1 --apcs=interwork --split_sections -I .\inc -I ..\PN7462AU\phCommon\inc -I ..\PN7462AU\phRtos\inc -I ..\PN7462AU\phBoot\inc -I ..\PN7462AU\phHal\phCfg\inc -I ..\PN7462AU\phHal\phhalClkGen\inc -I ..\PN7462AU\phHal\phhalFlash\inc -I ..\PN7462AU\phHal\phhalPcr\inc -I ..\PN7462AU\phHal\phhalPmu\inc -I ..\PN7462AU\phHal\phhalRf\inc -I ..\PN7462AU\phHal\phhalTimer\inc -I ..\PN7462AU\phHal\phLED\inc -I ..\PN7462AU\phROMIntf\phhalSysSer\inc-I.\RTE\_Debug-IC:\Keil_v5\ARM\PACK\NXP\PN7xxxxx\0.9.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -D__PN74XXXX__ -DPHFL_APP_NXBUILD_CONFIG-o .\objects\phhalpmu.o --omf_browse .\objects\phhalpmu.crf --depend .\objects\phhalpmu.d)
+I (..\PN7462AU\phCommon\inc\ph_Datatypes.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Platform.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Config.h)(0x5B6D62A4)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
+I (..\PN7462AU\phCommon\inc\ph_NxpBuild.h)(0x5B6D62A4)
+I (.\inc\APP_NxpBuild.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalNvic.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_regcore.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Reg.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_regcore_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalPmu.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Status.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalPcr.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_pcr.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_pcr_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU_ROM3.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phUser.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_pmu.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_pmu_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_ctip.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_ctip_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalCt.h)(0x5B6D62A4)
+F (..\PN7462AU\phRtos\src\phRtos_NoRtos.c)(0x5B6D62A6)(--c99 -c --cpu Cortex-M0 -g -O1 --apcs=interwork --split_sections -I .\inc -I ..\PN7462AU\phCommon\inc -I ..\PN7462AU\phRtos\inc -I ..\PN7462AU\phBoot\inc -I ..\PN7462AU\phHal\phCfg\inc -I ..\PN7462AU\phHal\phhalClkGen\inc -I ..\PN7462AU\phHal\phhalFlash\inc -I ..\PN7462AU\phHal\phhalPcr\inc -I ..\PN7462AU\phHal\phhalPmu\inc -I ..\PN7462AU\phHal\phhalRf\inc -I ..\PN7462AU\phHal\phhalTimer\inc -I ..\PN7462AU\phHal\phLED\inc -I ..\PN7462AU\phROMIntf\phhalSysSer\inc-I.\RTE\_Debug-IC:\Keil_v5\ARM\PACK\NXP\PN7xxxxx\0.9.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -D__PN74XXXX__ -DPHFL_APP_NXBUILD_CONFIG-o .\objects\phrtos_nortos.o --omf_browse .\objects\phrtos_nortos.crf --depend .\objects\phrtos_nortos.d)
+I (..\PN7462AU\phCommon\inc\ph_Datatypes.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Platform.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Config.h)(0x5B6D62A4)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
+I (..\PN7462AU\phCommon\inc\phRtos.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Status.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_NxpBuild.h)(0x5B6D62A4)
+I (.\inc\APP_NxpBuild.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\wrapper/phRtos_NoRtos.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalTimer.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU_ROM3.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phUser.h)(0x5B6D62A4)
+F (..\PN7462AU\phROMIntf\phhalSysSer\src\phhalSysSer_DS5.c)(0x5B6D62A6)(--c99 -c --cpu Cortex-M0 -g -O1 --apcs=interwork --split_sections -I .\inc -I ..\PN7462AU\phCommon\inc -I ..\PN7462AU\phRtos\inc -I ..\PN7462AU\phBoot\inc -I ..\PN7462AU\phHal\phCfg\inc -I ..\PN7462AU\phHal\phhalClkGen\inc -I ..\PN7462AU\phHal\phhalFlash\inc -I ..\PN7462AU\phHal\phhalPcr\inc -I ..\PN7462AU\phHal\phhalPmu\inc -I ..\PN7462AU\phHal\phhalRf\inc -I ..\PN7462AU\phHal\phhalTimer\inc -I ..\PN7462AU\phHal\phLED\inc -I ..\PN7462AU\phROMIntf\phhalSysSer\inc-I.\RTE\_Debug-IC:\Keil_v5\ARM\PACK\NXP\PN7xxxxx\0.9.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -D__PN74XXXX__ -DPHFL_APP_NXBUILD_CONFIG-o .\objects\phhalsysser_ds5.o --omf_browse .\objects\phhalsysser_ds5.crf --depend .\objects\phhalsysser_ds5.d)
+I (..\PN7462AU\phCommon\inc\ph_Datatypes.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Platform.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Config.h)(0x5B6D62A4)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
+I (..\PN7462AU\phCommon\inc\ph_Status.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_NxpBuild.h)(0x5B6D62A4)
+I (.\inc\APP_NxpBuild.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalSysSer.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phSysSv_Data.h)(0x5B6D62A4)
+F (..\PN7462AU\phHal\phhalTimer\src\phhalTimer.c)(0x5B6D62A6)(--c99 -c --cpu Cortex-M0 -g -O1 --apcs=interwork --split_sections -I .\inc -I ..\PN7462AU\phCommon\inc -I ..\PN7462AU\phRtos\inc -I ..\PN7462AU\phBoot\inc -I ..\PN7462AU\phHal\phCfg\inc -I ..\PN7462AU\phHal\phhalClkGen\inc -I ..\PN7462AU\phHal\phhalFlash\inc -I ..\PN7462AU\phHal\phhalPcr\inc -I ..\PN7462AU\phHal\phhalPmu\inc -I ..\PN7462AU\phHal\phhalRf\inc -I ..\PN7462AU\phHal\phhalTimer\inc -I ..\PN7462AU\phHal\phLED\inc -I ..\PN7462AU\phROMIntf\phhalSysSer\inc-I.\RTE\_Debug-IC:\Keil_v5\ARM\PACK\NXP\PN7xxxxx\0.9.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -D__PN74XXXX__ -DPHFL_APP_NXBUILD_CONFIG-o .\objects\phhaltimer.o --omf_browse .\objects\phhaltimer.crf --depend .\objects\phhaltimer.d)
+I (..\PN7462AU\phCommon\inc\ph_Datatypes.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Platform.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Config.h)(0x5B6D62A4)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
+I (..\PN7462AU\phCommon\inc\ph_NxpBuild.h)(0x5B6D62A4)
+I (.\inc\APP_NxpBuild.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalTimer.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Status.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU_ROM3.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_regcore.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Reg.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_regcore_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_pcr.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_pcr_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_timers.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_timers_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalNvic.h)(0x5B6D62A4)
+I (..\PN7462AU\phHal\phhalTimer\src\phhalTimer_Int.h)(0x5B6D62A6)
+F (..\PN7462AU\phpalCt\src\phpalCt.c)(0x5B6D62A4)(--c99 -c --cpu Cortex-M0 -g -O1 --apcs=interwork --split_sections -I .\inc -I ..\PN7462AU\phCommon\inc -I ..\PN7462AU\phRtos\inc -I ..\PN7462AU\phBoot\inc -I ..\PN7462AU\phHal\phCfg\inc -I ..\PN7462AU\phHal\phhalClkGen\inc -I ..\PN7462AU\phHal\phhalFlash\inc -I ..\PN7462AU\phHal\phhalPcr\inc -I ..\PN7462AU\phHal\phhalPmu\inc -I ..\PN7462AU\phHal\phhalRf\inc -I ..\PN7462AU\phHal\phhalTimer\inc -I ..\PN7462AU\phHal\phLED\inc -I ..\PN7462AU\phROMIntf\phhalSysSer\inc-I.\RTE\_Debug-IC:\Keil_v5\ARM\PACK\NXP\PN7xxxxx\0.9.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -D__PN74XXXX__ -DPHFL_APP_NXBUILD_CONFIG-o .\objects\phpalct.o --omf_browse .\objects\phpalct.crf --depend .\objects\phpalct.d)
+I (..\PN7462AU\phCommon\inc\ph_Datatypes.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Platform.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Config.h)(0x5B6D62A4)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
+I (..\PN7462AU\phCommon\inc\ph_NxpBuild.h)(0x5B6D62A4)
+I (.\inc\APP_NxpBuild.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Status.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phUser.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phpalCt.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalCt.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_ctip.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_ctip_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU_ROM3.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Reg.h)(0x5B6D62A4)
+I (..\PN7462AU\phpalCt\src\phpalCt_T0.h)(0x5B6D62A4)
+I (..\PN7462AU\phpalCt\src\phpalCt_T1.h)(0x5B6D62A4)
+F (..\PN7462AU\phpalCt\src\phpalCt_T0.c)(0x5B6D62A4)(--c99 -c --cpu Cortex-M0 -g -O1 --apcs=interwork --split_sections -I .\inc -I ..\PN7462AU\phCommon\inc -I ..\PN7462AU\phRtos\inc -I ..\PN7462AU\phBoot\inc -I ..\PN7462AU\phHal\phCfg\inc -I ..\PN7462AU\phHal\phhalClkGen\inc -I ..\PN7462AU\phHal\phhalFlash\inc -I ..\PN7462AU\phHal\phhalPcr\inc -I ..\PN7462AU\phHal\phhalPmu\inc -I ..\PN7462AU\phHal\phhalRf\inc -I ..\PN7462AU\phHal\phhalTimer\inc -I ..\PN7462AU\phHal\phLED\inc -I ..\PN7462AU\phROMIntf\phhalSysSer\inc-I.\RTE\_Debug-IC:\Keil_v5\ARM\PACK\NXP\PN7xxxxx\0.9.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -D__PN74XXXX__ -DPHFL_APP_NXBUILD_CONFIG-o .\objects\phpalct_t0.o --omf_browse .\objects\phpalct_t0.crf --depend .\objects\phpalct_t0.d)
+I (..\PN7462AU\phCommon\inc\ph_Datatypes.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Platform.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Config.h)(0x5B6D62A4)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
+I (..\PN7462AU\phCommon\inc\ph_NxpBuild.h)(0x5B6D62A4)
+I (.\inc\APP_NxpBuild.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Status.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalCt.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_ctip.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_ctip_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU_ROM3.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Reg.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phpalCt.h)(0x5B6D62A4)
+I (..\PN7462AU\phpalCt\src\phpalCt_T0.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phUser.h)(0x5B6D62A4)
+F (..\PN7462AU\phpalCt\src\phpalCt_T1.c)(0x5B6D62A4)(--c99 -c --cpu Cortex-M0 -g -O1 --apcs=interwork --split_sections -I .\inc -I ..\PN7462AU\phCommon\inc -I ..\PN7462AU\phRtos\inc -I ..\PN7462AU\phBoot\inc -I ..\PN7462AU\phHal\phCfg\inc -I ..\PN7462AU\phHal\phhalClkGen\inc -I ..\PN7462AU\phHal\phhalFlash\inc -I ..\PN7462AU\phHal\phhalPcr\inc -I ..\PN7462AU\phHal\phhalPmu\inc -I ..\PN7462AU\phHal\phhalRf\inc -I ..\PN7462AU\phHal\phhalTimer\inc -I ..\PN7462AU\phHal\phLED\inc -I ..\PN7462AU\phROMIntf\phhalSysSer\inc-I.\RTE\_Debug-IC:\Keil_v5\ARM\PACK\NXP\PN7xxxxx\0.9.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -D__PN74XXXX__ -DPHFL_APP_NXBUILD_CONFIG-o .\objects\phpalct_t1.o --omf_browse .\objects\phpalct_t1.crf --depend .\objects\phpalct_t1.d)
+I (..\PN7462AU\phCommon\inc\ph_NxpBuild.h)(0x5B6D62A4)
+I (.\inc\APP_NxpBuild.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phUser.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Datatypes.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Platform.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Config.h)(0x5B6D62A4)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
+I (..\PN7462AU\phCommon\inc\ph_Status.h)(0x5B6D62A4)
+I (..\PN7462AU\phpalCt\src\phpalCt_T1.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phpalCt.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalCt.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_ctip.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_ctip_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU_ROM3.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Reg.h)(0x5B6D62A4)
+F (..\PN7462AU\phHal\phhalCt\src\phhalCt.c)(0x5B6D62A6)(--c99 -c --cpu Cortex-M0 -g -O1 --apcs=interwork --split_sections -I .\inc -I ..\PN7462AU\phCommon\inc -I ..\PN7462AU\phRtos\inc -I ..\PN7462AU\phBoot\inc -I ..\PN7462AU\phHal\phCfg\inc -I ..\PN7462AU\phHal\phhalClkGen\inc -I ..\PN7462AU\phHal\phhalFlash\inc -I ..\PN7462AU\phHal\phhalPcr\inc -I ..\PN7462AU\phHal\phhalPmu\inc -I ..\PN7462AU\phHal\phhalRf\inc -I ..\PN7462AU\phHal\phhalTimer\inc -I ..\PN7462AU\phHal\phLED\inc -I ..\PN7462AU\phROMIntf\phhalSysSer\inc-I.\RTE\_Debug-IC:\Keil_v5\ARM\PACK\NXP\PN7xxxxx\0.9.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -D__PN74XXXX__ -DPHFL_APP_NXBUILD_CONFIG-o .\objects\phhalct.o --omf_browse .\objects\phhalct.crf --depend .\objects\phhalct.d)
+I (..\PN7462AU\phCommon\inc\ph_Datatypes.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Platform.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Config.h)(0x5B6D62A4)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
+I (..\PN7462AU\phCommon\inc\ph_Status.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_NxpBuild.h)(0x5B6D62A4)
+I (.\inc\APP_NxpBuild.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalCt.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_ctip.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_ctip_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU_ROM3.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Reg.h)(0x5B6D62A4)
+I (..\PN7462AU\phHal\phhalCt\src\phhalCt_Int.h)(0x5B6D62A6)
+I (..\PN7462AU\phHal\phhalCt\src\phhalCt_Event.h)(0x5B6D62A6)
+I (..\PN7462AU\phCommon\inc\phFlashBoot_Event.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_regcore.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_regcore_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phUser.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalNvic.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalPmu.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalPcr.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_pcr.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_pcr_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalSysSer.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phSysSv_Data.h)(0x5B6D62A4)
+F (..\PN7462AU\phHal\phhalCt\src\phhalCt_Activate.c)(0x5B6D62A6)(--c99 -c --cpu Cortex-M0 -g -O1 --apcs=interwork --split_sections -I .\inc -I ..\PN7462AU\phCommon\inc -I ..\PN7462AU\phRtos\inc -I ..\PN7462AU\phBoot\inc -I ..\PN7462AU\phHal\phCfg\inc -I ..\PN7462AU\phHal\phhalClkGen\inc -I ..\PN7462AU\phHal\phhalFlash\inc -I ..\PN7462AU\phHal\phhalPcr\inc -I ..\PN7462AU\phHal\phhalPmu\inc -I ..\PN7462AU\phHal\phhalRf\inc -I ..\PN7462AU\phHal\phhalTimer\inc -I ..\PN7462AU\phHal\phLED\inc -I ..\PN7462AU\phROMIntf\phhalSysSer\inc-I.\RTE\_Debug-IC:\Keil_v5\ARM\PACK\NXP\PN7xxxxx\0.9.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -D__PN74XXXX__ -DPHFL_APP_NXBUILD_CONFIG-o .\objects\phhalct_activate.o --omf_browse .\objects\phhalct_activate.crf --depend .\objects\phhalct_activate.d)
+I (..\PN7462AU\phCommon\inc\ph_Datatypes.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Platform.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Config.h)(0x5B6D62A4)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
+I (..\PN7462AU\phCommon\inc\ph_NxpBuild.h)(0x5B6D62A4)
+I (.\inc\APP_NxpBuild.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalCt.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Status.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_ctip.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_ctip_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU_ROM3.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Reg.h)(0x5B6D62A4)
+I (..\PN7462AU\phHal\phhalCt\src\phhalCt_Int.h)(0x5B6D62A6)
+I (..\PN7462AU\phHal\phhalCt\src\phhalCt_Event.h)(0x5B6D62A6)
+I (..\PN7462AU\phCommon\inc\phFlashBoot_Event.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_regcore.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_regcore_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phUser.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalPmu.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalPcr.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_pcr.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_pcr_rorw.h)(0x5B6D62A4)
+F (..\PN7462AU\phHal\phhalCt\src\phhalCt_Common.c)(0x5B6D62A6)(--c99 -c --cpu Cortex-M0 -g -O1 --apcs=interwork --split_sections -I .\inc -I ..\PN7462AU\phCommon\inc -I ..\PN7462AU\phRtos\inc -I ..\PN7462AU\phBoot\inc -I ..\PN7462AU\phHal\phCfg\inc -I ..\PN7462AU\phHal\phhalClkGen\inc -I ..\PN7462AU\phHal\phhalFlash\inc -I ..\PN7462AU\phHal\phhalPcr\inc -I ..\PN7462AU\phHal\phhalPmu\inc -I ..\PN7462AU\phHal\phhalRf\inc -I ..\PN7462AU\phHal\phhalTimer\inc -I ..\PN7462AU\phHal\phLED\inc -I ..\PN7462AU\phROMIntf\phhalSysSer\inc-I.\RTE\_Debug-IC:\Keil_v5\ARM\PACK\NXP\PN7xxxxx\0.9.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -D__PN74XXXX__ -DPHFL_APP_NXBUILD_CONFIG-o .\objects\phhalct_common.o --omf_browse .\objects\phhalct_common.crf --depend .\objects\phhalct_common.d)
+I (..\PN7462AU\phCommon\inc\ph_Datatypes.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Platform.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Config.h)(0x5B6D62A4)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
+I (..\PN7462AU\phCommon\inc\ph_NxpBuild.h)(0x5B6D62A4)
+I (.\inc\APP_NxpBuild.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalCt.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Status.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_ctip.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_ctip_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU_ROM3.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Reg.h)(0x5B6D62A4)
+I (..\PN7462AU\phHal\phhalCt\src\phhalCt_Int.h)(0x5B6D62A6)
+I (..\PN7462AU\phHal\phhalCt\src\phhalCt_Event.h)(0x5B6D62A6)
+I (..\PN7462AU\phCommon\inc\phFlashBoot_Event.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_regcore.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_regcore_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalPmu.h)(0x5B6D62A4)
+F (..\PN7462AU\phHal\phhalCt\src\phhalCt_Event.c)(0x5B6D62A6)(--c99 -c --cpu Cortex-M0 -g -O1 --apcs=interwork --split_sections -I .\inc -I ..\PN7462AU\phCommon\inc -I ..\PN7462AU\phRtos\inc -I ..\PN7462AU\phBoot\inc -I ..\PN7462AU\phHal\phCfg\inc -I ..\PN7462AU\phHal\phhalClkGen\inc -I ..\PN7462AU\phHal\phhalFlash\inc -I ..\PN7462AU\phHal\phhalPcr\inc -I ..\PN7462AU\phHal\phhalPmu\inc -I ..\PN7462AU\phHal\phhalRf\inc -I ..\PN7462AU\phHal\phhalTimer\inc -I ..\PN7462AU\phHal\phLED\inc -I ..\PN7462AU\phROMIntf\phhalSysSer\inc-I.\RTE\_Debug-IC:\Keil_v5\ARM\PACK\NXP\PN7xxxxx\0.9.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -D__PN74XXXX__ -DPHFL_APP_NXBUILD_CONFIG-o .\objects\phhalct_event.o --omf_browse .\objects\phhalct_event.crf --depend .\objects\phhalct_event.d)
+I (..\PN7462AU\phCommon\inc\ph_Datatypes.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Platform.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Config.h)(0x5B6D62A4)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
+I (..\PN7462AU\phCommon\inc\ph_NxpBuild.h)(0x5B6D62A4)
+I (.\inc\APP_NxpBuild.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalNvic.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_regcore.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Reg.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_regcore_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalCt.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Status.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_ctip.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_ctip_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU_ROM3.h)(0x5B6D62A4)
+I (..\PN7462AU\phHal\phhalCt\src\phhalCt_Event.h)(0x5B6D62A6)
+I (..\PN7462AU\phCommon\inc\phFlashBoot_Event.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phRtos.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\wrapper/phRtos_NoRtos.h)(0x5B6D62A4)
+F (..\PN7462AU\phHal\phhalCt\src\phhalCt_Transceive.c)(0x5B6D62A6)(--c99 -c --cpu Cortex-M0 -g -O1 --apcs=interwork --split_sections -I .\inc -I ..\PN7462AU\phCommon\inc -I ..\PN7462AU\phRtos\inc -I ..\PN7462AU\phBoot\inc -I ..\PN7462AU\phHal\phCfg\inc -I ..\PN7462AU\phHal\phhalClkGen\inc -I ..\PN7462AU\phHal\phhalFlash\inc -I ..\PN7462AU\phHal\phhalPcr\inc -I ..\PN7462AU\phHal\phhalPmu\inc -I ..\PN7462AU\phHal\phhalRf\inc -I ..\PN7462AU\phHal\phhalTimer\inc -I ..\PN7462AU\phHal\phLED\inc -I ..\PN7462AU\phROMIntf\phhalSysSer\inc-I.\RTE\_Debug-IC:\Keil_v5\ARM\PACK\NXP\PN7xxxxx\0.9.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -D__PN74XXXX__ -DPHFL_APP_NXBUILD_CONFIG-o .\objects\phhalct_transceive.o --omf_browse .\objects\phhalct_transceive.crf --depend .\objects\phhalct_transceive.d)
+I (..\PN7462AU\phCommon\inc\ph_Datatypes.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Platform.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Config.h)(0x5B6D62A4)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
+I (..\PN7462AU\phCommon\inc\ph_NxpBuild.h)(0x5B6D62A4)
+I (.\inc\APP_NxpBuild.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalCt.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Status.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_ctip.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_ctip_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU_ROM3.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Reg.h)(0x5B6D62A4)
+I (..\PN7462AU\phHal\phhalCt\src\phhalCt_Int.h)(0x5B6D62A6)
+I (..\PN7462AU\phHal\phhalCt\src\phhalCt_Event.h)(0x5B6D62A6)
+I (..\PN7462AU\phCommon\inc\phFlashBoot_Event.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_regcore.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_regcore_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phUser.h)(0x5B6D62A4)
+F (..\PN7462AU\phHal\phhalHif\src\phhalHif.c)(0x5D22A615)(--c99 -c --cpu Cortex-M0 -g -O1 --apcs=interwork --split_sections -I .\inc -I ..\PN7462AU\phCommon\inc -I ..\PN7462AU\phRtos\inc -I ..\PN7462AU\phBoot\inc -I ..\PN7462AU\phHal\phCfg\inc -I ..\PN7462AU\phHal\phhalClkGen\inc -I ..\PN7462AU\phHal\phhalFlash\inc -I ..\PN7462AU\phHal\phhalPcr\inc -I ..\PN7462AU\phHal\phhalPmu\inc -I ..\PN7462AU\phHal\phhalRf\inc -I ..\PN7462AU\phHal\phhalTimer\inc -I ..\PN7462AU\phHal\phLED\inc -I ..\PN7462AU\phROMIntf\phhalSysSer\inc-I.\RTE\_Debug-IC:\Keil_v5\ARM\PACK\NXP\PN7xxxxx\0.9.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -D__PN74XXXX__ -DPHFL_APP_NXBUILD_CONFIG-o .\objects\phhalhif.o --omf_browse .\objects\phhalhif.crf --depend .\objects\phhalhif.d)
+I (..\PN7462AU\phCommon\inc\ph_NxpBuild.h)(0x5B6D62A4)
+I (.\inc\APP_NxpBuild.h)(0x5B6D62A4)
+I (..\PN7462AU\phHal\phhalHif\src\phhalHif_Int.h)(0x5B6D62A6)
+I (..\PN7462AU\phCommon\inc\ph_Datatypes.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Platform.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Config.h)(0x5B6D62A4)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
+I (..\PN7462AU\phCommon\inc\ph_Status.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Reg.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalHif.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU_ROM3.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_hif.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_hif_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_pcr.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_pcr_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalNvic.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_regcore.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_regcore_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phUser.h)(0x5B6D62A4)
+F (..\PN7462AU\phHal\phhalFlash\src\phhalFlash.c)(0x5B6D62A6)(--c99 -c --cpu Cortex-M0 -g -O1 --apcs=interwork --split_sections -I .\inc -I ..\PN7462AU\phCommon\inc -I ..\PN7462AU\phRtos\inc -I ..\PN7462AU\phBoot\inc -I ..\PN7462AU\phHal\phCfg\inc -I ..\PN7462AU\phHal\phhalClkGen\inc -I ..\PN7462AU\phHal\phhalFlash\inc -I ..\PN7462AU\phHal\phhalPcr\inc -I ..\PN7462AU\phHal\phhalPmu\inc -I ..\PN7462AU\phHal\phhalRf\inc -I ..\PN7462AU\phHal\phhalTimer\inc -I ..\PN7462AU\phHal\phLED\inc -I ..\PN7462AU\phROMIntf\phhalSysSer\inc-I.\RTE\_Debug-IC:\Keil_v5\ARM\PACK\NXP\PN7xxxxx\0.9.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -D__PN74XXXX__ -DPHFL_APP_NXBUILD_CONFIG-o .\objects\phhalflash.o --omf_browse .\objects\phhalflash.crf --depend .\objects\phhalflash.d)
+I (..\PN7462AU\phCommon\inc\ph_Datatypes.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Platform.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Config.h)(0x5B6D62A4)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
+I (..\PN7462AU\phCommon\inc\ph_NxpBuild.h)(0x5B6D62A4)
+I (.\inc\APP_NxpBuild.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phUser.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Status.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_eectrl.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_eectrl_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Reg.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalFlash.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_MemoryMap.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalSysSer.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phSysSv_Data.h)(0x5B6D62A4)
+F (..\PN7462AU\phHal\phhalI2CM\src\phhalI2CM.c)(0x5B6D62A6)(--c99 -c --cpu Cortex-M0 -g -O1 --apcs=interwork --split_sections -I .\inc -I ..\PN7462AU\phCommon\inc -I ..\PN7462AU\phRtos\inc -I ..\PN7462AU\phBoot\inc -I ..\PN7462AU\phHal\phCfg\inc -I ..\PN7462AU\phHal\phhalClkGen\inc -I ..\PN7462AU\phHal\phhalFlash\inc -I ..\PN7462AU\phHal\phhalPcr\inc -I ..\PN7462AU\phHal\phhalPmu\inc -I ..\PN7462AU\phHal\phhalRf\inc -I ..\PN7462AU\phHal\phhalTimer\inc -I ..\PN7462AU\phHal\phLED\inc -I ..\PN7462AU\phROMIntf\phhalSysSer\inc-I.\RTE\_Debug-IC:\Keil_v5\ARM\PACK\NXP\PN7xxxxx\0.9.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -D__PN74XXXX__ -DPHFL_APP_NXBUILD_CONFIG-o .\objects\phhali2cm.o --omf_browse .\objects\phhali2cm.crf --depend .\objects\phhali2cm.d)
+I (..\PN7462AU\phCommon\inc\ph_Datatypes.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Platform.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Config.h)(0x5B6D62A4)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
+I (..\PN7462AU\phCommon\inc\ph_NxpBuild.h)(0x5B6D62A4)
+I (.\inc\APP_NxpBuild.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalI2CM.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Status.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU_ROM3.h)(0x5B6D62A4)
+I (..\PN7462AU\phHal\phhalI2CM\src\phhalI2CM_Int.h)(0x5B6D62A6)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_i2cm.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_i2cm_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phHal\phhalI2CM\src\phhalI2CM_FillCopyFifo.h)(0x5B6D62A6)
+I (..\PN7462AU\phCommon\inc\phhalNvic.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_regcore.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Reg.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_regcore_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_pcr.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_pcr_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phHal\phhalI2CM\src\phhalI2CM_Event.h)(0x5B6D62A6)
+F (..\PN7462AU\phHal\phhalI2CM\src\phhalI2CM_Event.c)(0x5B6D62A6)(--c99 -c --cpu Cortex-M0 -g -O1 --apcs=interwork --split_sections -I .\inc -I ..\PN7462AU\phCommon\inc -I ..\PN7462AU\phRtos\inc -I ..\PN7462AU\phBoot\inc -I ..\PN7462AU\phHal\phCfg\inc -I ..\PN7462AU\phHal\phhalClkGen\inc -I ..\PN7462AU\phHal\phhalFlash\inc -I ..\PN7462AU\phHal\phhalPcr\inc -I ..\PN7462AU\phHal\phhalPmu\inc -I ..\PN7462AU\phHal\phhalRf\inc -I ..\PN7462AU\phHal\phhalTimer\inc -I ..\PN7462AU\phHal\phLED\inc -I ..\PN7462AU\phROMIntf\phhalSysSer\inc-I.\RTE\_Debug-IC:\Keil_v5\ARM\PACK\NXP\PN7xxxxx\0.9.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -D__PN74XXXX__ -DPHFL_APP_NXBUILD_CONFIG-o .\objects\phhali2cm_event.o --omf_browse .\objects\phhali2cm_event.crf --depend .\objects\phhali2cm_event.d)
+I (..\PN7462AU\phCommon\inc\ph_Datatypes.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Platform.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Config.h)(0x5B6D62A4)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
+I (..\PN7462AU\phCommon\inc\ph_NxpBuild.h)(0x5B6D62A4)
+I (.\inc\APP_NxpBuild.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalI2CM.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Status.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU_ROM3.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_i2cm.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_i2cm_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phHal\phhalI2CM\src\phhalI2CM_Event.h)(0x5B6D62A6)
+I (..\PN7462AU\phCommon\inc\phRtos.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\wrapper/phRtos_NoRtos.h)(0x5B6D62A4)
+F (..\PN7462AU\phHal\phhalI2CM\src\phhalI2CM_FillCopyFifo.c)(0x5B6D62A6)(--c99 -c --cpu Cortex-M0 -g -O1 --apcs=interwork --split_sections -I .\inc -I ..\PN7462AU\phCommon\inc -I ..\PN7462AU\phRtos\inc -I ..\PN7462AU\phBoot\inc -I ..\PN7462AU\phHal\phCfg\inc -I ..\PN7462AU\phHal\phhalClkGen\inc -I ..\PN7462AU\phHal\phhalFlash\inc -I ..\PN7462AU\phHal\phhalPcr\inc -I ..\PN7462AU\phHal\phhalPmu\inc -I ..\PN7462AU\phHal\phhalRf\inc -I ..\PN7462AU\phHal\phhalTimer\inc -I ..\PN7462AU\phHal\phLED\inc -I ..\PN7462AU\phROMIntf\phhalSysSer\inc-I.\RTE\_Debug-IC:\Keil_v5\ARM\PACK\NXP\PN7xxxxx\0.9.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -D__PN74XXXX__ -DPHFL_APP_NXBUILD_CONFIG-o .\objects\phhali2cm_fillcopyfifo.o --omf_browse .\objects\phhali2cm_fillcopyfifo.crf --depend .\objects\phhali2cm_fillcopyfifo.d)
+I (..\PN7462AU\phCommon\inc\ph_Datatypes.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Platform.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Config.h)(0x5B6D62A4)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
+I (..\PN7462AU\phCommon\inc\ph_NxpBuild.h)(0x5B6D62A4)
+I (.\inc\APP_NxpBuild.h)(0x5B6D62A4)
+I (..\PN7462AU\phHal\phhalI2CM\src\phhalI2CM_FillCopyFifo.h)(0x5B6D62A6)
+F (..\PN7462AU\phHal\phhalSPIM\src\phhalSPIM.c)(0x5B6D62A6)(--c99 -c --cpu Cortex-M0 -g -O1 --apcs=interwork --split_sections -I .\inc -I ..\PN7462AU\phCommon\inc -I ..\PN7462AU\phRtos\inc -I ..\PN7462AU\phBoot\inc -I ..\PN7462AU\phHal\phCfg\inc -I ..\PN7462AU\phHal\phhalClkGen\inc -I ..\PN7462AU\phHal\phhalFlash\inc -I ..\PN7462AU\phHal\phhalPcr\inc -I ..\PN7462AU\phHal\phhalPmu\inc -I ..\PN7462AU\phHal\phhalRf\inc -I ..\PN7462AU\phHal\phhalTimer\inc -I ..\PN7462AU\phHal\phLED\inc -I ..\PN7462AU\phROMIntf\phhalSysSer\inc-I.\RTE\_Debug-IC:\Keil_v5\ARM\PACK\NXP\PN7xxxxx\0.9.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -D__PN74XXXX__ -DPHFL_APP_NXBUILD_CONFIG-o .\objects\phhalspim.o --omf_browse .\objects\phhalspim.crf --depend .\objects\phhalspim.d)
+I (..\PN7462AU\phCommon\inc\ph_Datatypes.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Platform.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Config.h)(0x5B6D62A4)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
+I (..\PN7462AU\phCommon\inc\ph_NxpBuild.h)(0x5B6D62A4)
+I (.\inc\APP_NxpBuild.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalSPIM.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Status.h)(0x5B6D62A4)
+I (..\PN7462AU\phHal\phhalSPIM\src\phhalSPIM_Int.h)(0x5B6D62A6)
+I (..\PN7462AU\phHal\phhalSPIM\src\phhalSPIM_Event.h)(0x5B6D62A6)
+I (..\PN7462AU\phCommon\inc\phhalNvic.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_regcore.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Reg.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_regcore_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_pcr.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_pcr_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_spim.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_spim_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU_ROM3.h)(0x5B6D62A4)
+F (..\PN7462AU\phHal\phhalSPIM\src\phhalSPIM_Event.c)(0x5B6D62A6)(--c99 -c --cpu Cortex-M0 -g -O1 --apcs=interwork --split_sections -I .\inc -I ..\PN7462AU\phCommon\inc -I ..\PN7462AU\phRtos\inc -I ..\PN7462AU\phBoot\inc -I ..\PN7462AU\phHal\phCfg\inc -I ..\PN7462AU\phHal\phhalClkGen\inc -I ..\PN7462AU\phHal\phhalFlash\inc -I ..\PN7462AU\phHal\phhalPcr\inc -I ..\PN7462AU\phHal\phhalPmu\inc -I ..\PN7462AU\phHal\phhalRf\inc -I ..\PN7462AU\phHal\phhalTimer\inc -I ..\PN7462AU\phHal\phLED\inc -I ..\PN7462AU\phROMIntf\phhalSysSer\inc-I.\RTE\_Debug-IC:\Keil_v5\ARM\PACK\NXP\PN7xxxxx\0.9.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -D__PN74XXXX__ -DPHFL_APP_NXBUILD_CONFIG-o .\objects\phhalspim_event.o --omf_browse .\objects\phhalspim_event.crf --depend .\objects\phhalspim_event.d)
+I (..\PN7462AU\phCommon\inc\ph_Datatypes.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Platform.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Config.h)(0x5B6D62A4)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
+I (..\PN7462AU\phCommon\inc\ph_NxpBuild.h)(0x5B6D62A4)
+I (.\inc\APP_NxpBuild.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phhalSPIM.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\ph_Status.h)(0x5B6D62A4)
+I (..\PN7462AU\phHal\phhalSPIM\src\phhalSPIM_Event.h)(0x5B6D62A6)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_spim.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\PN7462AU/PN7462AU_spim_rorw.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\phRtos.h)(0x5B6D62A4)
+I (..\PN7462AU\phCommon\inc\wrapper/phRtos_NoRtos.h)(0x5B6D62A4)
+F (RTE\Device\PN7462AU-C3-00\startup_PN74xxxx.s)(0x566680BA)(--cpu Cortex-M0 -g --16 --apcs=interwork -I.\RTE\_Debug-IC:\Keil_v5\ARM\PACK\NXP\PN7xxxxx\0.9.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 526" --pd "_RTE_ SETA 1" --pd "__PN74XXXX__ SETA 1"--list .\listings\startup_pn74xxxx.lst --xref -o .\objects\startup_pn74xxxx.o --depend .\objects\startup_pn74xxxx.d)
+F (RTE\Device\PN7462AU-C3-00\system_PN74xxxx.c)(0x5677600E)(--c99 -c --cpu Cortex-M0 -g -O1 --apcs=interwork --split_sections -I .\inc -I ..\PN7462AU\phCommon\inc -I ..\PN7462AU\phRtos\inc -I ..\PN7462AU\phBoot\inc -I ..\PN7462AU\phHal\phCfg\inc -I ..\PN7462AU\phHal\phhalClkGen\inc -I ..\PN7462AU\phHal\phhalFlash\inc -I ..\PN7462AU\phHal\phhalPcr\inc -I ..\PN7462AU\phHal\phhalPmu\inc -I ..\PN7462AU\phHal\phhalRf\inc -I ..\PN7462AU\phHal\phhalTimer\inc -I ..\PN7462AU\phHal\phLED\inc -I ..\PN7462AU\phROMIntf\phhalSysSer\inc-I.\RTE\_Debug-IC:\Keil_v5\ARM\PACK\NXP\PN7xxxxx\0.9.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -D__PN74XXXX__ -DPHFL_APP_NXBUILD_CONFIG-o .\objects\system_pn74xxxx.o --omf_browse .\objects\system_pn74xxxx.crf --depend .\objects\system_pn74xxxx.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
+I (C:\Keil_v5\ARM\PACK\NXP\PN7xxxxx\0.9.0\Device\Include\system_PN74xxAU.h)(0x5666828A)

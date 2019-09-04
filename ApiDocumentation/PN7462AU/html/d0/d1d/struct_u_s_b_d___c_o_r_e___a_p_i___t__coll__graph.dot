@@ -1,0 +1,6 @@
+digraph "USBD_CORE_API_T"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node0 [label="{USBD_CORE_API_T\n|+ RegisterClassHandler\l+ RegisterEpHandler\l+ SetupStage\l+ DataInStage\l+ DataOutStage\l+ StatusInStage\l+ StatusOutStage\l+ StallEp0\l+ GetEpHandler\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}

@@ -1,0 +1,38 @@
+
+     digraph "Sample Usage" {
+         node [shape=oval, fontname="Helvetica", fontsize=10];
+         End;
+         Start;
+
+         node [shape=record, fontname="Helvetica", fontsize=10];
+
+     //Nodes
+         phUser_WaitInit [URL ="\ref phUser_WaitInit"];
+         phhalEeprom_DeInit [URL ="\ref phhalEeprom_DeInit"];
+         phhalEeprom_FormatRegion [URL ="\ref phhalEeprom_FormatRegion"];
+         phhalEeprom_HwReset [URL ="\ref phhalEeprom_HwReset"];
+         phhalEeprom_Init [URL ="\ref phhalEeprom_Init"];
+         phhalEeprom_ReadBuffer [URL ="\ref phhalEeprom_ReadBuffer"];
+         phhalEeprom_WriteBuffer [URL ="\ref phhalEeprom_WriteBuffer"];
+         phhalEeprom_WritePage [URL ="\ref phhalEeprom_WritePage"];
+
+     //Logical Flow
+         Start -> phUser_WaitInit -> phhalEeprom_Init;
+         phhalEeprom_Init -> phhalEeprom_ReadBuffer;
+         phhalEeprom_Init -> phhalEeprom_WriteBuffer;
+         phhalEeprom_Init -> phhalEeprom_WritePage;
+         phhalEeprom_Init -> phhalEeprom_FormatRegion;
+         phhalEeprom_ReadBuffer -> phhalEeprom_DeInit;
+         phhalEeprom_WriteBuffer -> phhalEeprom_DeInit;
+         phhalEeprom_WritePage -> phhalEeprom_DeInit;
+         phhalEeprom_FormatRegion -> phhalEeprom_DeInit;
+         phhalEeprom_DeInit -> End;
+
+     //optionals
+         edge [ style="dashed", color="blue" ];
+
+     //error/abort cases
+         edge [ style="dashed", color="red" ];
+         phhalEeprom_HwReset -> End;
+
+     }

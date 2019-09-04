@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!--
+
+
+                     Copyright (c), NXP Semiconductors
+
+                        (C) NXP Semiconductors 2014,2015
+
+          All rights are reserved. Reproduction in whole or in part is
+         prohibited without the written consent of the copyright owner.
+     NXP reserves the right to make changes without notice at any time.
+    NXP makes no warranty, expressed, implied or statutory, including but
+    not limited to any implied warranty of merchantability or fitness for any
+   particular purpose, or that the use will not infringe any third party patent,
+    copyright or trademark. NXP must not be liable for any loss or damage
+                             arising from its use.
+
+-->
+<?xml-stylesheet type="text/xsl" href="user_ee.xslt" ?>
+<!DOCTYPE page SYSTEM "user_ee.dtd"    [
+        <!ENTITY ClifEE       SYSTEM "_ClifEE.xml" >
+
+        <!-- Enter user_ee_RfAntennae_PLM.xml or user_ee_RfAntennae_ALM.xml -->
+        <!ENTITY RfAntennae   SYSTEM "user_ee_RfAntennae.xml" >
+
+        <!-- Enter user_ee_RfPcdShaping_65x65.xml or user_ee_RfPcdShaping_30x50.xml -->
+        <!ENTITY RfPcdShaping SYSTEM "user_ee_RfPcdShaping.xml" >
+
+        <!-- Enter user_ee_RfAPC_65x65.xml or user_ee_RfAPC_30x50.xml -->
+        <!ENTITY RfAPC        SYSTEM "user_ee_RfAPC.xml" >
+
+        <!-- Enter user_ee_RfDPC_/Antennae/_/TVDDVoltage/.xml -->
+        <!ENTITY RfDPC      SYSTEM "user_ee_RfDPC.xml" >
+    ]
+>
+
+<UserEE
+  startAddress="0x201200"
+  endAddress="0x201FFF"
+  product_name="PN7462AU"
+  product_version="MRA3"
+  >
+
+    <pages>
+        <page name="ErrorMem" >
+            <description>Error Memory written by ROM in case of error</description>
+            <structure name="Err" >
+                <description>Error information during ROM APIs</description>
+                <array name="str_name" type="u8" size="36" value="IntentionallyEmpty" valuetype="cstring" >
+                    <description>Reserved for MRA2 and MRA3</description>
+                </array>
+                <field name="dwCauseCode" type="u32" value="0x00" valuetype="hex" >
+                    <description>Error information from ROM Boot</description>
+                </field>
+            </structure>
+        </page>
+        <page name="Ctrl" >
+            <description>Master Control Block for EEPROM</description>
+            <structure name="VerInfo" >
+                <!-- Reviewed 2015.03.03 -->
+                <description>
+&lt;pre&gt;
+    Version Information of the Layout
+	Version 28.0.0: artf178091: [CR][FW][TXOCP] Load dependent RX gain control
+	Version 27.0.0: artf203315 : The Default TVDD source config to be External. DPC 5V by default.
+	Version 27.0.0: Clif EEPROM 1.9.2v Settings.
+	Version 26.0.0: artf157683 : Changing the wWaitTime of Tx Ldo Params. [15:14] : Lfo Clock Value and [13:0] : Waiting Time after TxLdo is started.
+	Version 25.5.0: artf156243 : Update according to the Analysis Information.
+	Version 25.4.0: wWaitTime value for Tx Ldo start ir changed from 250us to 1100us.
+    Version 25.3.0: dwTidtTimeAdjust field added.
+    Version 25.2.0: RRDD value changed from 28us to 50us and dwExtRfOnTime values to 302us.
+    Version 25.1.0: Adding the RRDD and Fdt values for Jewel.
+    Version 25.0.0: Clif EEPROM 1.9v settings
+    &lt;hr /&gt;
+    Version 24.0.2: [RC4] CLIF_ANA_NFCLD_REG.CM_RFL_NFC set to 7.  [MRA3] v1.8.3 of EEPROM
+    Version 24.0.1: Refactored dwFelicaRxRMSigproTime
+    Version 24.0.0: Removed the Rf On and Off De-bouncing structure. 
+                  : Added Rf Inter-Op timings structure and Rf hal timings 
+                  : for different algos.
+    Version 23.9.0: CLIF_ANA_NFCLD_REG.CM_RFL_NFC value changed from 7 to 3
+    Version 23.8.0: [MRA2] v1.8   of EEPROM
+    Version 23.7.0: [MRA2] v1.7.4 of EEPROM
+    Version 23.6.0: [MRA2] ClkGenClifClockStart->ClkModeAlmCm set to 0x50
+&lt;/pre&gt;
+                </description>
+                <field  name="major" type="u16" value="28" valuetype="int" >
+                    <!-- Change in major version means total in-compatibility -->
+                    <description>Major Version</description>
+                </field>
+                <field  name="minor" type="u8" value="0" valuetype="int" >
+                    <!-- Change in minor version means new fields have been added -->
+                    <description>Minor Version</description>
+                </field>
+                <field  name="development" type="u8" value="0" valuetype="int" >
+                    <!-- Change in minor version means values have changed -->
+                    <description>Development Version</description>
+                </field>
+                <array name="str_name" type="u8" size="32" value="Rf#v1.9" valuetype="cstring" >
+                    <description>Canonical name to identify the EE Layout</description>
+                </array>
+            </structure>
+        </page>
+        <page name="Boot" >
+            <description>These values are used during during Boot up and applied to HW IPs</description>
+            <structure name="RNG" >
+                <description>Random Number Generator. \see phhalRng_Init</description>
+                <field name="bTrngFeedTimeout" type="u8" value="0x26" valuetype="hex" >
+                    <description>Programmable wait time to release gated clocks feeding the TRNG</description>
+                </field>
+            </structure>
+            <structure name="ClkGen" >
+                <description>Clock Generator.  \ref phhalClkGen_Init</description>
+                <field name="wXtalActivationTimeOut" type="u16" value="2000" valuetype="int" >
+                    <description>dwXtalActivationTimeOut Activation time out value</description>
+                </field>
+                <field name="eSource" type="u8" value="0x00" valuetype="hex" >
+                    <description>eSource Clock source selection, \see phhalClkGen_Source_t</description>
+                </field>
+                <field name="bKickOnError" type="u8" value="0x00" valuetype="hex" >
+                    <description>bKickOnError Kick on error.</description>
+                </field>
+            </structure>
+            <structure name="PcrPwrTempConfig" >
+                <!--  Reviewed structure contents PGh: 2015.03.09 -->
+                <description>Power Clock Reset Temperature Configuration related to \see phhalPcr_PwrTempConfig_t
+
+                \warning This structure is tightly linked to \ref phhalPcr_PwrTempConfig_t
+                </description>
+                <field name="bUseTempSensor0" type="u8" value="0" valuetype="int" >
+                    <description>Flag to indicate to use temperature sensor 0 or not</description>
+                    <option value="0" description="Disabled" />
+                    <option value="1" description="Enabled" />
+                </field>
+                <field name="bUseTempSensor1" type="u8" value="0" valuetype="int" >
+                    <description>Flag to indicate to use temperature sensor 1 or not</description>
+                    <option value="0" description="Disabled" />
+                    <option value="1" description="Enabled" />
+                </field>
+                <field name="bLowTempTarget0" type="u8" value="3" valuetype="int" >
+                    <option value="0" description="135" />
+                    <option value="1" description="130" />
+                    <option value="2" description="125" />
+                    <option value="3" description="120" />
+                </field>
+                <field name="bLowTempTarget1" type="u8" value="3" valuetype="int" >
+                    <option value="0" description="135" />
+                    <option value="1" description="130" />
+                    <option value="2" description="125" />
+                    <option value="3" description="120" />
+                </field>
+                <field name="bHighTempTarget0" type="u8" value="0" valuetype="int" >
+                    <option value="0" description="135" />
+                    <option value="1" description="130" />
+                    <option value="2" description="125" />
+                    <option value="3" description="120" />
+                </field>
+                <field name="bHighTempTarget1" type="u8" value="0" valuetype="int" >
+                    <option value="0" description="135" />
+                    <option value="1" description="130" />
+                    <option value="2" description="125" />
+                    <option value="3" description="120" />
+                </field>
+            </structure>
+            <structure name="PcrPwrDown">
+                <!-- Added on 2015.08.10:  See SC3476: [PCR HAL API Change] Power Down Setting during USB should be provided as input parameter -->
+                <description>See \ref phhalPcr_PwrDown_Setting_t
+
+It is a 32 bit value bit-file created by ORing enums of type \ref phhalPcr_PwrDown_Setting_t used to select which settings must be applied to reduce power consumption during Suspend</description>
+                <field valuetype="hex" name="dwPwrDownSettings" type="u32" value="0x7FFFFFFF">
+                    <description>
+                        0x7FFFFFFF : E_APPLY_ALL_SETTNGS. i.e.  all power reduction settings will be applied during Suspend
+                    </description>
+                </field>
+            </structure>
+            <structure name="TxAnaStandByConfig">
+                <!-- Reviewed structure contents PGh: 2015.03.09 -->
+                <description> TxAna register settings for standby  \see phhalPcr_TxAnaStandByConfig_t</description>
+                <field name="dwAnaTxStandByValue" type="u32" value="0F" valuetype="hex" >
+                    <description>
+                        To hold CLIF standby GSN value selection
+                    </description>
+                </field>
+                <field name="dwAnaTxProtStandByValue" type="u32" value="03" valuetype="hex" >
+                    <description>
+                        To hold the CLIF configuration related to powerdown
+                    </description>
+                </field>
+            </structure>
+            <structure name="EEPROM" >
+                <!-- Reviewed structure contents PGh: 2015.03.09 -->
+                <description>EEPROM Access Settings. \see phhalEeprom_Init</description>
+                <field name="bEnableFastMode" type="u8" value="0" valuetype="int" >
+                    <description>Disable Fast mode for EEPROM access</description>
+                    <option value="0" description="Disabled" />
+                    <option value="1" description="Enabled" />
+                </field>
+            </structure>
+            <structure name="FLASH" >
+                <!-- Reviewed structure contents PGh: 2015.03.09 -->
+                <description>Flash Settings. \see phhalFlash_Init</description>
+                <field name="bEnableFastMode" type="u8" value="0" valuetype="int" >
+                    <description>Enable or Disable fast mode for Page Flash access</description>
+                    <option value="0" description="Disabled" />
+                    <option value="1" description="Enabled" />
+                </field>
+                <field name="bEnableSkipProgramOnEraseFail" type="u8" value="1" valuetype="int" >
+                    <description>Setting to decide if program phase will be attempted in the event of an erase phase failure</description>
+                    <option value="0" description="Program phase will be attempted even if erase phase failed" />
+                    <option value="1" description="Program phase will be skipped if erase phase failed" />
+                </field>
+            </structure>
+            <structure name="TxLdoParams" >
+                <!-- Reviewed and fixed structure contents PGh: 2015.03.09 -->
+                <description>Power management unit. \see phhalPmu_TxLdoInit and \see phhalPmu_TxLdoParams_t</description>
+                <field name="bUseTxLdo" type="u8" value="0x00" valuetype="hex" >
+                    <description>
+                        Parameter to use internal TxLDO or external TxLDO for TVDD Source
+                    </description>
+                    <option value="0" description="Use external TxLDO" />
+                    <option value="1" description="Use internal TxLDO" />
+                </field>
+                <field name="eFullPowerTvddSel" type="u8" value="0x04" valuetype="hex" >
+                    <!-- 2015.07.17 : Changed to 4.7v -->
+                    <description>
+                        TVDD Power Selection for Reader Mode. \see phhalPmu_TvddSel_t
+                    </description>
+                    <option description="3V" value="0"/>
+                    <option description="3.3V" value="1"/>
+                    <option description="3.6v" value="2"/>
+                    <option description="4.5V" value="3"/>
+                    <option description="4.7v" value="4"/>
+                    <option description="Invalid" value="other"/>
+                </field>
+                <field name="eLowPowerTvddSrc" type="u8" value="0x00" valuetype="hex" >
+                    <description>Source for the TVDD \see phhalPmu_LowPower_TvddSrc_t</description>
+                    <option description="Source is TVDD In" value="0"/>
+                    <option description="Source is VUP" value="1"/>
+                    <option description="Source is VBUS" value="2"/>
+                    <option description="Invalid" value="other"/>
+                </field>
+                <field name="bOverCurrentEnable" type="u8" value="0x00" valuetype="hex" >
+                    <description>Over Current Interrupt Enable or disable</description>
+                    <option value="0" description="Disabled" />
+                    <option value="Others" description="Enable" />
+                </field>
+                <field name="wWaitTime" type="u16" value="50272" valuetype="int" >
+                    <description>[15:14] : Lfo Clock Value and [13:0] : Waiting Time after TxLdo is started. Lfo Clk = 3 and Waiting Time = 1120us.</description>
+                </field>
+            </structure>
+            <structure name="CT" >
+                <description>Initial settings for CT Interface. \see phhalCt_InitParam_t</description>
+                <field name="bPullUp" type="u8" value="1" valuetype="hex" >
+                    <description>Pull UP Configuration</description>
+                    <option value="0" description="Pull Down" />
+                    <option value="1" description="Pull UP" />
+                    <option value="others" description="Undefined behaviour" />
+                </field>
+                <field name="bConnectorType" type="u8" value="1" valuetype="hex" >
+                    <description>Connector Type</description>
+                    <option value="0" description="Normally Closed" />
+                    <option value="others" description="Normally Open" />
+                </field>
+              <field name="bAutoCTDeactivationEnable" type="u8" value="1" valuetype="hex" >
+                <description>Auto deactivation</description>
+                <option value="0" description="Disabled" />
+                <option value="others" description="Enabled" />
+              </field>
+              <field name="bSlewRate" type="u8" value="0x38" valuetype="hex" >
+                    <description>CLK,IO,VCC slew rate</description>
+                    <option value="0" description="CLK,IO,VCC slew rate" />
+                    <option value="others" description="This value is directly mapped to ct_srr_reg
+                    to give enough options" />
+                </field>
+
+<!--
+                <field name="bEmvProfile" type="u8" value="1" valuetype="hex" >
+                    <description>Select EMV profile or ISO profile</description>
+                    <option value="0" description="ISO profile" />
+                    <option value="others" description="EMV profile" />
+                </field>
+ -->
+
+<!--
+                <field name="bAuxActiveLowEn" type="u8" value="1" valuetype="hex" >
+                    <description>Should we enable AUX Pin Active LOW?</description>
+                    <option value="0" description="Disabled" />
+                    <option value="1" description="Active Low" />
+                </field>
+ -->
+            </structure>
+            <structure name="GPIO" >
+                <description>
+                    GPIO Bootup Configuration. Each byte represents a Gpio configuration starting from Gpio 1 to 12.
+                </description>
+                <array name="OutputPUPD" type="u8" size="12" valuetype="hex"
+                    value="00 00 00 00 00 00 03 03 07 03 03 03" >
+                    <!--    1  2  3  4  5  6  7  8  9 10 11 12 -->
+                    <!-- GPIO 7 is used for APC.
+                         GPIO 8 is used for DPC. -->
+                    <description>
+                        Lower Nibble - Related to output configuration
+                        Upper Nibble - Related to Pull-up/Pull-down configuration
+                    </description>
+                    <option value="Bit0=0" description="Skip Configuration as output on Boot" />
+                    <option value="Bit0=1" description="Configure Gpio as output" />
+                    <option value="Bit1=1" description="Enable slew-rate" />
+                    <option value="Bit2=1" description="Drive the output high" />
+                    <option value="Bit2=0" description="Drive the output low" />
+
+                    <option value="Bit5=1" description="Apply Pull UP" />
+                    <option value="Bit6=1" description="Apply Pull Down" />
+
+                </array>
+                <array name="InputISR" type="u8" size="12" valuetype="hex"
+                    value="00 00 00 00 00 00 00 00 00 00 00 00" >
+                    <!--    1  2  3  4  5  6  7  8  9 10 11 12 -->
+                    <!--          -BLV-IWI -->
+                    <option value="ALL=0" description="Skip Configuration on Boot" />
+                    <option value="Bit0=0" description="Un-Configure as input" />
+                    <option value="Bit0=1" description="Configure/SET as Input" />
+                    <option value="Bit1=1" description="GPIO is a wakeup source" />
+                    <option value="Bit2=1" description="GPIO is an interrupt source" />
+                    <option value="Bit4=1" description="Level Sensitive Interrupt" />
+                    <option value="Bit5=1" description="Interrupt on Active Low or Falling Edge" />
+                    <option value="Bit6=1" description="Interrupt on Both Edges" />
+                </array>
+            </structure>
+        </page>
+        <page name="HW" >
+            <description>Hardware Configurations / Default settings.  These settings are not applied direclty at bootup but eventually during the course of usage of the IPs.</description>
+            <structure name="WakeUpConfig">
+                <description>Wakeup Sources \see phhalPcr_WakeUpConfig_t</description>
+                <!-- Reviewed 2015.03.03 -->
+                <field name="wWakeUpTimerVal" type="u16" value="300" valuetype="int" >
+                    <description>Timer value for the wake up in milliseconds</description>
+                </field>
+                <field name="bEnableHIFWakeup" type="u8" value="0" valuetype="int" >
+                    <description>Flag to know the host interface wake up</description>
+                    <option value="0" description="Disabled" />
+                    <option value="1" description="Enabled" />
+                </field>
+                <field name="bI2CAddr" type="u8" value="0x28" valuetype="hex" >
+                    <description>I2C address if the wake up is configured for HIF</description>
+                </field>
+                <field name="bWakeUpTimer" type="u8" value="1" valuetype="int" >
+                    <description>Flag to enable the wake up timer as wake up source</description>
+                    <option value="0" description="Disabled" />
+                    <option value="1" description="Enabled" />
+                </field>
+                <field name="bWakeUpRfLdt" type="u8" value="0" valuetype="int" >
+                    <description>Flag to enable the RfLdt as wake up source</description>
+                    <option value="0" description="Disabled" />
+                    <option value="1" description="Enabled" />
+                </field>
+                <field name="bWakeUpPvddLim" type="u8" value="1" valuetype="int" >
+                    <description>Flag to enable Pvdd current limitation as wake up source when it goes below the lower threshold</description>
+                    <option value="0" description="Disabled" />
+                    <option value="1" description="Enabled" />
+                </field>
+                <field name="bWakeUpCtPr" type="u8" value="1" valuetype="int" >
+                    <description>Flag to enable CT presence as wake up source when it goes below the lower threshold</description>
+                    <option value="0" description="Disabled" />
+                    <option value="1" description="Enabled" />
+                </field>
+                <field name="bWakeUpIntAux" type="u8" value="0" valuetype="int" >
+                    <description>Flag to enable PVDD Auxiliary interrupt as wake up source when it goes below the lower threshold</description>
+                    <option value="0" description="Disabled" />
+                    <option value="1" description="Enabled" />
+                </field>
+                <field name="bWakeUpTvddMon" type="u8" value="0" valuetype="int" >
+                    <description> Flag to enable Tvdd Monitoring as wake up source when it goes below the lower threshold</description>
+                    <option value="0" description="Disabled" />
+                    <option value="1" description="Enabled" />
+                </field>
+                <field name="bWakeUpGpio" type="u8" value="0" valuetype="int" >
+                    <description> Flag to enable Gpio as wake up source when it goes below the lower threshold</description>
+                    <option value="0" description="Disabled" />
+                    <option value="1" description="Enabled" />
+                </field>
+            </structure>
+            &RfAntennae;
+            <structure name="RfInitUserEE">
+                <description>\see phhalRf_InitUserEE_t</description>
+                <field name="dwAgcConfig1CMValue" type="u32" value="0x0107FF7" valuetype="hex" >
+                    <description>Card mode AGC Config1 value</description>
+                </field>
+                <field name="dwAgcConfig0CMValue" type="u32" value="0x44003" valuetype="hex" >
+                    <description>Card mode AGC Config0 value</description>
+                </field>
+                <field name="dwLCPDRefValue" type="u32" value="0x000020AC" valuetype="hex" >
+                    <description>Reference value of AGC for LPCD</description>
+                </field>
+                <field name="dwLCPDThreashold" type="u32" value="0x00000005" valuetype="hex" >
+                    <description>Threshold value for LPCD</description>
+                </field>
+                <field name="dwLCPDDurations" type="u32" value="0x00000028" valuetype="hex" >
+                    <description>Duration value for LPCD</description>
+                </field>
+                <field name="wAgcCMInputValue" type="u16" value="0x00" valuetype="hex" >
+                    <description>Card Mode most possible sensitive input value</description>
+                </field>
+                <field name="bAnaNFCLD" type="u8" value="0x0C" valuetype="hex" >
+                    <description>NFC LD Threshold value</description>
+                </field>
+                <field name="bAnaTxProt" type="u8" value="0x09" valuetype="hex" >
+                    <description>Initial value for Ana Tx Prot Register</description>
+                </field>
+            </structure>
+            &RfDPC;
+            &RfPcdShaping;
+            &RfAPC;
+            <structure name="RfInterOpTimings">
+                <description>Rf Timings for the Inter-op issues</description>
+                <field name="dwExtRfOnTime" type="u32" value="302" valuetype="int" >
+                    <description>Value of Time(us) for Peer to turn the Rf On</description>
+                </field>
+                <field name="dwExtRfOffTime" type="u32" value="10" valuetype="int" >
+                    <description>Value of Time(us) for Peer to turn the Rf off after Transmitting data</description>
+                </field>
+                <field name="dwIntRfOnTime" type="u32" value="302" valuetype="int" >
+                    <description>Value of Time(us) for Internal Rf On in active communication</description>
+                </field>
+				<field name="dwRRDDTime" type="u32" value="50" valuetype="int" >
+                    <description>Value of Time(us) for RRDD for Jewel (((28 + (2 * 9.44)) + Tolerence) = 50).</description>
+                </field>
+                <field name="dwTidtTimeAdjust" type="u32" value="50" valuetype="int" >
+                    <description>Value of Time(us) for Tidt adjust to meet the spec timings of Tadt(Tadt > 768/fc(~57)).</description>
+                </field>
+            </structure>
+            <structure name="RfHalTimings">
+                <description>Rf Timings different algo.</description>
+                <field name="dwClkErrRecoveryTime" type="u32" value="50" valuetype="int" >
+                    <description>Time(us) for Clock Error Recovery</description>
+                </field>
+                <field name="dwRfOffDeBouncingTime" type="u32" value="20" valuetype="int" >
+                    <description>Time(us) for External Rf off De-Bouncing</description>
+                </field>
+                <field name="dwPbfAlmFwResetTime" type="u32" value="100" valuetype="int" >
+                    <description>Time(us) for Pbf Alm Fw Reset Timer</description>
+                </field>
+                <field name="dwFelicaRxRMSigproTime" type="u32" value="2000" valuetype="int" >
+                    <description>Time(us) for Felica Stuck Timer in Card mode when SIGPRO RM is used</description>
+                </field>
+            </structure>
+            <structure name="DPLLCfg">
+                <description>DPLL Configurations</description>
+                <field name="DpllControl" type="u32" value="0x63" valuetype="hex" >
+                    <description>Dpll Control</description>
+                </field>
+                <field name="DpllInit" type="u32" value="0x00171433" valuetype="hex" >
+                    <description>Dpll Init</description>
+                </field>
+                <field name="DpllGear" type="u32" value="0x00042A55" valuetype="hex" >
+                    <description>Dpll Gear</description>
+                </field>
+                <field name="DpllInitFreq" type="u32" value="0x80008591" valuetype="hex" >
+                    <description>Dpll Init Freq</description>
+                </field>
+            </structure>
+            <structure name="DPLLClkPhaseAdjustment">
+                <description>DPLL Clock Phase Adjustment Configuration</description>
+                <field name="DpllInitCeA" type="u32" value="0x00000000" valuetype="hex" >
+                    <description>Dpll Init value for card emulation A</description>
+                </field>
+                <field name="AnaClkManCeA" type="u32" value="0x00000005" valuetype="hex" >
+                    <description> Value of Ana Clk Man for card emulation A </description>
+                </field>
+                   <field name="DpllInitCeB" type="u32" value="0x00000000" valuetype="hex" >
+                    <description>Dpll Init value for card emulation B</description>
+                </field>
+                <field name="AnaClkManCeB" type="u32" value="0x00000005" valuetype="hex" >
+                    <description> Value of Ana Clk Man for card emulation B </description>
+                </field>
+                <field name="DpllInitCeF" type="u32" value="0x00000000" valuetype="hex" >
+                    <description>Dpll Init value for card emulation F</description>
+                </field>
+                <field name="AnaClkManCeF" type="u32" value="0x00000005" valuetype="hex" >
+                    <description> Value of Ana Clk Man for card emulation F </description>
+                </field>
+            </structure>
+            <structure name="RfLdtParams">
+                <!-- Reviewed structure contents PGh: 2015.03.09 -->
+                <description>\see phhalPcr_RfLdtParams_t</description>
+                <field name="bRfldRefLo" type="u8" value="02" valuetype="int" >
+                    <description>
+                        Higher Reference Value for RF Level Detector
+                    </description>
+                </field>
+                <field name="bRfldRefHi" type="u8" value="03" valuetype="int" >
+                    <description>
+                        Lower Reference Value for RF Level Detector
+                    </description>
+                </field>
+                <field name="bEnableAdvancedRFLD" type="u8" value="0" valuetype="int" >
+                    <description>
+                        Should we used advanced RFLD Feature or normal RFLD Feature
+                    </description>
+                </field>
+                <field name="bPadding" type="u8" value="0" valuetype="int" >
+                    <description>
+                        Structure padding.
+                    </description>
+                </field>
+            </structure>
+            <structure name="RfTestBus">
+                <!-- Updated on 2015.08.10 : See PT_SC3518: EEPROM Allocation needed for TestBus and CM Configuration -->
+                <description>Test Bus configuration of RF</description>
+                <field valuetype="hex" name="dwAnaTB" type="u32" value="0x00000000">
+                    <description>
+                        0x00: No Analog Test Bus Signal Enabled
+                    </description>
+                </field>
+                <field valuetype="hex" name="dwDAC" type="u32" value="0x00000000">
+                    <description>
+                        0x00 :  No Analog Test Bus Signal Enabled
+                    </description>
+                </field>
+                <field valuetype="hex" name="bTbDigi1" type="u8" value="0x02">
+                    <description>
+                        0x02 : Tx Active
+                    </description>
+                </field>
+                <field valuetype="hex" name="bTbDigi2" type="u8" value="0x00">
+                    <description>
+                        0x00 : No Digital Test Bus Signal2 Enabled
+                    </description>
+                </field>
+            </structure>
+
+            <structure name="ClkGenClifClockStart">
+                <description>Configuration for ClkGen to start Clif Clock</description>
+                <field valuetype="hex" name="ClkModePassiveRm" type="u8" value="0x00">
+                    <description> Value of Ana Clk field for Passive Reader Mode </description>
+                </field>
+                <field valuetype="hex" name="ClkModeActive" type="u8" value="0x10">
+                    <description> Value of Ana Clk field for Active Mode </description>
+                </field>
+                <field valuetype="hex" name="ClkModePlmCm" type="u8" value="0x50">
+                    <description> Value of Ana Clk field for PLM Card Mode </description>
+                </field>
+                <field valuetype="hex" name="ClkModeAlmCm" type="u8" value="0x50">
+                    <description> Value of Ana Clk field for Alm Card Mode </description>
+                </field>
+            </structure>
+            <structure name="I2CM" >
+                <!-- Reviewed structure contents PGh: 2015.03.09 -->
+                <description>Default configuration for I2C Master. These values are primarily used for phExHif.</description>
+                <field name="dwDataRateHz" type="u32" value="100000" valuetype="int" >
+                    <description>I2C Master transaction data rate in Hz.</description>
+                </field>
+                <field name="bSlaveAddr" type="u8" value="0x28" valuetype="hex" >
+                    <description>I2C 7-bit slave address.</description>
+                </field>
+            </structure>
+            <structure name="SPIM" >
+                <!-- Reviewed structure contents PGh: 2015.03.09 -->
+                <description>SPI Master configurations</description>
+                <field name="bModes" type="u8" value="00" valuetype="hex" >
+                    <description>Specifies the SPIM mode (CPOL, CPHA) of operation, \see phhalSPIM_Modes_t.</description>
+                </field>
+                <field name="bDataRate" type="u8" value="00" valuetype="hex" >
+                    <description>Specifies the SPIM transaction data rate. \see phhalSPIM_Configure</description>
+                    <option value="0" description="1.0 MHz" />
+                    <option value="1" description="1.51 MHz" />
+                    <option value="2" description="2.09 MHz" />
+                    <option value="3" description="2.47 MHz" />
+                    <option value="4" description="3.01 MHz" />
+                    <option value="5" description="4.52 MHz" />
+                    <option value="6" description="5.42 MHz" />
+                    <option value="7" description="6.78 MHz" />
+                </field>
+            </structure>
+            <structure name="HIF" >
+                <description>Host interface configurations. These values are primarily used for phExHif.</description>
+                <field name="bInterface" type="u8" value="1" valuetype="hex" >
+                    <description>Hif interfaces like I2C, SPI, HSU, USB or disabled.</description>
+                    <option value="0" description="Disabled" />
+                    <option value="1" description="I2C" />
+                    <option value="2" description="SPI" />
+                    <option value="3" description="HSU" />
+                    <option value="4" description="USB" />
+                </field>
+                <field name="bI2cConfig" type="u8" value="0x00" valuetype="hex" >
+                    <description>Refer phhalHif_Config_t->sI2cConfig in Hif module.</description>
+                </field>
+                <field name="bSpiConfig" type="u8" value="0x00" valuetype="hex" >
+                    <description>Refer phhalHif_Config_t->sSpiConfig in Hif module.</description>
+                </field>
+                <field name="bIsHsuBoot" type="u8" value="0x00" valuetype="hex" >
+                    <description>Set the Hsu Wakeup simulation.</description>
+                </field>
+                <field name="bEndOfFrame" type="u8" value="0x00" valuetype="hex" >
+                    <description>Hsu Eof size - Maximum interbyte duration.</description>
+                </field>
+                <field name="bStopBits" type="u8" value="0x00" valuetype="hex" >
+                    <description>Number of Hsu stop bits.</description>
+                </field>
+                <field name="bDummyBytes" type="u8" value="0x00" valuetype="hex" >
+                    <description>Number of Dummy bytes, used during standby phase.</description>
+                </field>
+                <field name="bBaudRate" type="u8" value="0x00" valuetype="hex" >
+                    <description>Refer phhalHif_Hsu_BaudRate_t.</description>
+                </field>
+                <field name="bBufferType" type="u8" value="0" valuetype="hex" >
+                    <description>Hif interfaces like I2C, SPI, HSU, USB or disabled.</description>
+                    <option value="0" description="E_BUFFER_FORMAT_FREE, transparent (generic HW protocol format). " />
+                    <option value="1" description="E_BUFFER_FORMAT_FIXED, Header + Payload + Crc. " />
+                    <option value="2" description="E_BUFFER_FORMAT_NATIVE, transparent with Size at 1st Word. " />
+                </field>
+                <field name="bShortFrameLen" type="u8" value="0x00" valuetype="hex" >
+                    <description>Number of bytes representing ShortFrame.</description>
+                </field>
+                <field name="bStoreErrData" type="u8" value="0x00" valuetype="hex" >
+                    <description>Store error data or discard error data.</description>
+                    <option value="0" description="Disabled" />
+                    <option value="1" description="Enabled" />
+                </field>
+                <field name="bHeaderSize" type="u8" value="0x00" valuetype="hex" >
+                    <description>Header Size in Fixed Format.</description>
+                </field>
+                <field name="bTimeout" type="u8" value="0x00" valuetype="hex" >
+                    <description>Inter character Tx Timeout in steps of 3.6us.</description>
+                </field>
+                <field name="bEnableVBUSPullDown" type="u8" value="0x00" valuetype="hex" >
+                    <description>
+If the user board takes more time than expected to detect discharge during self power mode,
+user can set this bit to discharge faster. There is a possibility of performance improvement
+of detecting USB disconnected based on PULLDOWN enabled/disabled.
+                    </description>
+                </field>
+            </structure>
+        </page>
+        &ClifEE;
+        <page name="Trailer">
+            <description>
+                Trailer region of the EEPROM.  This region does not contain any function data/values.
+                Test cases can write scratch data beyond this region.
+            </description>
+            <structure name="Last">
+                <description>
+                    Last structure on EEPROM. Starting from this address/region,
+                    there is nothing relevent for the example/reference implementation.
+                </description>
+                <field name="dummyByte" type="u32" value="0x32363437" valuetype="hex" >
+                    <description>Dummy Byte for the Structure</description>
+                </field>
+            </structure>
+        </page>
+    </pages>
+</UserEE>
+

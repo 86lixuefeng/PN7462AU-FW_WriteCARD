@@ -1,0 +1,4 @@
+<map id="Led" name="Led">
+<area shape="rect" id="node2" href="$db/d15/group__ledpatterns.html" title="These patterns can be used as described in phLED_SetPattern. " alt="" coords="97,5,215,32"/>
+<area shape="rect" id="node3" href="$d0/d2b/group__ledapi.html" title="APIs for LED" alt="" coords="107,56,205,83"/>
+</map>

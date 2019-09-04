@@ -1,0 +1,11 @@
+digraph "external/CCID/inc" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_6303fed337eac965f509d062849ece48 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="CCID" fontname="Helvetica", fontsize="10", URL="dir_6303fed337eac965f509d062849ece48.html"]
+  dir_837fdd17e969cf34c0a05b5582a77c6a [shape=box, label="inc", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_837fdd17e969cf34c0a05b5582a77c6a.html"];
+  }
+  dir_f23c9e26b440a70abb590ad1d9eff66a [shape=box label="USBD_ROMStack" fillcolor="white" style="filled" color="red" URL="dir_f23c9e26b440a70abb590ad1d9eff66a.html"];
+  dir_837fdd17e969cf34c0a05b5582a77c6a->dir_f23c9e26b440a70abb590ad1d9eff66a [headlabel="4", labeldistance=1.5 headhref="dir_000002_000005.html"];
+}

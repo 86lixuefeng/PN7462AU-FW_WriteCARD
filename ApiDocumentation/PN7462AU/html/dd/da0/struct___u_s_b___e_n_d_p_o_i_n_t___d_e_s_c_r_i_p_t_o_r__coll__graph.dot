@@ -1,0 +1,6 @@
+digraph "USB_ENDPOINT_DESCRIPTOR"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node0 [label="{USB_ENDPOINT_DESCRIPTOR\n|+ bLength\l+ bDescriptorType\l+ bEndpointAddress\l+ bmAttributes\l+ wMaxPacketSize\l+ bInterval\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}

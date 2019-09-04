@@ -1,0 +1,17 @@
+digraph "Success Conditions"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir=LR;
+  Node0 [label="Success Conditions",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node5 [label="Masking Codes",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d5e/group__ph_comp_codes_m_a_s_k.html",tooltip="Macros to mask/recover Component Codes for error status. "];
+  Node2 [label="Communication Errors",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/d3f/group__grp___comm___err___code.html",tooltip="Return status that denote failures of communication/IO/Tx-Rx. "];
+  Node3 [label="Generic Errors",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d8/d94/group__grp___generic___err___code.html",tooltip="Return status that denote common failures. "];
+  Node1 [label="Error Code Collection",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/d00/group__ph___error.html"];
+  Node4 [label="Reader Library Components",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/d44/group__ph_comp_codes.html",tooltip="IDs/Codes of NxpNfcLib Components. "];
+  Node1->Node0 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node2 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node3 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node4 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node5 [shape=plaintext, dir="back", style="solid"];
+}

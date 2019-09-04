@@ -1,0 +1,6 @@
+digraph "phhalPcr_WakeUpConfig_t"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node0 [label="{phhalPcr_WakeUpConfig_t\n|+ wWakeUpTimerVal\l+ bEnableHIFWakeup\l+ bSmBusAddrResp\l+ bI2CAddr\l+ bWakeUpTimer\l+ bWakeUpRfLdt\l+ bWakeUpTemp\l+ bWakeUpPvddLim\l+ bWakeUpCtPr\l+ bWakeUpIntAux\l+ bWakeUpTvddMon\l+ bWakeUpGpio\l+ blWakeupVbusLow\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}

@@ -1,0 +1,7 @@
+<map id="component : Rc663" name="component : Rc663">
+<area shape="rect" id="node1" href="$d7/dc6/group__phhalHw__Rc663__Reg.html" title="Register definitions. " alt="" coords="385,5,519,32"/>
+<area shape="rect" id="node3" href="$d3/d62/group__phhalHw__Rc663__Cmd.html" title="Supported ReaderIC commands. " alt="" coords="408,56,496,83"/>
+<area shape="rect" id="node5" href="$dd/d44/group__phhalHw__Rc663__Int.html" title="Internal definitions. " alt="" coords="420,107,484,133"/>
+<area shape="rect" id="node6" href="$d0/da3/group__phhalHw__Rc663__Config.html" title="Custom configuration related to NFC IC Hardware settings. " alt="" coords="403,157,501,184"/>
+<area shape="rect" id="node4" href="$d6/d78/group__phhalHw.html" title="These are the components which are used to abstract the functionality of the physical reader device t..." alt="" coords="5,74,152,115"/>
+</map>

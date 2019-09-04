@@ -1,0 +1,7 @@
+<map id="SYNC CT HAL" name="SYNC CT HAL">
+<area shape="rect" id="node1" href="$d2/df5/group__grp_err___hal_sync_c_t.html" title="Error codes for Synchronous CT HAL. " alt="" coords="275,5,453,32"/>
+<area shape="rect" id="node2" href="$d0/db5/group__phhal_ct.html" title="The Contact Interface (HAL) APIs. " alt="" coords="5,81,72,108"/>
+<area shape="rect" id="node3" href="$d3/dca/group__phhal_sync_ct___s9.html" title="The purpose and scope of this file is to implement S9 Synchronous card Apis. " alt="" coords="301,56,427,83"/>
+<area shape="rect" id="node4" href="$d3/d65/group__phhal_sync_ct___i2_c.html" title="The purpose and scope of this file is to implement SYNC CT HAL, Prototype of the Sync CT Interface HA..." alt="" coords="299,107,429,133"/>
+<area shape="rect" id="node6" href="$d3/dfa/group__phhal_sync_ct___s10.html" title="The purpose and scope of this file is to implement S10 synchronous card api. " alt="" coords="297,157,431,184"/>
+</map>

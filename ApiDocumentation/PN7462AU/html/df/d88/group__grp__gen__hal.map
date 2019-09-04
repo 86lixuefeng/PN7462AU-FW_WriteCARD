@@ -1,0 +1,10 @@
+<map id="Generic HALs" name="Generic HALs">
+<area shape="rect" id="node1" href="$d2/d5c/group__phhal_timer.html" title="The General Purpose Timer APIs. " alt="" coords="361,5,452,32"/>
+<area shape="rect" id="node2" href="$d4/d01/group__phhal_wdt.html" title="The Watch Dog Timer (HAL) APIs. " alt="" coords="367,56,447,83"/>
+<area shape="rect" id="node3" href="$d4/d6a/group__phhal_c_r_c.html" title="The Cyclic Redundancy Check APIs. " alt="" coords="371,107,443,133"/>
+<area shape="rect" id="node4" href="$d6/d66/group__grp__hal.html" title="Hardware Abstraction\l Layer" alt="" coords="5,150,152,191"/>
+<area shape="rect" id="node6" href="$d1/d63/group__phhal_eeprom.html" title="The EEPROM Controller Read/Write APIs. " alt="" coords="353,157,461,184"/>
+<area shape="rect" id="node7" href="$d4/daa/group__phhal_flash.html" title="The PAGEFLASH Read/Write APIs. " alt="" coords="360,208,453,235"/>
+<area shape="rect" id="node8" href="$da/d95/group__phhal_rng.html" title="The Random Number Generator APIs. " alt="" coords="367,259,446,285"/>
+<area shape="rect" id="node9" href="$d2/d76/group__phhal_g_p_i_o.html" title="The General Purpose IO (HAL) APIs. " alt="" coords="365,309,448,336"/>
+</map>

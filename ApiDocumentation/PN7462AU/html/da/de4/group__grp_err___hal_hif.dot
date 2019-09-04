@@ -1,0 +1,11 @@
+digraph "Error Code: HIF HAL"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir=LR;
+  Node2 [label="HIF (I2C,SPI,HSU) HAL",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d3/dad/group__phhal_hif.html",tooltip="The HOST Interface APIs. "];
+  Node0 [label="Error Code: HIF HAL",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 [label="Component Specific\l Error",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/dea/group__grp__comp_specific_error.html",tooltip="Component specific Error Codes. "];
+  Node1->Node0 [shape=plaintext, dir="back", style="solid"];
+  Node2->Node0 [shape=plaintext, dir="back", style="solid"];
+}

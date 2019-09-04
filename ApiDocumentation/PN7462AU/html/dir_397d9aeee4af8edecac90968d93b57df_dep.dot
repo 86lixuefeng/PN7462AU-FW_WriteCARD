@@ -1,0 +1,13 @@
+digraph "external" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_397d9aeee4af8edecac90968d93b57df {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_397d9aeee4af8edecac90968d93b57df.html"];
+    dir_397d9aeee4af8edecac90968d93b57df [shape=plaintext label="external"];
+    dir_6303fed337eac965f509d062849ece48 [shape=box label="CCID" color="red" fillcolor="white" style="filled" URL="dir_6303fed337eac965f509d062849ece48.html"];
+    dir_bd5ac3529ef4a8d05c91b5f527a1b7c6 [shape=box label="CDCLib" color="red" fillcolor="white" style="filled" URL="dir_bd5ac3529ef4a8d05c91b5f527a1b7c6.html"];
+    dir_f23c9e26b440a70abb590ad1d9eff66a [shape=box label="USBD_ROMStack" color="red" fillcolor="white" style="filled" URL="dir_f23c9e26b440a70abb590ad1d9eff66a.html"];
+  }
+  dir_6303fed337eac965f509d062849ece48->dir_f23c9e26b440a70abb590ad1d9eff66a [headlabel="4", labeldistance=1.5 headhref="dir_000001_000005.html"];
+}

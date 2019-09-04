@@ -1,0 +1,11 @@
+.\objects\phhalrf_event.o: ..\PN7462AU\phHal\phhalRf\src\phhalRf_Event.c
+.\objects\phhalrf_event.o: ..\PN7462AU\phCommon\inc\ph_Datatypes.h
+.\objects\phhalrf_event.o: ..\PN7462AU\phCommon\inc\ph_Platform.h
+.\objects\phhalrf_event.o: ..\PN7462AU\phCommon\inc\ph_Config.h
+.\objects\phhalrf_event.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\phhalrf_event.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\phhalrf_event.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\phhalrf_event.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\phhalrf_event.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\phhalrf_event.o: ..\PN7462AU\phCommon\inc\ph_NxpBuild.h
+.\objects\phhalrf_event.o: .\inc\APP_NxpBuild.h

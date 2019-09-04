@@ -1,0 +1,17 @@
+.\objects\phosal_port_pn74xxxx.o: ..\phOsal\src\NullOs\portable\phOsal_Port_PN74xxxx.c
+.\objects\phosal_port_pn74xxxx.o: ..\phOsal\inc\phOsal.h
+.\objects\phosal_port_pn74xxxx.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\phosal_port_pn74xxxx.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\phosal_port_pn74xxxx.o: ..\phOsal\inc\phOsal_Config.h
+.\objects\phosal_port_pn74xxxx.o: ..\phOsal\inc\../src/Freertos/phOsal_Freertos.h
+.\objects\phosal_port_pn74xxxx.o: ..\FreeRTOS\include\FreeRTOS.h
+.\objects\phosal_port_pn74xxxx.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\phosal_port_pn74xxxx.o: ..\FreeRTOS\include\FreeRTOSConfig.h
+.\objects\phosal_port_pn74xxxx.o: ..\PN7462AU\phCommon\inc\ph_NxpBuild.h
+.\objects\phosal_port_pn74xxxx.o: .\inc\APP_NxpBuild.h
+.\objects\phosal_port_pn74xxxx.o: ..\FreeRTOS\include\projdefs.h
+.\objects\phosal_port_pn74xxxx.o: ..\FreeRTOS\include\portable.h
+.\objects\phosal_port_pn74xxxx.o: ..\FreeRTOS\include\deprecated_definitions.h
+.\objects\phosal_port_pn74xxxx.o: ..\FreeRTOS\portable\RVDS\ARM_CM0\portmacro.h
+.\objects\phosal_port_pn74xxxx.o: ..\FreeRTOS\include\mpu_wrappers.h
+.\objects\phosal_port_pn74xxxx.o: ..\phOsal\src\NullOs\portable\phOsal_NullOs_Port.h

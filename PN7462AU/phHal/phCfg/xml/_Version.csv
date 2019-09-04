@@ -1,0 +1,48 @@
+Name,65x65_PLM_MRA3,"","","","","","",""
+Antenna,65x65 PLM,"","","","","","",""
+Last Modified,2/1/2016,"","","","","","",""
+Last Author,Maniraj Ashirwad G,"","","","","","",""
+"","","","","","","","",""
+Version Number,Comments,"","","","","","",""
+V1.0,Initial Version. Changes in this excel sheet and user_ee_65x65.xml &  should be logged further. User_ee.xml should be same as user_ee_65x65.xml while generating the eeprom for 65x65 Antenna.,"","","","","","",""
+V1.1,DYNAMIC_BPSK_TH_ENABLE - Enabled for Felica Reader Mode Passive Initiator 212 and 424
+
+CLIF_ANA_CLK_MAN_REG - Register Value added for Felica Passive CM transition (For ALM, GTM and Felica values are different),"","","","","","",""
+V1.2,All the test bus signal are disable except TX_ACTIVE on Digital Test Bus 1 (GPIO4) in user_ee_65x65_5V.xml
+
+Separate TXOCP configuration added for 3.0V and 3.6V TXLDO configuration. (user_ee_65x65_3.0_3.6V.xml),"","","","","","",""
+V1.3,For Type A RM 848, in CLIF_ANA_TX_SHAPE_CONTROL_REG register, TX_SET_TAU_MOD_FALLING, TX_SET_TAU_MOD_RISING are changed for RM A-848 fixing ISO OverShoot Failure
+
+For Type A RM 848, in CLIF_ANA_TX_AMPLITUDE_REG register, TX_GSN_MOD_RM is changed to fix ISO Overshoot Failure.
+
+Refer SC3587 for more information,"","","","","","",""
+V1.4 ,Integration with the excel sheet PN5180_RF_ConfigurationSnapshot_20151103,"","","","","","",""
+V1.5 ,1. Bug Fix - SC3871
+2. Bit Fields of "CLIF_SIGPRO_ADCBCM_CONFIG_REG", are updated with MRA2 Bit Fields
+3. Addition of Boot Eeprom Settings
+4. CLIF_TX_SYMBOL1_DEF_REG is added,"","","","","","",""
+V1.5.1,1. Bug Fix - Type B update for "CLIF_TX_SYMBOL1_DEF_REG","","","","","","",""
+V1.5.2,Bug Fix - SC3897. TX_CW_AMP_REF2TVDD is set to '0' in the boot settings,"","","","","","",""
+V1.6,"Integration with the PN5180 Eeprom Configuration ""PN5180 FW RC4 release - V0.143"". 
+Register Changes:
+CLIF_ANA_RX_REG -  A212, A424,A848, B424, B848, 1800 - 18.88 SC424 2M, 1800 - 18.88 SC424 4M, 1800 - 18.88 SC848 2M,1800 - 18.88 SC848 4M, 1800 - 9.44 SC424 2M, 1800 - 9.44 SC424 4M, 1800 - 9.44 SC848 2M, 1800 - 9.44 SC848 4M
+
+CLIF_SIGPRO_RM_CONFIG1_REG - A212, A424, A848, B212, B424, B848,1800 - 18.88 SC424 2M, 1800 - 18.88 SC424 4M, 1800 - 9.44 SC424 2M, 1800 - 9.44 SC424 4M","","","","","","",""
+V1.7,No update - Created by Purnank,"","","","","","",""
+V1.7.1,TXOCP configuration update for 65x65 <4v. Agc Ref = 220,"","","","","","",""
+V1.7.2,CLIF_SIGPRO_ADCBCM_CONFIG_REG configuration update based for MRA2 Addition bit fields.
+Register Changes :
+CLIF_SIGPRO_ADCBCM_CONFIG_REG - GTM,CM - A106, A212, A424, A848, F212, F424, AI 212, AI 424
+,"","","","","","",""
+V1.7.3,PCD Shaping configuration update for 65x65,"","","","","","",""
+V1.7.4,Renaming of TxOCP to DPC (eeprom xml files),"","","","","","",""
+V1.8,Separate PCD configuration added for <4v and >4v configuration,"","","","","","",""
+V1.8.1,CLIF_ANA_NFCLD_REG value is updated - Initiator. 
+EDGE_DETECT_TAP_SEL updated for Type A 424, 848 CM - Target,"","","","","","",""
+V1.8.2,CLIF_ANA_NFCLD_REG set to 0x0C,"","","","","","",""
+V1.8.3,CLIF_ANA_NFCLD_REG set to 0x07,"","","","","","",""
+V1.9,1. CLIF_TEST_CONTROL_REG added to the Initiator Tab
+2. Boot Register values are updated for all registers
+3. Duplicate Entry of CLIF_ANA_AGC_REG removed,"","","","","","",""
+V1.9.1,Change for 30x50mm 5V DPC Config (AGC Hi Threshold) no change for 65x65mm,"","","","","","",""
+V1.9.2,CLIF_ANA_NFCLD_REG set to 0x1C in boot setting,"","","","","","",""

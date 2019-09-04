@@ -1,0 +1,17 @@
+.\objects\phacdiscloop.o: ..\NxpNfcRdLib\comps\phacDiscLoop\src\phacDiscLoop.c
+.\objects\phacdiscloop.o: ..\PN7462AU\phCommon\inc\ph_Status.h
+.\objects\phacdiscloop.o: ..\PN7462AU\phCommon\inc\ph_NxpBuild.h
+.\objects\phacdiscloop.o: .\inc\APP_NxpBuild.h
+.\objects\phacdiscloop.o: ..\PN7462AU\phCommon\inc\ph_Datatypes.h
+.\objects\phacdiscloop.o: ..\PN7462AU\phCommon\inc\ph_Platform.h
+.\objects\phacdiscloop.o: ..\PN7462AU\phCommon\inc\ph_Config.h
+.\objects\phacdiscloop.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\phacdiscloop.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\phacdiscloop.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\phacdiscloop.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\phacdiscloop.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\phacdiscloop.o: ..\PN7462AU\phCommon\inc\ph_RefDefs.h
+.\objects\phacdiscloop.o: ..\PN7462AU\phCommon\inc\ph_TypeDefs.h
+.\objects\phacdiscloop.o: ..\NxpNfcRdLib\intfs\phacDiscLoop.h
+.\objects\phacdiscloop.o: ..\NxpNfcRdLib\comps\phacDiscLoop\src\Sw/phacDiscLoop_Sw.h
+.\objects\phacdiscloop.o: ..\NxpNfcRdLib\intfs\phNxpNfcRdLib_Config.h

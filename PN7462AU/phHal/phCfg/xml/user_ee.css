@@ -1,0 +1,120 @@
+﻿/*
+
+
+                     Copyright (c), NXP Semiconductors
+
+                        (C) NXP Semiconductors 2014,2015
+
+          All rights are reserved. Reproduction in whole or in part is
+         prohibited without the written consent of the copyright owner.
+     NXP reserves the right to make changes without notice at any time.
+    NXP makes no warranty, expressed, implied or statutory, including but
+    not limited to any implied warranty of merchantability or fitness for any
+   particular purpose, or that the use will not infringe any third party patent,
+    copyright or trademark. NXP must not be liable for any loss or damage
+                             arising from its use.
+
+*/
+
+
+table, td, tr {
+    margin: 0;
+    padding: 0;
+    border-spacing: 0;
+    border: 0;
+    font-size: 9pt;
+}
+
+table.structure {
+    border: 2px;
+    border-color: #B3CAC6;
+    margin: 0px;
+    padding: 0px;
+    border-style: solid;
+    background: white;
+    width: 100%;
+}
+
+td.structurename, td.structuredescription {
+    width: 5em !important;
+}
+
+td.structurename, td.structuredescription {
+    background: #E6EDEC;
+}
+.structuredescription, .pagedescription {
+    white-space: pre-wrap;       /* css-3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+    white-space: pre;
+}
+td.structurename {
+    text-align: right;
+    width: 10m;
+    padding-right: 4px;
+}
+thead  {
+    background: #E6EDEC;
+    color: #005042;
+    text-align: center;
+    word-wrap: break-word;
+    font-weight: bold;
+    font-family: Arial;
+}
+td.structuredescription {
+    text-align: left;
+    padding-left: 10px;
+}
+
+td.fieldtype {
+    text-align: right;
+    padding-right: 4;
+    width: 4em !important;
+}
+
+td.fieldname {
+    text-align: left;
+    width: 8em !important;
+    padding-left: 4;
+}
+td.fieldvalue {
+    text-align: center;
+    width: 6em !important;
+    padding-left: 4;
+}
+
+.pagename h3, .structurename h3{
+    font-family:Lucida Console;
+}
+
+.fieldname, .fieldtype, .fieldvalue, .fielddescription
+{
+    font-family:Lucida Console;
+    border: solid;
+    border-width: 1px;
+    margin: 0px;
+    padding: 0px;
+    border-color: #E6EDEC;
+}
+
+.filedvaluetype {
+    font-size: smaller;
+}
+
+.fielddescription {
+    font-family:normal;
+    white-space: pre-line;
+}
+.fielddescription ul{
+    white-space: normal;
+}
+
+.fieldoption {
+    margin: 0;
+}
+
+
+
+

@@ -1,0 +1,34 @@
+
+
+     digraph "Sample Usage" {
+         node [shape=oval, fontname="Helvetica", fontsize=10];
+         End;
+         Start;
+
+         node [shape=record, fontname="Helvetica", fontsize=10];
+
+     //Nodes
+         phpalCt_ActivateCard [ URL="\ref phpalCt_ActivateCard"];
+         phpalCt_DeInit [ URL="\ref phpalCt_DeInit"];
+         phpalCt_Init [ URL="\ref phpalCt_Init"];
+         phpalCt_SetNAD [ URL="\ref phpalCt_SetNAD"];
+         phpalCt_SetProtocol [ URL="\ref phpalCt_SetProtocol"];
+         phpalCt_Transceive [ URL="\ref phpalCt_Transceive"];
+
+     //Logical Flow
+     Start -> phpalCt_Init;
+     phpalCt_Init -> phpalCt_ActivateCard;
+     phpalCt_ActivateCard -> phpalCt_Transceive
+     phpalCt_Transceive -> phpalCt_DeInit[label = "Call the CT HAL Deactivate directly"];
+     phpalCt_DeInit -> End;
+
+     //optionals
+     edge [ style="dashed", color="blue" ];
+         phpalCt_ActivateCard -> phpalCt_SetProtocol;
+         phpalCt_SetProtocol -> phpalCt_Transceive;
+         phpalCt_ActivateCard -> phpalCt_SetNAD;
+         phpalCt_SetNAD -> phpalCt_Transceive;
+     //error/abort cases
+         edge [ style="dashed", color="red" ];
+
+     }

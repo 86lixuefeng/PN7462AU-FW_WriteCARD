@@ -1,0 +1,28 @@
+
+
+     digraph "Sample Usage"{
+         node [shape=oval, fontname="Helvetica", fontsize=10];
+         End;
+         Start;
+
+         node [shape=record, fontname="Helvetica", fontsize=10];
+
+     //Nodes
+         phhalWdt_DeInit [URL ="\ref phhalWdt_DeInit"];
+         phhalWdt_GetStatus [URL ="\ref phhalWdt_GetStatus"];
+         phhalWdt_Refresh [URL ="\ref phhalWdt_Refresh"];
+         phhalWdt_Start [URL ="\ref phhalWdt_Start"];
+
+     //Logical Flow
+         Start -> phhalWdt_Start -> phhalWdt_Refresh;
+         phhalWdt_Refresh -> phhalWdt_DeInit;
+         phhalWdt_DeInit -> End;
+
+     //optionals
+         edge [ style="dashed", color="blue" ];
+         phhalWdt_Start -> phhalWdt_GetStatus;
+
+     //error/abort cases
+         edge [ style="dashed", color="red" ];
+
+     }

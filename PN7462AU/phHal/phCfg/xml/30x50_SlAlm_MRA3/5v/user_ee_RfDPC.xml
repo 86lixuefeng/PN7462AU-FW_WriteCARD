@@ -1,0 +1,51 @@
+<!--
+
+    $URL: https://www.collabnet.nxp.com/svn/pn640/pn640_docs/trunk/06_Validation/RF_Validation/Bring-up/PN640_RF_Settings/30x50_ALM/V1.9.2/5v/user_ee_RfDPC.xml $
+    $Date: 2016-02-02 00:09:17 +0530 (Tue, 02 Feb 2016) $
+    $Id: user_ee_RfDPC.xml 17667 2016-02-01 18:39:17Z Purnank G (ing05193) $
+    $Revision: 17667 $
+
+-->
+
+<structure name="RfDPC">
+    <description>\see phhalRf_DPCConfig_t</description>
+    <field type="u16" name="wControlCycle" value="0x4E20" valuetype="hex">
+        <description>Sets the value for the periodic regulation. Time base is 1/20Mhz. (Example: Value of 20000 is equal to 1ms) </description>
+    </field>
+    <field type="u16" name="wAgcFastModeConfig" value="0x2540" valuetype="hex">
+        <description>Controls AGC FastMode (StepSizeEnabled: 13 + StepSize: 12..11 + DurationEnabled: 10 + Duration: 9..0 ) </description>
+    </field>
+    <field type="u16" name="wAgcTrshLow" value="0x144" valuetype="hex">
+        <description>Low threashold for gearshift </description>
+    </field>
+    <field type="u16" name="wGuardTimeFastMode" value="0x88B8" valuetype="hex">
+        <description>                        Guard time after AGC fast mode has been triggered. This happens in the following scenarios:                        - End of Receive                        - End of Transmit                        - After a gear switch                        Time base is 1/20MHz (Example: Value of 2000 is equal to 100us)</description>
+    </field>
+    <field type="u16" name="wGuardTimeSofDetected" value="0x61A8" valuetype="hex">
+        <description>Guard time after SoF or SC detection. This is to avoid any DPC regulation between SoF/SC and actual begin of reception. Time base is 1/20MHz (Example: Value of 2000 is equal to 100us) </description>
+    </field>
+    <field type="u16" name="wGuardTimeFieldOn" value="0x0190" valuetype="hex">
+        <description>Guard time after Gear Switch during FieldOn instruction. Time base is 1/20MHz (Example: Value of 2000 is equal to 100us) </description>
+    </field>
+    <array type="u16" name="wAgcTrshHigh" valuetype="hex" size="15" value="0x014A 0x014A 0x014A 0x014A 0x014A 0x014A 0x014A 0x014A 0x014A 0x014A 0x014A 0x014A 0x014A 0x014A 0x014A">
+        <description>High threasholds for each gear </description>
+    </array>
+    <field type="u8" name="bOcProtControl" value="0x73" valuetype="hex">
+        <description>Control byte (StartGear: 7..4 bits + GearStep: 3..1 bits + OcProtLoopEnabled: 0 bit ) </description>
+    </field>
+    <field type="u8" name="bAgcXi" value="0x0" valuetype="hex">
+        <description>Compensation value for the AGC </description>
+    </field>
+    <field type="u8" name="bDebug" value="0x0" valuetype="hex">
+        <description>Enable/Disable debug signals </description>
+    </field>
+    <field type="u8" name="bAgcShiftValue" value="0x04" valuetype="hex">
+        <description>Shift value for AGC dynamic low threshold adjustment </description>
+    </field>
+    <field type="u8" name="bSizeOfLUT" value="0x08" valuetype="hex">
+        <description>Number of fields in the following configuration look up table </description>
+    </field>
+    <array type="u8" name="bConfigLUT" valuetype="hex" size="15" value="0xF9 0xF1 0xF3 0xF5 0xF7 0xF0 0xF2 0xF6 0x17 0x17 0x17 0x17 0x17 0x17 0x17">
+        <description>Look up table for configuration values </description>
+    </array>
+</structure>

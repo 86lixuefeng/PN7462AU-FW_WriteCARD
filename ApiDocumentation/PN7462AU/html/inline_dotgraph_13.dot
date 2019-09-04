@@ -1,0 +1,36 @@
+
+     digraph {
+         node [shape=oval, fontname="Helvetica", fontsize=10];
+         End;
+         Start;
+         AnotherThread [label = "Another\nThread" ];
+
+         node [shape=record, fontname="Helvetica", fontsize=10];
+
+     //Nodes
+         phhalRf_Init [ URL="\ref phhalRf_Init"];
+         phhalRf_DeInit [ URL="\ref phhalRf_DeInit"];
+         phhalRf_FieldOff [ URL="\ref phhalRf_FieldOff"];
+         phhalRf_FieldOn [ URL="\ref phhalRf_FieldOn"];
+         phhalRf_LoadProtocol_Initiator [ URL="\ref phhalRf_LoadProtocol_Initiator"];
+         phhalRf_PCD_SetExchgFdt [ URL="\ref phhalRf_PCD_SetExchgFdt"];
+         phhalRf_SetConfig [ URL="\ref PHHAL_RF_CONFIG_RXWAIT_US"];
+         phhalRf_PCD_Exchg [ URL="\ref phhalRf_PCD_Exchg"];
+
+     //Logical Flow
+         Start ->phhalRf_Init -> phhalRf_LoadProtocol_Initiator;
+         phhalRf_LoadProtocol_Initiator -> phhalRf_FieldOn;
+         phhalRf_FieldOn -> phhalRf_PCD_SetExchgFdt;
+         phhalRf_PCD_SetExchgFdt -> phhalRf_SetConfig;
+         phhalRf_SetConfig -> phhalRf_PCD_Exchg;
+         phhalRf_PCD_Exchg -> phhalRf_DeInit;
+         phhalRf_DeInit -> End;
+
+     //error/abort cases
+         edge [ style="dashed", color="red" ];
+         AnotherThread -> phhalRf_SetIdleState [label = "Async Shutdown" ];
+
+         edge [ style="dashed", color="purple" ];
+         phhalRf_SetIdleState -> phhalRf_PCD_Exchg [label = "Aborts the API\nif it was already\nrunning." ];
+
+     }

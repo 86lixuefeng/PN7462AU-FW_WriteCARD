@@ -1,0 +1,6 @@
+digraph "phCfg_EE_phRFLP_T_Tx_val"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node0 [label="{phCfg_EE_phRFLP_T_Tx_val\n|+ u32_T_TX_GTM_00_TRANSCEIVE\l_CONTROL_REG\l+ u32_T_TX_GTM_01_ANA\l_PBF_CONTROL_REG\l+ u32_T_TX_GTM_02_ANA\l_TX_AMPLITUDE_REG\l+ u32_T_TX_GTM_03_ANA\l_TX_CLK_CONTROL_REG\l+ u32_T_TX_GTM_04_TX\l_UNDERSHOOT_CONFIG_REG\l+ u32_T_TX_GTM_05_TX\l_OVERSHOOT_CONFIG_REG\l+ u32_T_TX_GTM_06_ANA\l_TX_SHAPE_CONTROL_REG\l+ u32_T_TX_GTM_07_TX\l_CONTROL_REG\l+ u32_T_TX_GTM_08_ANA\l_CLK_MAN_REG\l+ u32_T_TX_A_106_P_00\l_TRANSCEIVE_CONTROL_REG\land 45 more...\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}

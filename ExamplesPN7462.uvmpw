@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<ProjectWorkspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="project_mpw.xsd">
+
+  <SchemaVersion>1.0</SchemaVersion>
+
+  <Header>### uVision Project, (C) Keil Software</Header>
+
+  <WorkspaceName>WorkSpace</WorkspaceName>
+
+  <project>
+    <PathAndName>.\PN7462AU_ex_phExCcid\phExCcid.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\PN7462AU_ex_phExCt\phExCt.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\PN7462AU_ex_phExCT7816\phExCT7816.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\PN7462AU_ex_phExCTEMVCo\phExCTEMVCo.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\PN7462AU_ex_phExDoorAccess\phExDoorAccess.uvprojx</PathAndName>
+    <NodeIsActive>1</NodeIsActive>
+    <NodeIsExpanded>1</NodeIsExpanded>
+  </project>
+
+  <project>
+    <PathAndName>.\PN7462AU_ex_phExEMVCo\phExEMVCo.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\PN7462AU_ex_phExHif\phExHif.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\PN7462AU_ex_phExMain\phExMain.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\PN7462AU_ex_phExNFCCcid\phExNFCCcid.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\PN7462AU_ex_phExPos\phExPos.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\PN7462AU_ex_phExRf\phExRf.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\PN7462AU_ex_phExRfPCDA\phExRfPCDA.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\PN7462AU_ex_phExRfPoll\phExRfPoll.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\PN7462AU_ex_phExVCom\phExVCom.uvprojx</PathAndName>
+  </project>
+
+</ProjectWorkspace>

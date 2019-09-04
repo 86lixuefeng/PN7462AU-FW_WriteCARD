@@ -1,0 +1,6 @@
+digraph "USB_REGS_T"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node0 [label="{USB_REGS_T\n|+ DEVCMDSTAT\l+ INFO\l+ EPLISTSTART\l+ DATABUFSTART\l+ LPM\l+ EPSKIP\l+ EPINUSE\l+ EPBUFCFG\l+ INTSTAT\l+ INTEN\l+ INTSETSTAT\l+ INTROUTING\l+ RESERVED0\l+ EPTOGGLE\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}

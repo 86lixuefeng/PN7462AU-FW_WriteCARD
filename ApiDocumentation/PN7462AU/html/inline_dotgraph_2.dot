@@ -1,0 +1,24 @@
+
+     digraph "Sample Usage" {
+         node [shape=oval, fontname="Helvetica", fontsize=10];
+         End;
+         Start;
+
+         node [shape=record, fontname="Helvetica", fontsize=10];
+
+     //Nodes
+         phhalCrc_CalculateCrc [URL ="\ref phhalCrc_CalculateCrc"];
+         phhalCrc_CheckCrc [URL ="\ref phhalCrc_CheckCrc"];
+
+
+     //Logical Flow
+         Start -> phhalCrc_CalculateCrc -> End;
+         Start -> phhalCrc_CheckCrc -> End;
+
+     //optionals
+         edge [ style="dashed", color="green" ];
+
+     //error/abort cases
+         edge [ style="dashed", color="red" ];
+
+     }

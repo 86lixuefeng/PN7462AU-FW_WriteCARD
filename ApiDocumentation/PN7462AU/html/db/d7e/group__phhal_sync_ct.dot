@@ -1,0 +1,17 @@
+digraph "SYNC CT HAL"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir=LR;
+  Node5 [label="Error Code: CT (Sync) HAL",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/df5/group__grp_err___hal_sync_c_t.html",tooltip="Error codes for Synchronous CT HAL. "];
+  Node1 [label="CT HAL",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d0/db5/group__phhal_ct.html",tooltip="The Contact Interface (HAL) APIs. "];
+  Node3 [label="SYNC CT HAL S9",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d3/dca/group__phhal_sync_ct___s9.html",tooltip="The purpose and scope of this file is to implement S9 Synchronous card Apis. "];
+  Node2 [label="SYNC CT HAL I2C",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d3/d65/group__phhal_sync_ct___i2_c.html",tooltip="The purpose and scope of this file is to implement SYNC CT HAL, Prototype of the Sync CT Interface HA..."];
+  Node0 [label="SYNC CT HAL",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node4 [label="SYNC CT HAL S10",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d3/dfa/group__phhal_sync_ct___s10.html",tooltip="The purpose and scope of this file is to implement S10 synchronous card api. "];
+  Node1->Node0 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node2 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node3 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node4 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node5 [shape=plaintext, dir="back", style="solid"];
+}

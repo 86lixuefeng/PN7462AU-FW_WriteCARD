@@ -1,0 +1,13 @@
+digraph "Component Codes"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir=LR;
+  Node0 [label="Component Codes",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node3 [label="Platform/IC Specific\l Components",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d1c/group__ph_comp_codes_i_c.html",tooltip="IDs/Codes of Platform/IC Specific Components. "];
+  Node1 [label="Other",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/d86/group__grp__others.html"];
+  Node2 [label="Reader Library Components",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/d44/group__ph_comp_codes.html",tooltip="IDs/Codes of NxpNfcLib Components. "];
+  Node1->Node0 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node2 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node3 [shape=plaintext, dir="back", style="solid"];
+}

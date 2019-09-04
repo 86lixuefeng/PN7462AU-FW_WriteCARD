@@ -1,0 +1,12 @@
+.\objects\phcfg_pf.o: ..\PN7462AU\phHal\phCfg\src\phCfg_PF.c
+.\objects\phcfg_pf.o: ..\PN7462AU\phCommon\inc\ph_Datatypes.h
+.\objects\phcfg_pf.o: ..\PN7462AU\phCommon\inc\ph_Platform.h
+.\objects\phcfg_pf.o: ..\PN7462AU\phCommon\inc\ph_Config.h
+.\objects\phcfg_pf.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\phcfg_pf.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\phcfg_pf.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\phcfg_pf.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\phcfg_pf.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\phcfg_pf.o: ..\PN7462AU\phCommon\inc\ph_NxpBuild.h
+.\objects\phcfg_pf.o: .\inc\APP_NxpBuild.h
+.\objects\phcfg_pf.o: ..\PN7462AU\phCommon\inc\phCfg_EE.h

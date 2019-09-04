@@ -1,0 +1,24 @@
+
+     digraph "Sample Usage"{
+         node [shape=oval, fontname="Helvetica", fontsize=10];
+         End;
+         Start;
+
+         node [shape=record, fontname="Helvetica", fontsize=10];
+
+     //Nodes
+         phhalRng_Init [URL ="\ref phhalRng_Init"];
+         phhalRng_GenerateRng [URL ="\ref phhalRng_GenerateRng"];
+         phhalRng_DeInit [URL ="\ref phhalRng_DeInit"];
+
+
+     //Logical Flow
+         Start -> phhalRng_Init -> phhalRng_GenerateRng -> phhalRng_DeInit -> End;
+
+     //optionals
+         edge [ style="dashed", color="green" ];
+
+     //error/abort cases
+         edge [ style="dashed", color="red" ];
+
+     }

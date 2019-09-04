@@ -1,0 +1,36 @@
+
+     digraph {
+         node [shape=oval, fontname="Helvetica", fontsize=10];
+         End;
+         Start;
+
+         node [shape=record, fontname="Helvetica", fontsize=10];
+
+     //Nodes
+         phhalRf_Init [ URL="\ref phhalRf_Init"];
+         phhalRf_DeInit [ URL="\ref phhalRf_DeInit"];
+         phhalRf_AutoColl [ URL="\ref phhalRf_AutoColl"];
+         phhalRf_LoadProtocol_Target [ URL="\ref phhalRf_LoadProtocol_Target"];
+         phhalRf_Receive [ URL="\ref phhalRf_Receive"];
+         phhalRf_SetConfig [ URL="\ref phhalRf_SetConfig"];
+         phhalRf_Transmit [ URL="\ref phhalRf_Transmit"];
+         phhalRf_RegCallBack [ URL="\ref phhalRf_RegCallBack"];
+
+     //Logical Flow
+         Start ->phhalRf_Init -> phhalRf_AutoColl;
+         phhalRf_AutoColl -> phhalRf_Transmit;
+         phhalRf_Transmit -> phhalRf_Receive;
+         phhalRf_Receive ->  phhalRf_DeInit;
+         phhalRf_DeInit -> End;
+
+     //optionals
+         edge [ style="dashed", color="blue" ];
+         phhalRf_Receive -> phhalRf_LoadProtocol_Target [label = "Change Baud Rate."];
+         phhalRf_LoadProtocol_Target -> phhalRf_Transmit;
+
+     //optionals
+         edge [ style="dashed", color="purple" ];
+         phhalRf_AutoColl -> phhalRf_SetConfig [label = "If external field is off."];
+         phhalRf_SetConfig -> phhalRf_RegCallBack;
+         phhalRf_RegCallBack -> phhalRf_AutoColl [label = "If External Field is Turned On"]
+     }

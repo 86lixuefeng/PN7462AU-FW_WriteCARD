@@ -1,0 +1,39 @@
+
+     digraph "Sample Usage"{
+         node [shape=oval, fontname="Helvetica", fontsize=10];
+         End;
+         Start;
+
+         node [shape=record, fontname="Helvetica", fontsize=10];
+
+     //Nodes
+         phhalSPIM_Configure [URL ="\ref phhalSPIM_Configure"];
+         phhalSPIM_DeInit [URL ="\ref phhalSPIM_DeInit"];
+         phhalSPIM_Init [URL ="\ref phhalSPIM_Init"];
+         phhalSPIM_Receive [URL ="\ref phhalSPIM_Receive"];
+         phhalSPIM_ReceiveContinue [URL ="\ref phhalSPIM_ReceiveContinue"];
+         phhalSPIM_SetWaterLevel [URL ="\ref phhalSPIM_SetWaterLevel"];
+         phhalSPIM_Transmit [URL ="\ref phhalSPIM_Transmit"];
+         phhalSPIM_TransmitContinue [URL ="\ref phhalSPIM_TransmitContinue"];
+
+     //Logical Flow
+         Start ->phhalSPIM_Init -> phhalSPIM_Configure;
+         phhalSPIM_Configure -> phhalSPIM_Receive;
+         phhalSPIM_Configure -> phhalSPIM_Transmit;
+         phhalSPIM_Receive -> phhalSPIM_DeInit;
+         phhalSPIM_Transmit -> phhalSPIM_DeInit;
+         phhalSPIM_DeInit -> End;
+
+     //optionals
+         edge [ style="dashed", color="blue" ];
+         phhalSPIM_Configure -> phhalSPIM_SetWaterLevel;
+         phhalSPIM_SetWaterLevel -> phhalSPIM_Receive;
+         phhalSPIM_SetWaterLevel -> phhalSPIM_Transmit;
+         phhalSPIM_Receive -> phhalSPIM_ReceiveContinue -> phhalSPIM_DeInit;
+         phhalSPIM_Transmit -> phhalSPIM_TransmitContinue -> phhalSPIM_DeInit;
+
+     //error/abort cases
+         edge [ style="dashed", color="red" ];
+         phhalSPIM_Reset -> End;
+
+     }

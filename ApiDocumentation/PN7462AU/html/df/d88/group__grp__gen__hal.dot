@@ -1,0 +1,23 @@
+digraph "Generic HALs"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir=LR;
+  Node2 [label="TIMER HAL",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/d5c/group__phhal_timer.html",tooltip="The General Purpose Timer APIs. "];
+  Node7 [label="WDT HAL",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d01/group__phhal_wdt.html",tooltip="The Watch Dog Timer (HAL) APIs. "];
+  Node3 [label="CRC Hal",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d6a/group__phhal_c_r_c.html",tooltip="The Cyclic Redundancy Check APIs. "];
+  Node1 [label="Hardware Abstraction\l Layer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/d66/group__grp__hal.html"];
+  Node0 [label="Generic HALs",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node5 [label="EEPROM HAL",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/d63/group__phhal_eeprom.html",tooltip="The EEPROM Controller Read/Write APIs. "];
+  Node6 [label="FLASH HAL",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/daa/group__phhal_flash.html",tooltip="The PAGEFLASH Read/Write APIs. "];
+  Node4 [label="RNG HAL",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/d95/group__phhal_rng.html",tooltip="The Random Number Generator APIs. "];
+  Node8 [label="GPIO HAL",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/d76/group__phhal_g_p_i_o.html",tooltip="The General Purpose IO (HAL) APIs. "];
+  Node1->Node0 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node2 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node3 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node4 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node5 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node6 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node7 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node8 [shape=plaintext, dir="back", style="solid"];
+}

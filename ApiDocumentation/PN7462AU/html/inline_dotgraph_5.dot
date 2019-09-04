@@ -1,0 +1,39 @@
+
+     digraph "Sample Usage" {
+         node [shape=oval, fontname="Helvetica", fontsize=10];
+         End;
+         Start;
+
+         node [shape=record, fontname="Helvetica", fontsize=10];
+
+     //Nodes
+         phhalFlash_FormatRegion [URL ="\ref phhalFlash_FormatRegion"];
+         phhalFlash_Init [URL ="\ref phhalFlash_Init"];
+         phhalFlash_ReadBuffer [URL ="\ref phhalFlash_ReadBuffer"];
+         phhalFlash_WriteBuffer [URL ="\ref phhalFlash_WriteBuffer"];
+         phhalFlash_WritePage [URL ="\ref phhalFlash_WritePage"];
+
+         phhalSysSer_SetFlashProgram  [URL = "\ref phhalSysSer_SetFlashProgram"];
+
+     //Logical Flow
+         Start -> phhalFlash_Init;
+         phhalFlash_Init -> phhalFlash_ReadBuffer;
+         phhalFlash_Init -> phhalFlash_WriteBuffer;
+         phhalFlash_Init -> phhalFlash_WritePage;
+         phhalFlash_Init -> phhalFlash_FormatRegion;
+
+         phhalFlash_ReadBuffer -> End;
+         phhalFlash_WriteBuffer -> End;
+         phhalFlash_WritePage -> End;
+         phhalFlash_FormatRegion -> End;
+
+     //optionals
+         edge [ style="dashed", color="green" ];
+         phhalFlash_WriteBuffer -> phhalSysSer_SetFlashProgram [label = "Uses"];
+         phhalFlash_WritePage -> phhalSysSer_SetFlashProgram [label = "Uses"];
+         phhalFlash_FormatRegion -> phhalSysSer_SetFlashProgram [label = "Uses"];
+
+     //error/abort cases
+         edge [ style="dashed", color="red" ];
+
+     }

@@ -1,0 +1,6 @@
+digraph "phCfg_EE_HW_HIF"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node0 [label="{phCfg_EE_HW_HIF\n|+ bInterface\l+ bI2cConfig\l+ bSpiConfig\l+ bIsHsuBoot\l+ bEndOfFrame\l+ bStopBits\l+ bDummyBytes\l+ bBaudRate\l+ bBufferType\l+ bShortFrameLen\l+ bStoreErrData\l+ bHeaderSize\l+ bTimeout\l+ bEnableVBUSPullDown\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}

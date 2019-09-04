@@ -1,0 +1,18 @@
+<!--
+
+    $URL: https://www.collabnet.nxp.com/svn/pn640/pn640_docs/trunk/06_Validation/RF_Validation/Bring-up/PN640_RF_Settings/65x65_PLM/V1.9.2/5v/user_ee_RfPcdShaping.xml $
+    $Date: 2016-02-02 00:09:17 +0530 (Tue, 02 Feb 2016) $
+    $Id: user_ee_RfPcdShaping.xml 17667 2016-02-01 18:39:17Z Purnank G (ing05193) $
+    $Revision: 17667 $
+
+-->
+<structure name="RfPcdShaping">
+    <description>\see phhalRf_PcdShapeConfig_t</description>
+    <array type="u32"  name="dwConfiguration" valuetype="hex" size="20"
+            value="0x08079991 0x00089991 0x17A09991 0x0040F991 0x0010B992 0x00209BA2 0x0040E9A2 0x00089A92 0x0080F992 0x08479093 0x080799A7 0x00089997 0x17309997 0x00014681 0x00104A85 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000">
+        <description>The lookup table for the configuration for PCD shaping.</description>
+    </array>
+    <field type="u8"  name="bSizeOfLUT" value="0x2D"  valuetype="hex" >
+        <description>Number of elements in the following configuration look up table.</description>
+    </field>
+</structure>

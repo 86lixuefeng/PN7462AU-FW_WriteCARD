@@ -1,0 +1,7 @@
+<map id="Error Code Collection" name="Error Code Collection">
+<area shape="rect" id="node1" href="$dd/d93/group__grp___success___err___code.html" title="Return status that denote a sucessful operation. " alt="" coords="311,5,449,32"/>
+<area shape="rect" id="node2" href="$da/d3f/group__grp___comm___err___code.html" title="Return status that denote failures of communication/IO/Tx&#45;Rx. " alt="" coords="305,56,455,83"/>
+<area shape="rect" id="node3" href="$d8/d94/group__grp___generic___err___code.html" title="Return status that denote common failures. " alt="" coords="327,107,433,133"/>
+<area shape="rect" id="node6" href="$de/dea/group__grp__comp_specific_error.html" title="Component specific Error Codes. " alt="" coords="311,158,449,199"/>
+<area shape="rect" id="node5" href="$d5/d86/group__grp__others.html" title="Other" alt="" coords="6,81,61,108"/>
+</map>

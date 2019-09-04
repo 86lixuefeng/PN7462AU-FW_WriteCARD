@@ -1,0 +1,6 @@
+<map id="NXP NFC Library Top Level API" name="NXP NFC Library Top Level API">
+<area shape="rect" id="node1" href="$d2/d94/group__grpsApi.html" title="Contains Simplified APIs for access to NxpNfcRdLib functionality. " alt="" coords="5,56,144,83"/>
+<area shape="rect" id="node2" href="$da/d35/group__nfc__lib__config__tags.html" title="These tags are used as bConfigTag parameter for phNfcLib_SetConfig_Value, phNfcLib_SetConfig and phNf..." alt="" coords="387,5,589,32"/>
+<area shape="rect" id="node4" href="$dd/dbf/group__nfc__lib__api.html" title="All Public Functions of the NFC Library. " alt="" coords="412,56,564,83"/>
+<area shape="rect" id="node5" href="$d1/d90/group__nfc__lib__definitions.html" title="Common defines used within the API of NFC library. " alt="" coords="413,107,563,149"/>
+</map>

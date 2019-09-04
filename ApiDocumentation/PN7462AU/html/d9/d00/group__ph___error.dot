@@ -1,0 +1,17 @@
+digraph "Error Code Collection"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir=LR;
+  Node2 [label="Success Conditions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d93/group__grp___success___err___code.html",tooltip="Return status that denote a sucessful operation. "];
+  Node3 [label="Communication Errors",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/d3f/group__grp___comm___err___code.html",tooltip="Return status that denote failures of communication/IO/Tx-Rx. "];
+  Node4 [label="Generic Errors",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d8/d94/group__grp___generic___err___code.html",tooltip="Return status that denote common failures. "];
+  Node0 [label="Error Code Collection",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 [label="Other",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/d86/group__grp__others.html"];
+  Node5 [label="Component Specific\l Error",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/dea/group__grp__comp_specific_error.html",tooltip="Component specific Error Codes. "];
+  Node1->Node0 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node2 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node3 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node4 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node5 [shape=plaintext, dir="back", style="solid"];
+}

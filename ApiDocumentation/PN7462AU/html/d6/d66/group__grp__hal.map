@@ -1,0 +1,11 @@
+<map id="Hardware Abstraction Layer" name="Hardware Abstraction Layer">
+<area shape="rect" id="node1" href="$dd/d5e/group__phhal_clk_gen.html" title="The Clock Generation APIs. " alt="" coords="224,5,328,32"/>
+<area shape="rect" id="node2" href="$db/dd9/group___r_f_hal.html" title="The Low Level RF(CLIF) APIs. " alt="" coords="242,56,310,83"/>
+<area shape="rect" id="node3" href="$d6/d41/group__phhal_pcr.html" title="The Power Control and Reset APIs. " alt="" coords="237,107,315,133"/>
+<area shape="rect" id="node4" href="$d4/d18/group__grp__mif__hal.html" title="Master Interface HALs" alt="" coords="201,157,351,184"/>
+<area shape="rect" id="node5" href="$da/d8b/group__phhal_pmu.html" title="The Power Management Unit APIs. " alt="" coords="236,208,316,235"/>
+<area shape="rect" id="node6" href="$d6/d2c/group__grp__hif__hal.html" title="Host Interface HAL" alt="" coords="211,259,341,285"/>
+<area shape="rect" id="node7" href="$d0/db5/group__phhal_ct.html" title="The Contact Interface (HAL) APIs. " alt="" coords="243,309,309,336"/>
+<area shape="rect" id="node9" href="$d3/db5/group__phhal_sys_ser.html" title="ROM Interface (System Services) APIs. " alt="" coords="209,360,343,387"/>
+<area shape="rect" id="node10" href="$df/d88/group__grp__gen__hal.html" title="Generic HALs" alt="" coords="225,411,327,437"/>
+</map>

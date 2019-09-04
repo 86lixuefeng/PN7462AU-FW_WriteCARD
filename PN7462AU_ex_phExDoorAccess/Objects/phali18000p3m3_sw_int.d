@@ -1,0 +1,16 @@
+.\objects\phali18000p3m3_sw_int.o: ..\NxpNfcRdLib\comps\phalI18000p3m3\src\Sw\phalI18000p3m3_Sw_Int.c
+.\objects\phali18000p3m3_sw_int.o: ..\PN7462AU\phCommon\inc\ph_Status.h
+.\objects\phali18000p3m3_sw_int.o: ..\PN7462AU\phCommon\inc\ph_NxpBuild.h
+.\objects\phali18000p3m3_sw_int.o: .\inc\APP_NxpBuild.h
+.\objects\phali18000p3m3_sw_int.o: ..\PN7462AU\phCommon\inc\ph_Datatypes.h
+.\objects\phali18000p3m3_sw_int.o: ..\PN7462AU\phCommon\inc\ph_Platform.h
+.\objects\phali18000p3m3_sw_int.o: ..\PN7462AU\phCommon\inc\ph_Config.h
+.\objects\phali18000p3m3_sw_int.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\phali18000p3m3_sw_int.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\phali18000p3m3_sw_int.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\phali18000p3m3_sw_int.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\phali18000p3m3_sw_int.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\phali18000p3m3_sw_int.o: ..\PN7462AU\phCommon\inc\ph_RefDefs.h
+.\objects\phali18000p3m3_sw_int.o: ..\PN7462AU\phCommon\inc\ph_TypeDefs.h
+.\objects\phali18000p3m3_sw_int.o: ..\NxpNfcRdLib\intfs\phalI18000p3m3.h
+.\objects\phali18000p3m3_sw_int.o: ..\NxpNfcRdLib\comps\phalI18000p3m3\src\Sw\phalI18000p3m3_Sw_Int.h

@@ -1,0 +1,39 @@
+
+     digraph "Sample Usage"{
+         node [shape=oval, fontname="Helvetica", fontsize=10];
+         End;
+         Start;
+
+         node [shape=record, fontname="Helvetica", fontsize=10];
+
+         phhalHif_AbortTransmission [ URL="\ref phhalHif_AbortTransmission"];
+         phhalHif_ConfigureWaterLevel [ URL="\ref phhalHif_ConfigureWaterLevel"];
+         phhalHif_DeInit [ URL="\ref phhalHif_DeInit"];
+         phhalHif_DeInitRxBuffer [ URL="\ref phhalHif_DeInitRxBuffer"];
+         phhalHif_Init [ URL="\ref phhalHif_Init"];
+         phhalHif_InitRxBuffer [ URL="\ref phhalHif_InitRxBuffer"];
+         phhalHif_ReleaseRxBuffer [ URL="\ref phhalHif_ReleaseRxBuffer"];
+         phhalHif_Reset [ URL="\ref phhalHif_Reset"];
+         phhalHif_Transmit [ URL="\ref phhalHif_Transmit"];
+
+         Start -> phhalHif_Init;
+         phhalHif_Init -> phhalHif_Transmit ;
+         phhalHif_Transmit -> phhalHif_DeInit [label = "After sending data"];
+         phhalHif_Init -> phhalHif_InitRxBuffer;
+         phhalHif_InitRxBuffer -> phhalHif_ReleaseRxBuffer [label = "After receiving data"];
+         phhalHif_ReleaseRxBuffer -> phhalHif_DeInitRxBuffer -> phhalHif_DeInit;
+
+         //optionals
+         edge [ style="dashed", color="blue" ];
+         phhalHif_Init -> phhalHif_ConfigureWaterLevel;
+         phhalHif_ConfigureWaterLevel -> phhalHif_Transmit;
+         phhalHif_ConfigureWaterLevel -> phhalHif_InitRxBuffer;
+
+         //error/abort cases
+         edge [ style="dashed", color="red" ];
+         phhalHif_Transmit -> phhalHif_AbortTransmission -> phhalHif_DeInit;
+
+         phhalHif_DeInit -> End;
+         phhalHif_Reset -> End;
+         phhalHif_AbortTransmission -> End;
+     }

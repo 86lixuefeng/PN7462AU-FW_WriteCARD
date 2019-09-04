@@ -1,0 +1,13 @@
+<map id="Component Specific Error" name="Component Specific Error">
+<area shape="rect" id="node1" href="$d4/d71/group__grp_err___hal_ct.html" title="Error codes for CT HAL. " alt="" coords="407,5,545,32"/>
+<area shape="rect" id="node2" href="$d3/d3d/group__grp_err___hal_p_m_u.html" title="Error codes for PMU HAL. " alt="" coords="401,56,551,83"/>
+<area shape="rect" id="node3" href="$d2/df5/group__grp_err___hal_sync_c_t.html" title="Error codes for Synchronous CT HAL. " alt="" coords="387,107,565,133"/>
+<area shape="rect" id="node4" href="$d7/d94/group__grp_err___hal_u_s_b.html" title="Error codes for USB HAL. " alt="" coords="402,157,550,184"/>
+<area shape="rect" id="node5" href="$da/de4/group__grp_err___hal_hif.html" title="Error codes for HIF HAL. " alt="" coords="405,208,547,235"/>
+<area shape="rect" id="node6" href="$d9/d00/group__ph___error.html" title="Error Code Collection" alt="" coords="6,233,151,260"/>
+<area shape="rect" id="node7" href="$de/df1/group__grp_err___hal_i2_c_m.html" title="Error codes for I2C Master HAL. " alt="" coords="401,259,551,285"/>
+<area shape="rect" id="node8" href="$d7/d24/group__grp_err___hal_s_p_i_m.html" title="Error codes for SPI Master HAL. " alt="" coords="399,309,553,336"/>
+<area shape="rect" id="node10" href="$d6/db2/group__grp_err___hal_clk_gen.html" title="Error codes for CLKGen HAL. " alt="" coords="394,360,558,387"/>
+<area shape="rect" id="node11" href="$db/d78/group__grp_err___pal_ct.html" title="Error codes for CT PAL. " alt="" coords="407,411,545,437"/>
+<area shape="rect" id="node12" href="$d2/d6c/group__grp_err___hal_p_c_r.html" title="Error codes for PCR HAL. " alt="" coords="402,461,550,488"/>
+</map>

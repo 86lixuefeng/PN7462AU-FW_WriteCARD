@@ -1,0 +1,6 @@
+digraph "phhalSysSer_USBInfo"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node0 [label="{phhalSysSer_USBInfo\n|+ USBDesc_PID\l+ USBDesc_VID\l+ MfrStr_Len\l+ MfrString\l+ ProductStr_Len\l+ ProductString\l+ VolumeString\l+ USBDesc_Attributes\l+ USBDesc_MaxCurr\l+ Reserved0\land 6 more...\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}

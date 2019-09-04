@@ -1,0 +1,5 @@
+<map id="Master Interface HALs" name="Master Interface HALs">
+<area shape="rect" id="node1" href="$d0/d7d/group__phhal_s_p_i_m.html" title="The SPI Master APIs. " alt="" coords="400,5,531,32"/>
+<area shape="rect" id="node4" href="$db/d69/group__phhal_i2_c_m.html" title="The I2C Master APIs. " alt="" coords="401,56,529,83"/>
+<area shape="rect" id="node3" href="$d6/d66/group__grp__hal.html" title="Hardware Abstraction\l Layer" alt="" coords="5,23,152,65"/>
+</map>

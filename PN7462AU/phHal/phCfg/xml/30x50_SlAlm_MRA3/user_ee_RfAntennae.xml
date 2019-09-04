@@ -1,0 +1,16 @@
+<!--
+
+    $URL: https://www.collabnet.nxp.com/svn/pn640/pn640_docs/trunk/06_Validation/RF_Validation/Bring-up/PN640_RF_Settings/30x50_ALM/V1.9/user_ee_RfAntennae.xml $
+    $Date: 2015-12-08 11:05:11 +0100 (Di, 08 Dez 2015) $
+    $Id: user_ee_RfAntennae.xml 16882 2015-12-08 10:05:11Z Purnank G (ing05193) $
+    $Revision: 16882 $
+
+-->
+<structure name="RfAntennae">
+    <!-- Added on 2015.08.10: See PT_SC3518: EEPROM Allocation needed for TestBus and CM Configuration -->
+    <description>Antennae type. ALM or PLM</description>
+    <field valuetype="hex" name="enableALM" type="u8" value="1">
+        <option value="1" description="ALM is used." />
+        <option value="0" description="PLM is used." />
+    </field>
+</structure>
